@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, TextInput, Button, Image, StyleSheet, Text, Alert } from 'react-native';
+import { SafeAreaView, View, TextInput, Button, Image, StyleSheet, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
@@ -16,7 +16,6 @@ const Login = () => {
       return;
     }
     setError(''); //reset error if password and username are not empty 
-    Alert.alert('Başarılı Giriş.');
     console.log('Kullanıcı Adı:', username);
     console.log('Şifre:', password);
     navigation.navigate('Home', { userName: username });

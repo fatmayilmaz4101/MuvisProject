@@ -7,7 +7,7 @@ const Home = ({ route }) => {
     return (
         <SafeAreaView>
             <View style={styles.textStyle}>
-                <Text style={styles.textColor}> Hoşgeldin {userName}! </Text>
+                <Text style={styles.greetingText}> Hoşgeldin {userName}! </Text>
             </View>
         </SafeAreaView>
     )
@@ -15,11 +15,17 @@ const Home = ({ route }) => {
 
 const styles = StyleSheet.create({
     textColor: {
-        color: 'black'
     },
     textStyle: {
         alignItems: 'center',
-    }
+    },
+    greetingText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#169D6B', 
+        marginTop: 20
+    },
+
 });
 
 export default Home;

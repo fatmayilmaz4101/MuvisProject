@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, TextInput, Button, Image, StyleSheet, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackNavigatorParamsList } from '../components/Tabs';
 
-const Login = () => {
+
+
+const Login: React.FC = () => {
   const { container, center, input, image, errorMessage } = styles;
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackNavigatorParamsList>>();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
   const handleLogin = () => {
     if (!username || !password) {

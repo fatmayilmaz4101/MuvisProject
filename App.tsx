@@ -8,14 +8,14 @@ import { enableScreens } from 'react-native-screens';
 
 enableScreens();
 
-
 const Stack = createStackNavigator();
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <Tabs/>
+      <Tabs />
     </NavigationContainer>
-  )
-}
+  );
+};
+
 export default App;

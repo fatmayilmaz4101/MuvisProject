@@ -1,7 +1,8 @@
 import { RouteProp } from '@react-navigation/native';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import { RootStackNavigatorParamsList } from '../components/Tabs';
+import { UserContext, useUser } from '../contexts/UserContext';
 
 type HomeRouteProp = RouteProp<RootStackNavigatorParamsList, 'Home'>;
 
@@ -10,11 +11,12 @@ type HomeProps = {
   };
 
 const Home: React.FC<HomeProps> = ({ route }) => {
-    const { userName } = route.params;
+  const { user } = useUser();
+
     return (
     <SafeAreaView>
       <View style={styles.textStyle}>
-        <Text style={styles.greetingText}> Hoşgeldin {userName}! </Text>
+        <Text style={styles.greetingText}> Hoşgeldin {user.userName}! </Text>
       </View>
     </SafeAreaView>
   );

@@ -4,7 +4,7 @@ import Login from "../screens/Login";
 import Home from "../screens/Home";
 
 export type RootStackNavigatorParamsList = {
-  Home: {userName:string};
+  Home: undefined;
   Login: undefined;
 };
 

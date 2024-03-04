@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, TextInput, Button, Image, StyleSheet, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackNavigatorParamsList } from '../components/Tabs';
-import { UserContext, useUser } from '../contexts/UserContext';
+import { useUser } from '../contexts/UserContext';
 import { styles } from '../styles/login.styles';
 
 const Login = () => {
@@ -12,7 +10,7 @@ const Login = () => {
   const [error, setError] = useState<string>('');
   const { setUser } = useUser();
   const { container, center, input, image, errorMessage } = styles;
-  const navigation = useNavigation<StackNavigationProp<RootStackNavigatorParamsList>>();
+  const navigation = useNavigation<any>();
 
 
   const handleLogin = () => {

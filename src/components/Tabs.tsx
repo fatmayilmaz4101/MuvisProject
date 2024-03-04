@@ -3,12 +3,8 @@ import { createStackNavigator, StackNavigationProp } from '@react-navigation/sta
 import Login from "../screens/Login";
 import Home from "../screens/Home";
 
-export type RootStackNavigatorParamsList = {
-  Home: undefined;
-  Login: undefined;
-};
 
-const Stack = createStackNavigator<RootStackNavigatorParamsList>();
+const Stack = createStackNavigator();
 
 const Tabs: React.FC = () => {
   return (

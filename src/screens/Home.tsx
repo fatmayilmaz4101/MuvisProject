@@ -3,17 +3,19 @@ import React, { useContext } from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import { RootStackNavigatorParamsList } from '../components/Tabs';
 import { UserContext, useUser } from '../contexts/UserContext';
+import { styles } from '../styles/home.styles';
 
 type HomeRouteProp = RouteProp<RootStackNavigatorParamsList, 'Home'>;
 
 type HomeProps = {
-    route: HomeRouteProp;
-  };
+  route: HomeRouteProp;
+};
 
 const Home: React.FC<HomeProps> = ({ route }) => {
   const { user } = useUser();
+  const { textStyle, greetingText } = styles;
 
-    return (
+  return (
     <SafeAreaView>
       <View style={styles.textStyle}>
         <Text style={styles.greetingText}> Hoşgeldin {user.userName}! </Text>
@@ -22,16 +24,5 @@ const Home: React.FC<HomeProps> = ({ route }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  textStyle: {
-    alignItems: 'center',
-  },
-  greetingText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#169D6B',
-    marginTop: 20,
-  },
-});
 
 export default Home;

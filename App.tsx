@@ -15,7 +15,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <UserProvider>
-      <Tabs />
+        <Tabs />
       </UserProvider>
     </NavigationContainer>
   );

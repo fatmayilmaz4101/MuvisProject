@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {SafeAreaView, View, TextInput, Button, Image, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useUser} from '../contexts/UserContext';
-import {styles} from '../styles/login.styles';
+import {useUser} from '../../contexts/UserContext';
+import {styles} from './login.styles';
 
 const Login = () => {
   const [userName, setUserName] = useState<string>('');
@@ -29,7 +29,10 @@ const Login = () => {
   return (
     <SafeAreaView style={container}>
       <View style={center}>
-        <Image source={require('../../assets/muvis-logo.jpg')} style={image} />
+        <Image
+          source={require('/Users/fatmayilmaz/Documents/GitHub/MuvisProject/assets/muvis-logo.jpg')}
+          style={image}
+        />
 
         <TextInput
           style={input}

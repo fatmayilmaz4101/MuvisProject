@@ -13,6 +13,8 @@ React Navigation
 - Sign In
 
 ## OUTPUTS
+###Android-iOS Video
+- https://disk.yandex.com.tr/d/4nGnyuceBQPB3w
 
 ### For iOS
 ![Login Page](assets/ios-login.png)

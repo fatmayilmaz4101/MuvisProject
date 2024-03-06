@@ -1,12 +1,13 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {SafeAreaView, View, Text, Button} from 'react-native';
 import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
-import {CounterContext} from '../../contexts/context';
+import {CounterContext, TitleContext} from '../../contexts/context';
 
 const Home: React.FC = () => {
   const {user} = useUser();
-  const [counter, setCounter] = useState<number>(0);
+  const {counter, setCounter} = useContext(CounterContext);
+  const counterTitle = useContext(TitleContext);
   const {
     textStyle,
     greetingText,
@@ -15,12 +16,14 @@ const Home: React.FC = () => {
     buttonContainer,
     counterText,
   } = styles;
-  const counterTitle = useContext(CounterContext);
-  const handleIncrement = () => {
+  const handleIncrease = () => {
     setCounter(counter + 1);
   };
-  const resetIncrement = () => {
+  const resetIncrease = () => {
     setCounter(0);
+  };
+  const decrease = () => {
+    setCounter(counter - 1);
   };
   return (
     <SafeAreaView>
@@ -30,9 +33,11 @@ const Home: React.FC = () => {
           <Text style={counterText}>{counterTitle}</Text>
           <Text style={counterText}>{counter}</Text>
           <View style={buttonStyle}>
-            <Button color="gray" title="Arttır" onPress={handleIncrement} />
+            <Button color="gray" title="Arttır" onPress={handleIncrease} />
             <View style={seperator} />
-            <Button color="gray" title="Sıfırla" onPress={resetIncrement} />
+            <Button color="gray" title="Sıfırla" onPress={resetIncrease} />
+            <View style={seperator} />
+            <Button color="gray" title="Azalt" onPress={decrease} />
           </View>
         </View>
       </View>

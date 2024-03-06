@@ -5,18 +5,19 @@ import Tabs from './src/components/Tabs';
 import 'react-native-safe-area-context';
 import {enableScreens} from 'react-native-screens';
 import {UserProvider} from './src/contexts/UserContext';
-import {CounterContext} from './src/contexts/context';
+import {CounterProvider, TitleContext} from './src/contexts/context';
 
 enableScreens();
 
 const App: React.FC = () => {
-  const counterTitle = 'Sayaç';
   return (
     <NavigationContainer>
       <UserProvider>
-        <CounterContext.Provider value={counterTitle}>
-          <Tabs />
-        </CounterContext.Provider>
+        <CounterProvider>
+          <TitleContext.Provider value="Sayaç">
+            <Tabs />
+          </TitleContext.Provider>
+        </CounterProvider>
       </UserProvider>
     </NavigationContainer>
   );

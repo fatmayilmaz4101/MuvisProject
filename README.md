@@ -14,7 +14,7 @@ React Navigation
 
 ## OUTPUTS
 ###Android-iOS Video
-- https://disk.yandex.com.tr/d/4nGnyuceBQPB3w
+- 1.1 https://disk.yandex.com.tr/d/4nGnyuceBQPB3w
 
 ### For iOS
 ![Login Page](assets/ios-login.png)

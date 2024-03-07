@@ -21,7 +21,7 @@ const LogoutButton = () => {
 
   return (
     <Button
-      color="#169D6B"
+      color="green"
       title="Çıkış Yap"
       onPress={() => {
         navigation.navigate('Login');

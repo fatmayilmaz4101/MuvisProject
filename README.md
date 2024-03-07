@@ -14,21 +14,17 @@ React Navigation
 
 ## OUTPUTS
 ### Android-iOS Video
+- 1.0 https://disk.yandex.com.tr/d/46iacSXjU73MUg
 - 1.1 https://disk.yandex.com.tr/d/4nGnyuceBQPB3w
+- 1.2 https://disk.yandex.com.tr/i/giFksbgW7VAsAg
 
 ### For iOS
 ![Login Page](assets/ios-login.png)
 ![Home Page](assets/ios-home.png)
 
-### LOGIN AND HOME PAGE VIDEO
-- https://disk.yandex.com.tr/d/PRhDv4_Jne2CIA
-
 ### For Android
 ![Login Page](assets/android-login.png)
 ![Home Page](assets/android-home.png)
-
-### LOGIN AND HOME PAGE VIDEO
-- https://disk.yandex.com.tr/d/3bY2ohAKHt6ihQ
 
 ## EXPLANATION
 The user can navigate to the home page by entering a username and password. However, if the user leaves the username or password empty, they cannot proceed to the home page. Once on the home page, the username is visible.

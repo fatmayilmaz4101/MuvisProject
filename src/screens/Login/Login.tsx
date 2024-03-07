@@ -23,18 +23,7 @@ const Login = () => {
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
-    console.log(`${value}`);
-    if (value) {
-      try {
-        await AsyncStorage.setItem('username', userName);
-        await AsyncStorage.setItem('password', password);
-      } catch (error) {
-        console.error('Veri işlemleri hatası:', error);
-      }
-    } else {
-      await AsyncStorage.removeItem('username');
-      await AsyncStorage.removeItem('password');
-    }
+    console.log(`Switch'in değeri: ${value}`);
     await AsyncStorage.setItem('isEnabled', value.toString());
   };
 
@@ -43,12 +32,25 @@ const Login = () => {
       setError('Kullanıcı adı veya şifre boş bırakılamaz.');
       return;
     }
-
     setError(''); //reset error if password and username are not empty
     setUser({userName, password});
-    console.log('Kullanıcı Adı:', userName);
-    console.log('Şifre:', password);
-
+    console.log('İnputtan gelen Kullanıcı Adı:', userName);
+    console.log('İnputtan gelen Şifre:', password);
+    if (isEnabled) {
+      await AsyncStorage.setItem('username', userName);
+      await AsyncStorage.setItem('password', password);
+      console.log(
+        "Switch true: Storage'a kaydedilen değerler: ",
+        userName,
+        password,
+      );
+    } else {
+      await AsyncStorage.removeItem('username');
+      await AsyncStorage.removeItem('password');
+      setUserName('');
+      setPassword('');
+      console.log('Storage temizlendi. İnputlar set edildi');
+    }
     navigation.navigate('Home');
   };
   return (

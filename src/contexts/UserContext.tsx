@@ -9,8 +9,8 @@ import {
 } from 'react';
 
 export type User = {
-  userName: string;
-  password: string;
+  userName: string | null;
+  password: string | null;
 };
 
 export interface UserContextInterface {

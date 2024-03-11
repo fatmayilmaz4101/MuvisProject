@@ -8,7 +8,7 @@ type Movie = {
   title: string;
 };
 
-const Home: React.FC = () => {
+const Home = () => {
   const {user} = useUser();
   const {counter, setCounter} = useContext(CounterContext);
   const counterTitle = useContext(TitleContext);

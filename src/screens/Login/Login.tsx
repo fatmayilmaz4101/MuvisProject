@@ -20,7 +20,9 @@ const Login = () => {
   const {setUser} = useUser();
   const {container, center, input, image, errorMessage} = styles;
   const navigation = useNavigation<any>();
+
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
+
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
     console.log(`Switch'in değeri: ${value}`);
@@ -34,8 +36,7 @@ const Login = () => {
     }
     setError(''); //reset error if password and username are not empty
     setUser({userName, password});
-    console.log('İnputtan gelen Kullanıcı Adı:', userName);
-    console.log('İnputtan gelen Şifre:', password);
+
     if (isEnabled) {
       await AsyncStorage.setItem('username', userName);
       await AsyncStorage.setItem('password', password);

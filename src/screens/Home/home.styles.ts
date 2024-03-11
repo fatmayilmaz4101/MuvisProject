@@ -25,4 +25,19 @@ export const styles = StyleSheet.create({
   counterText: {
     fontSize: 30,
   },
+  container: {
+    flex: 1,
+    padding: 12,
+  },
+  itemContainer: {
+    marginBottom: 1,
+    backgroundColor: '#e0e0e0',
+    padding: 10,
+    borderRadius: 5,
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
 });

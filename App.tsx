@@ -9,7 +9,7 @@ import {CounterProvider, TitleContext} from './src/contexts/context';
 
 enableScreens();
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <NavigationContainer>
       <UserProvider>

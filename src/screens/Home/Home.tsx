@@ -1,14 +1,15 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {SafeAreaView, View, Text, Button, FlatList} from 'react-native';
+import {SafeAreaView, View, Text, Button, FlatList, Alert} from 'react-native';
 import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {CounterContext, TitleContext} from '../../contexts/context';
+
 type Movie = {
   id: number;
   title: string;
 };
 
-const Home = () => {
+const Home: React.FC = () => {
   const {user} = useUser();
   const {counter, setCounter} = useContext(CounterContext);
   const counterTitle = useContext(TitleContext);
@@ -38,6 +39,8 @@ const Home = () => {
       const json = await response.json();
       setData(json);
     } catch (error) {
+      const errorMessage = typeof error === 'string' ? error : 'Tip hatası.';
+      Alert.alert('Bir hata oluştu.', errorMessage);
       console.error(error);
     }
   };
@@ -46,10 +49,16 @@ const Home = () => {
     getTodos();
   }, []);
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const RenderItem = ({item}: {item: Movie}) => (
     <View style={styles.itemContainer}>
       <Text style={styles.title}>{item.id}</Text>
       <Text style={styles.title}>{item.title}</Text>
+    </View>
+  );
+  const MoviesEmptyComponent = () => (
+    <View style={styles.emptyContainer}>
+      <Text style={styles.emptyText}>Liste Boş</Text>
     </View>
   );
 
@@ -72,6 +81,8 @@ const Home = () => {
               data={data}
               keyExtractor={({id}) => id.toString()}
               renderItem={({item}) => <RenderItem item={item} />}
+              ListEmptyComponent={MoviesEmptyComponent}
+              initialNumToRender={10} //ilk etapta 10 öğe render edilir
             />
           </View>
         </View>

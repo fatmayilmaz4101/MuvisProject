@@ -25,4 +25,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: 'gray',
   },
+  movieImg: {
+    height: 100,
+  },
 });

@@ -8,7 +8,8 @@ import {
   Image,
 } from 'react-native';
 import {styles} from './movieList.styles.ts';
-const {itemContainer, title, emptyContainer, emptyText, container} = styles;
+const {itemContainer, title, emptyContainer, emptyText, container, movieImg} =
+  styles;
 type Movie = {
   id: number;
   title: string;
@@ -16,10 +17,7 @@ type Movie = {
 };
 const RenderItem = ({item}: {item: Movie}) => (
   <View style={itemContainer}>
-    <Image
-      source={{uri: item.thumbnailUrl}}
-      style={{width: 100, height: 100}}
-    />
+    <Image source={{uri: item.thumbnailUrl}} style={movieImg} />
     <Text style={title}>{item.id}</Text>
     <Text style={title}>{item.title}</Text>
   </View>

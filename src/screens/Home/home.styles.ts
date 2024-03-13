@@ -8,45 +8,14 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#169D6B',
-    marginTop: 20,
+    marginTop: 30,
   },
-  buttonStyle: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  seperator: {
-    width: 10,
-  },
-  buttonContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  counterText: {
-    fontSize: 30,
-  },
-  container: {
+  homeScreen: {
     flex: 1,
-    padding: 12,
   },
-  itemContainer: {
-    marginBottom: 1,
-    backgroundColor: '#e0e0e0',
-    padding: 10,
-    borderRadius: 5,
-  },
-  title: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
+  homeButtons: {
     alignItems: 'center',
-  },
-  emptyText: {
-    fontSize: 18,
-    color: 'gray',
+    justifyContent: 'center',
+    flex: 1,
   },
 });

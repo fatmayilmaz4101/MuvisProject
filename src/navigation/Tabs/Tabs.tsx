@@ -4,6 +4,8 @@ import Login from '../../screens/Login/Login';
 import Home from '../../screens/Home/Home';
 import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native';
+import Counter from '../../screens/Counter/Counter';
+import MovieList from '../../screens/MovieList/MovieList';
 
 const Stack = createStackNavigator();
 
@@ -49,6 +51,16 @@ const Tabs: React.FC = () => {
         })}
         name="Home"
         component={Home}
+      />
+      <Stack.Screen
+        options={{title: 'Sayaç'}}
+        name="Counter"
+        component={Counter}
+      />
+      <Stack.Screen
+        options={{title: 'Film Listesi'}}
+        name="MovieList"
+        component={MovieList}
       />
     </Stack.Navigator>
   );

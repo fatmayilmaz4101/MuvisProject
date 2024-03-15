@@ -6,6 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native';
 import Counter from '../../screens/Counter/Counter';
 import MovieList from '../../screens/MovieList/MovieList';
+import MovieDetails from '../../screens/MovieDetails/MovieDetails';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,11 @@ const Tabs: React.FC = () => {
         options={{title: 'Film Listesi'}}
         name="MovieList"
         component={MovieList}
+      />
+      <Stack.Screen
+        options={{title: 'Film Detayı'}}
+        name="MovieDetail"
+        component={MovieDetails}
       />
     </Stack.Navigator>
   );

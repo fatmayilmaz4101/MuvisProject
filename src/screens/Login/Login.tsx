@@ -18,7 +18,7 @@ const Login = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const {setUser} = useUser();
-  const {container, center, input, image, errorMessage} = styles;
+  const {container, center, input, image, errorMessage, CustomText} = styles;
   const navigation = useNavigation<any>();
 
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
@@ -38,16 +38,17 @@ const Login = () => {
     setUser({userName, password});
 
     if (isEnabled) {
-      await AsyncStorage.setItem('username', userName);
-      await AsyncStorage.setItem('password', password);
+      const userCredentials = {userName, password};
+      await AsyncStorage.setItem(
+        'userCredentials',
+        JSON.stringify(userCredentials),
+      );
       console.log(
         "Switch true: Storage'a kaydedilen değerler: ",
-        userName,
-        password,
+        userCredentials,
       );
     } else {
-      await AsyncStorage.removeItem('username');
-      await AsyncStorage.removeItem('password');
+      await AsyncStorage.removeItem('userCredentials');
       setUserName('');
       setPassword('');
       console.log('Storage temizlendi. İnputlar set edildi');
@@ -58,7 +59,7 @@ const Login = () => {
     <SafeAreaView style={container}>
       <View style={center}>
         <Image
-          source={require('/Users/fatmayilmaz/Documents/GitHub/MuvisProject/assets/muvis-logo.jpg')}
+          source={require('/Users/fatmayilmaz/Documents/GitHub/MuvisProject/assets/images/muvis-logo.jpg')}
           style={image}
         />
 
@@ -84,10 +85,10 @@ const Login = () => {
           onValueChange={toggleSwitch}
           value={isEnabled}
         />
-        <Text style={errorMessage}>{error}</Text>
-
+        <Text style={[errorMessage]}>{error}</Text>
         <Button color="#169D6B" title="Giriş Yap" onPress={handleLogin} />
       </View>
+      <Text style={CustomText}>Created by FatmaYilmsz</Text>
     </SafeAreaView>
   );
 };

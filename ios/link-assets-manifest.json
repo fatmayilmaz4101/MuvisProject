@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Lora/Lora-Italic-VariableFont_wght.ttf",
+      "sha1": "f0f894d17def6931603c97e896331564be9096b0"
+    },
+    {
+      "path": "assets/fonts/Lora/Lora-VariableFont_wght.ttf",
+      "sha1": "47b78da7542fcf4a27c30fbaaf9234172dfa6f7a"
+    },
+    {
+      "path": "assets/fonts/Lora/OFL.txt",
+      "sha1": "de2ca828c5f3d6af1ab0e577b7b2b6a428505a42"
+    },
+    {
+      "path": "assets/fonts/Lora/README.txt",
+      "sha1": "2d8888c10045c5a067b0a72dbc93725566926b1b"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-Bold.ttf",
+      "sha1": "2e444def8d9c585fa95eb135a66e55ec0824304b"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-BoldItalic.ttf",
+      "sha1": "32576bcedb2f1b69a83d3a87fdbc4a256d46552a"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-Italic.ttf",
+      "sha1": "a07ad6a0ec38c123e82e14654d6142b6118b9908"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-Medium.ttf",
+      "sha1": "5fb0d23ffdab38a56e61b9126ecaabb8cd384f41"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-MediumItalic.ttf",
+      "sha1": "92695596aa5830e58c6317a2b6387a1ca444990e"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-Regular.ttf",
+      "sha1": "ac19a510bf9608477c9c566aaea491ecb25d4b20"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-SemiBold.ttf",
+      "sha1": "642232c25f14075f6d62956702a1eea5e396f29e"
+    },
+    {
+      "path": "assets/fonts/Lora/static/Lora-SemiBoldItalic.ttf",
+      "sha1": "c58cc7e51ad5e2f4a8f7d56446cf360f12b44369"
+    }
+  ]
+}

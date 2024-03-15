@@ -28,4 +28,9 @@ export const styles = StyleSheet.create({
     color: 'red',
     marginBottom: 10,
   },
+  CustomText: {
+    color: 'white',
+    fontFamily: 'Lora-Italic',
+    marginTop: 100,
+  },
 });

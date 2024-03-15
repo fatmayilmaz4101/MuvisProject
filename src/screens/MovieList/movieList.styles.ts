@@ -6,15 +6,17 @@ export const styles = StyleSheet.create({
   },
   itemContainer: {
     alignItems: 'center',
-    marginBottom: 1,
     backgroundColor: '#e0e0e0',
     padding: 10,
     borderRadius: 5,
+    width: 180,
+    height: 230,
+    margin: 6,
   },
   title: {
     fontSize: 15,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginTop: 10,
   },
   emptyContainer: {
     flex: 1,
@@ -26,7 +28,7 @@ export const styles = StyleSheet.create({
     color: 'gray',
   },
   movieImg: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
   },
 });

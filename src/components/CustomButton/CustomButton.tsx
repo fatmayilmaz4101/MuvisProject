@@ -1,19 +1,29 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './customButton.styles';
-
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
-  style?: object;
+  type?: 'customGreen' | 'menu';
 }
 
-export const CustomButton: React.FC<CustomButtonProps> = ({
+const CustomButton: React.FC<CustomButtonProps> = ({
   title,
   onPress,
-  style,
-}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-    <Text style={styles.buttonText}>{title}</Text>
-  </TouchableOpacity>
-);
+  type = 'customGreen',
+}) => {
+  const buttonStyles =
+    type === 'customGreen' ? styles.customGreenButton : styles.menuButton;
+  const buttonTextStyles =
+    type === 'customGreen'
+      ? styles.customGreenButtonText
+      : styles.menuButtonText;
+
+  return (
+    <TouchableOpacity style={[styles.button, buttonStyles]} onPress={onPress}>
+      <Text style={buttonTextStyles}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
+
+export default CustomButton;

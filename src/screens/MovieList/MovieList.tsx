@@ -55,7 +55,8 @@ const MovieList = () => {
   // eslint-disable-next-line react/no-unstable-nested-components
   const RenderItem = ({item}: {item: Movie}) => {
     const newTitle =
-      item.title.length > 30 ? `${item.title.slice(0, 35)}...` : item.title; // 30'dan büyükse ilk 30 karakteri al ... ekle, aksi halde title olduğu gibi kalsın.
+      item.title.length > 30 ? `${item.title.slice(0, 35)}...` : item.title;
+    // 30'dan büyükse ilk 30 karakteri al ... ekle, aksi halde title olduğu gibi kalsın.
 
     return (
       <TouchableOpacity onPress={() => handlePress(item)}>
@@ -69,20 +70,19 @@ const MovieList = () => {
 
   return (
     <SafeAreaView>
-      <View style={container}>
-        {loading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
-        ) : (
-          <FlatList
-            data={data}
-            keyExtractor={({id}) => id.toString()}
-            renderItem={RenderItem}
-            ListEmptyComponent={MoviesEmptyComponent}
-            initialNumToRender={10} //ilk etapta 10 öğe render edilir
-            numColumns={2}
-          />
-        )}
-      </View>
+      {loading ? (
+        <ActivityIndicator size="large" color="#0000ff" />
+      ) : (
+        <FlatList
+          style={container}
+          data={data}
+          keyExtractor={({id}) => id.toString()}
+          renderItem={RenderItem}
+          ListEmptyComponent={MoviesEmptyComponent}
+          initialNumToRender={10} //ilk etapta 10 öğe render edilir
+          numColumns={2}
+        />
+      )}
     </SafeAreaView>
   );
 };

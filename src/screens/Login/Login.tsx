@@ -1,17 +1,11 @@
 import React, {useState} from 'react';
-import {
-  SafeAreaView,
-  View,
-  TextInput,
-  Button,
-  Image,
-  Text,
-  Switch,
-} from 'react-native';
+import {SafeAreaView, View, TextInput, Image, Text, Switch} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useUser} from '../../contexts/UserContext';
 import {styles} from './login.styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CustomButton from '../../components/CustomButton/CustomButton';
+import Color from '../../components/Color/Color';
 
 const Login = () => {
   const [userName, setUserName] = useState<string>('');
@@ -79,14 +73,13 @@ const Login = () => {
           value={password}
         />
         <Switch
-          trackColor={{false: '#767577', true: '#169D6B'}}
-          thumbColor={isEnabled ? 'white' : '#f4f3f4'}
-          ios_backgroundColor="#3e3e3e"
+          trackColor={{false: Color.dark, true: Color.customGreen}}
+          thumbColor={isEnabled ? Color.light : Color.secondary}
           onValueChange={toggleSwitch}
           value={isEnabled}
         />
-        <Text style={[errorMessage]}>{error}</Text>
-        <Button color="#169D6B" title="Giriş Yap" onPress={handleLogin} />
+        <Text style={[{color: Color.danger}, errorMessage]}>{error}</Text>
+        <CustomButton title="Giriş Yap" onPress={handleLogin} />
       </View>
       <Text style={CustomText}>Created by FatmaYilmsz</Text>
     </SafeAreaView>

@@ -3,16 +3,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../../screens/Login/Login';
 import Home from '../../screens/Home/Home';
 import {useNavigation} from '@react-navigation/native';
-import {Button} from 'react-native';
 import Counter from '../../screens/Counter/Counter';
 import MovieList from '../../screens/MovieList/MovieList';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
-
+import Color from '../../components/Color/Color';
+import CustomButton from '../../components/CustomButton/CustomButton';
 const Stack = createStackNavigator();
 
 const LogoutButton = () => {
   const navigation = useNavigation<any>();
-
+  const onPressLogin = () => navigation.navigate('Login');
   useEffect(() => {
     // Render olduğunda geri tuşu kaldırılıyor.
     if (navigation) {
@@ -23,22 +23,16 @@ const LogoutButton = () => {
   }, [navigation]);
 
   return (
-    <Button
-      color="green"
-      title="Çıkış Yap"
-      onPress={() => {
-        navigation.navigate('Login');
-      }}
-    />
+    <CustomButton title="Çıkış Yap" onPress={onPressLogin} type="customGreen" />
   );
 };
 
-const Tabs: React.FC = () => {
+const Tabs = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: {backgroundColor: '#169D6B'},
-        headerTintColor: 'white',
+        headerStyle: {backgroundColor: Color.customGreen},
+        headerTintColor: Color.light,
       }}>
       <Stack.Screen
         options={{title: 'Giriş Yap'}}

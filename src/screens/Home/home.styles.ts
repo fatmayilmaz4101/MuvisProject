@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   greetingText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#169D6B',
+    color: 'gray',
     marginTop: 30,
   },
   homeScreen: {

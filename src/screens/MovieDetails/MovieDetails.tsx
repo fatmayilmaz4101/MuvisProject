@@ -13,7 +13,6 @@ const MovieDetails = ({route}: any) => {
         <Text style={title}>Movie Name</Text>
         <Text style={text}>Id: {movie.id}</Text>
         <Text style={text}>Title: {movie.title}</Text>
-        {/* Diğer film ayrıntılarını burada gösterebilirsiniz */}
       </View>
     </View>
   );

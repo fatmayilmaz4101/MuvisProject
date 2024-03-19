@@ -2,14 +2,23 @@ import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'gray',
-    padding: 10,
     alignItems: 'center',
-    marginBottom: 30,
-    width: 300,
   },
-  buttonText: {
+  customGreenButton: {
+    padding: 10,
+  },
+  menuButton: {
+    backgroundColor: 'gray',
+    width: 300,
+    margin: 10,
+    padding: 12,
+  },
+  customGreenButtonText: {
     color: 'white',
-    fontSize: 17,
+    fontSize: 18,
+  },
+  menuButtonText: {
+    color: 'white',
+    fontSize: 16,
   },
 });

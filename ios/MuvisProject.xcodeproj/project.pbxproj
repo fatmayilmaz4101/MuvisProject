@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		420F1D08A9F44973BA4AB2B8 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03D34788DDB64367A017764C /* Lora-BoldItalic.ttf */; };
+		4DD0FF822BA9DC0C007CC108 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0FF812BA9DC0C007CC108 /* Fonts */; };
 		4E48938BCAB14B8AA70D9B62 /* Lora-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06707B69901B40F798127B64 /* Lora-MediumItalic.ttf */; };
 		654156E0F2134E19845E0AFF /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D94C7D0CC574579A3E9FD7E /* Lora-Bold.ttf */; };
 		6BECA45DA0C340508ADD919A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 82296B8475A7453C9E625708 /* OFL.txt */; };
@@ -42,10 +43,10 @@
 		00E356EE1AD99517003FC87E /* MuvisProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuvisProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MuvisProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuvisProjectTests.m; sourceTree = "<group>"; };
-		03D34788DDB64367A017764C /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-BoldItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
-		05DCF9C593C64A2E858492B0 /* Lora-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-SemiBold.ttf"; path = "../assets/fonts/Lora/static/Lora-SemiBold.ttf"; sourceTree = "<group>"; };
-		06707B69901B40F798127B64 /* Lora-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-MediumItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-MediumItalic.ttf"; sourceTree = "<group>"; };
-		0762C3AB8A6243FF9D17241D /* README.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = README.txt; path = ../assets/fonts/Lora/README.txt; sourceTree = "<group>"; };
+		03D34788DDB64367A017764C /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-BoldItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
+		05DCF9C593C64A2E858492B0 /* Lora-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-SemiBold.ttf"; path = "../assets/fonts/Lora/static/Lora-SemiBold.ttf"; sourceTree = "<group>"; };
+		06707B69901B40F798127B64 /* Lora-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-MediumItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0762C3AB8A6243FF9D17241D /* README.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = README.txt; path = ../assets/fonts/Lora/README.txt; sourceTree = "<group>"; };
 		0C614DE1C0148F49711CDBA8 /* Pods-MuvisProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject.debug.xcconfig"; path = "Target Support Files/Pods-MuvisProject/Pods-MuvisProject.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MuvisProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuvisProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MuvisProject/AppDelegate.h; sourceTree = "<group>"; };
@@ -53,19 +54,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MuvisProject/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MuvisProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MuvisProject/main.m; sourceTree = "<group>"; };
-		1FDABFAC616B4570ADD4C7B4 /* Lora-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Regular.ttf"; path = "../assets/fonts/Lora/static/Lora-Regular.ttf"; sourceTree = "<group>"; };
-		2553F7D7E00E4BCF8B223A43 /* Lora-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Italic-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		1FDABFAC616B4570ADD4C7B4 /* Lora-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Regular.ttf"; path = "../assets/fonts/Lora/static/Lora-Regular.ttf"; sourceTree = "<group>"; };
+		2553F7D7E00E4BCF8B223A43 /* Lora-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Italic-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		3FEB252C02F42FB904D51D2D /* Pods-MuvisProject-MuvisProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject-MuvisProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-MuvisProject-MuvisProjectTests/Pods-MuvisProject-MuvisProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4C4C3E63FB7048848214FA38 /* Lora-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Medium.ttf"; path = "../assets/fonts/Lora/static/Lora-Medium.ttf"; sourceTree = "<group>"; };
-		585200883EC343CEB83BE91C /* Lora-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-SemiBoldItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		4C4C3E63FB7048848214FA38 /* Lora-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Medium.ttf"; path = "../assets/fonts/Lora/static/Lora-Medium.ttf"; sourceTree = "<group>"; };
+		4DD0FF812BA9DC0C007CC108 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		585200883EC343CEB83BE91C /* Lora-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-SemiBoldItalic.ttf"; path = "../assets/fonts/Lora/static/Lora-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		6F2D361F410D59250EE38B96 /* Pods-MuvisProject-MuvisProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject-MuvisProjectTests.release.xcconfig"; path = "Target Support Files/Pods-MuvisProject-MuvisProjectTests/Pods-MuvisProject-MuvisProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		813A6C42E8214EF18E1E7E5B /* Lora-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Italic.ttf"; path = "../assets/fonts/Lora/static/Lora-Italic.ttf"; sourceTree = "<group>"; };
+		813A6C42E8214EF18E1E7E5B /* Lora-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Italic.ttf"; path = "../assets/fonts/Lora/static/Lora-Italic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MuvisProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82296B8475A7453C9E625708 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../assets/fonts/Lora/OFL.txt; sourceTree = "<group>"; };
+		82296B8475A7453C9E625708 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../assets/fonts/Lora/OFL.txt; sourceTree = "<group>"; };
 		8B656BD845E18257C3552ED9 /* libPods-MuvisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D94C7D0CC574579A3E9FD7E /* Lora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora/static/Lora-Bold.ttf"; sourceTree = "<group>"; };
+		8D94C7D0CC574579A3E9FD7E /* Lora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora/static/Lora-Bold.ttf"; sourceTree = "<group>"; };
 		9FE150A1E96D25B702263F32 /* libPods-MuvisProject-MuvisProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject-MuvisProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC59EFC15F1A4675B5F95C07 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		EC59EFC15F1A4675B5F95C07 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F2A727CEE2D6B5EA1D9AD603 /* Pods-MuvisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject.release.xcconfig"; path = "Target Support Files/Pods-MuvisProject/Pods-MuvisProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4DD0FF812BA9DC0C007CC108 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* MuvisProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MuvisProjectTests */,
@@ -190,7 +193,6 @@
 				0762C3AB8A6243FF9D17241D /* README.txt */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD0FF822BA9DC0C007CC108 /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				DBD4EA20746E40B7A973D820 /* Lora-Italic-VariableFont_wght.ttf in Resources */,

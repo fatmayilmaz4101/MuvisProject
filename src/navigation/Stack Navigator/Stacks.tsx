@@ -8,7 +8,21 @@ import MovieList from '../../screens/MovieList/MovieList';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
 import Color from '../../components/Color/Color';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View } from 'react-native';
+import Profile from '../../screens/Profile/Profile';
 const Stack = createStackNavigator();
+
+const ProfileIcon = () => {
+  const navigation = useNavigation<any>();
+  const onPressProfile = () => navigation.navigate('Profile');
+  return (
+    <TouchableOpacity onPress={onPressProfile}>
+    <Icon name="person" size={25} color={Color.light}/>
+    </TouchableOpacity>
+  )
+}
 
 const LogoutButton = () => {
   const navigation = useNavigation<any>();
@@ -42,7 +56,12 @@ const Tabs = () => {
       <Stack.Screen
         options={({route}) => ({
           title: 'Ana Sayfa',
-          headerRight: () => route.name === 'Home' && <LogoutButton />,
+          headerRight: () => (
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              {route.name === 'Home' && <ProfileIcon />}
+              {route.name === 'Home' && <LogoutButton />}
+            </View>
+          ),
         })}
         name="Home"
         component={Home}
@@ -61,6 +80,11 @@ const Tabs = () => {
         options={{title: 'Film Detayı'}}
         name="MovieDetail"
         component={MovieDetails}
+      />
+        <Stack.Screen
+        options={{title: 'Profil'}}
+        name="Profile"
+        component={Profile}
       />
     </Stack.Navigator>
   );

@@ -4,6 +4,8 @@ import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import Icon from 'react-native-vector-icons/Ionicons';
+import Color from '../../components/Color/Color';
 const {textStyle, greetingText, homeButtons, homeScreen} = styles;
 const Home = () => {
   const navigation = useNavigation<any>();
@@ -22,6 +24,7 @@ const Home = () => {
           onPress={onPressMovieList}
           type="menu"
         />
+        <Icon name="person" size={40} color={Color.light}/>
       </View>
     </SafeAreaView>
   );

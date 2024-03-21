@@ -1,35 +1,38 @@
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import {Button, Text, TextInput, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {TextInput, View, SafeAreaView} from 'react-native';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { styles } from './profile.style';
+import { useUser } from '../../contexts/UserContext';
+import { useEffect } from 'react';
+
 interface FormInput {
   username: string;
   password: string;
-  phone: number;
 }
 const Profile = () => {
-  const {
-    control,
-    handleSubmit,
-    formState: {errors},
-  } = useForm<FormInput>();
+  const { updateForm, customButton, textInput } = styles;
+  const { user, setUser } = useUser();
+  const { control, handleSubmit } = useForm<FormInput>();
 
-  const onSubmit: SubmitHandler<FormInput> = data => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormInput> = async data => {
+    const updatedUserData = {
+      userName: data.username, 
+      password: data.password, 
+    };
+    setUser(updatedUserData);
+    console.log('Kullanıcı güncellendi:', updatedUserData);
   };
+  
+  useEffect(() => {
+    console.log('Güncellenmiş user nesnesi:', user);
+  }, [user]);
   return (
-    <SafeAreaView>
+    <SafeAreaView style={updateForm}>
       <Controller
         control={control}
-        render={({field: {onChange, onBlur, value}}) => (
+        render={({ field: { onBlur, onChange, value } }) => (
           <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: 'gray',
-              marginBottom: 10,
-              padding: 10,
-            }}
+            style={textInput}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -37,53 +40,24 @@ const Profile = () => {
           />
         )}
         name="username"
-        rules={{required: true}}
       />
-      {errors.username && <Text>Username alanı zorunludur.</Text>}
       <Controller
         control={control}
-        render={({field: {onChange, onBlur, value}}) => (
+        render={({ field: { onBlur, onChange, value } }) => (
           <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: 'gray',
-              marginBottom: 10,
-              padding: 10,
-            }}
+            style={textInput}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             placeholder="Şifre"
+            secureTextEntry
           />
         )}
         name="password"
-        rules={{required: true}}
       />
-      {errors.password && <Text>Password alanı zorunludur.</Text>}
-      <Controller
-        control={control}
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: 'gray',
-              marginBottom: 10,
-              padding: 10,
-            }}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value ? value.toString() : ''}
-            placeholder="Cep Telefonu"
-            keyboardType="numeric"
-          />
-        )}
-        name="phone"
-        rules={{required: true}}
-      />
-      {errors.phone && <Text>Telefon numarası alanı zorunludur.</Text>}
-        <View style={styles.customButton}>
-            <CustomButton title='Güncelle' onPress={handleSubmit(onSubmit)} type='menu' />
-        </View>
+      <View style={customButton}>
+        <CustomButton title='Güncelle' onPress={handleSubmit(onSubmit)} type='menu' />
+      </View>
     </SafeAreaView>
   );
 };

@@ -6,33 +6,39 @@ import {styles} from './login.styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import Color from '../../components/Color/Color';
+import {Controller, SubmitHandler, useForm} from 'react-hook-form';
+
+interface FormInput {
+  username: string;
+  password: string;
+}
 
 const Login = () => {
-  const [userName, setUserName] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState<string>('');
-  const {setUser} = useUser();
   const {container, center, input, image, errorMessage, CustomText} = styles;
-  const navigation = useNavigation<any>();
-
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
+  const {control, handleSubmit} = useForm<FormInput>();
+  const [error, setError] = useState<string>('');
+  const navigation = useNavigation<any>();
+  const {setUser} = useUser();
 
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
     console.log(`Switch'in değeri: ${value}`);
     await AsyncStorage.setItem('isEnabled', value.toString());
   };
-
-  const handleLogin = async () => {
-    if (!userName || !password) {
+  const onSubmit: SubmitHandler<FormInput> = async data => {
+    if (!data || !data.username || !data.password) {
       setError('Kullanıcı adı veya şifre boş bırakılamaz.');
       return;
     }
     setError(''); //reset error if password and username are not empty
-    setUser({userName, password});
-
+    const updatedUserData = {
+      userName: data.username,
+      password: data.password,
+    };
+    setUser(updatedUserData);
     if (isEnabled) {
-      const userCredentials = {userName, password};
+      const userCredentials = updatedUserData;
       await AsyncStorage.setItem(
         'userCredentials',
         JSON.stringify(userCredentials),
@@ -43,8 +49,6 @@ const Login = () => {
       );
     } else {
       await AsyncStorage.removeItem('userCredentials');
-      setUserName('');
-      setPassword('');
       console.log('Storage temizlendi. İnputlar set edildi');
     }
     navigation.navigate('Home');
@@ -56,21 +60,34 @@ const Login = () => {
           source={require('/Users/fatmayilmaz/Documents/GitHub/MuvisProject/assets/images/muvis-logo.jpg')}
           style={image}
         />
-
-        <TextInput
-          style={input}
-          placeholderTextColor="gray"
-          placeholder="Kullanıcı Adı"
-          onChangeText={setUserName}
-          value={userName}
+        <Controller
+          control={control}
+          render={({field: {onBlur, onChange, value}}) => (
+            <TextInput
+              style={input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="Kullanıcı Adı"
+              placeholderTextColor="gray"
+            />
+          )}
+          name="username"
         />
-        <TextInput
-          style={input}
-          placeholderTextColor="gray"
-          placeholder="Şifre"
-          secureTextEntry={true}
-          onChangeText={setPassword}
-          value={password}
+        <Controller
+          control={control}
+          render={({field: {onBlur, onChange, value}}) => (
+            <TextInput
+              style={input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholder="Şifre"
+              placeholderTextColor="gray"
+              secureTextEntry
+            />
+          )}
+          name="password"
         />
         <Switch
           trackColor={{false: Color.dark, true: Color.customGreen}}
@@ -79,7 +96,9 @@ const Login = () => {
           value={isEnabled}
         />
         <Text style={[{color: Color.danger}, errorMessage]}>{error}</Text>
-        <CustomButton title="Giriş Yap" onPress={handleLogin} />
+        <View>
+          <CustomButton title="Giriş Yap" onPress={handleSubmit(onSubmit)} />
+        </View>
       </View>
       <Text style={CustomText}>Created by FatmaYilmsz</Text>
     </SafeAreaView>

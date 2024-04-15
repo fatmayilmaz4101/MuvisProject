@@ -11,6 +11,7 @@ import {
 export type User = {
   userName: string | null;
   password: string | null;
+  phone: number | null;
 };
 
 export interface UserContextInterface {
@@ -19,7 +20,7 @@ export interface UserContextInterface {
 }
 
 const defaultState: UserContextInterface = {
-  user: {userName: '', password: ''},
+  user: {userName: '', password: '', phone:0 },
   setUser: () => {},
 } as UserContextInterface;
 
@@ -33,7 +34,7 @@ type UserProvideProps = {
 //Comsumer: component içinden verilere erişmek. İhtiyaç duyduğu verileri alır
 export function UserProvider({children}: UserProvideProps) {
   //useState olarak kullanılmazsa başka bileşenlerde değiştirsek bile değişiklik yansıtılmaz
-  const [user, setUser] = useState<User>({userName: '', password: ''});
+  const [user, setUser] = useState<User>({userName: '', password: '', phone: 0});
 
   return (
     <UserContext.Provider value={{user, setUser}}>

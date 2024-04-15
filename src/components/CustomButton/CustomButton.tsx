@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {styles} from './customButton.styles';
+
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
@@ -14,6 +15,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 }) => {
   const buttonStyles =
     type === 'customGreen' ? styles.customGreenButton : styles.menuButton;
+    
   const buttonTextStyles =
     type === 'customGreen'
       ? styles.customGreenButtonText

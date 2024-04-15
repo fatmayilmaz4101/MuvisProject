@@ -11,6 +11,7 @@ import {Controller, SubmitHandler, useForm} from 'react-hook-form';
 interface FormInput {
   username: string;
   password: string;
+  phone: number;
 }
 
 const Login = () => {
@@ -30,15 +31,17 @@ const Login = () => {
     if (!data || !data.username || !data.password) {
       setError('Kullanıcı adı veya şifre boş bırakılamaz.');
       return;
+    } else {
     }
     setError(''); //reset error if password and username are not empty
-    const updatedUserData = {
+    const newUserData = {
       userName: data.username,
       password: data.password,
+      phone: data.phone,
     };
-    setUser(updatedUserData);
+    setUser(newUserData);
     if (isEnabled) {
-      const userCredentials = updatedUserData;
+      const userCredentials = newUserData;
       await AsyncStorage.setItem(
         'userCredentials',
         JSON.stringify(userCredentials),
@@ -88,6 +91,21 @@ const Login = () => {
             />
           )}
           name="password"
+        />
+          <Controller
+          control={control}
+          render={({field: {onBlur, onChange, value}}) => (
+            <TextInput
+              style={input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value ? value.toString() : ''}
+              placeholder="Cep Telefonu"
+              placeholderTextColor="gray"
+              keyboardType='numeric'
+            />
+          )}
+          name="phone"
         />
         <Switch
           trackColor={{false: Color.dark, true: Color.customGreen}}

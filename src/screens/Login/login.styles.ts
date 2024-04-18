@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: 'gray',
     marginBottom: 10,
     width: '75%',
+    padding: 15
   },
   image: {
     width: 100,

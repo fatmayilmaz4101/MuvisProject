@@ -10,8 +10,10 @@ import Color from '../../components/Color/Color';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import Profile from '../../screens/Profile/Profile';
+import { styles } from './stacks.styles';
+import MovieStars from '../../screens/MovieStars/movieStars';
 const Stack = createStackNavigator();
 
 const ProfileIcon = () => {
@@ -19,7 +21,7 @@ const ProfileIcon = () => {
   const onPressProfile = () => navigation.navigate('Profile');
   return (
     <TouchableOpacity onPress={onPressProfile}>
-    <Icon name="person" size={25} color={Color.light}/>
+    <Icon style={styles.personIcon} name="person" color={Color.light}/>
     </TouchableOpacity>
   )
 }
@@ -27,14 +29,6 @@ const ProfileIcon = () => {
 const LogoutButton = () => {
   const navigation = useNavigation<any>();
   const onPressLogin = () => navigation.navigate('Login');
-  useEffect(() => {
-    // Render olduğunda geri tuşu kaldırılıyor.
-    if (navigation) {
-      navigation.setOptions({
-        headerLeft: () => null,
-      });
-    }
-  }, [navigation]);
 
   return (
     <CustomButton title="Çıkış Yap" onPress={onPressLogin} type="customGreen" />
@@ -47,9 +41,11 @@ const Tabs = () => {
       screenOptions={{
         headerStyle: {backgroundColor: Color.customGreen},
         headerTintColor: Color.light,
+        headerTitleAlign: 'center',  
       }}>
       <Stack.Screen
-        options={{title: 'Giriş Yap'}}
+        options={{title: 'Giriş Yap',
+        }}
         name="Login"
         component={Login}
       />
@@ -58,12 +54,16 @@ const Tabs = () => {
           title: 'Ana Sayfa',
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              {route.name === 'Home' && <ProfileIcon />}
-              {route.name === 'Home' && <LogoutButton />}
+             <LogoutButton />
             </View>
           ),
+          headerLeft: () => (
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+             <ProfileIcon/>
+            </View>
+          )
         })}
-        name="Home"
+      name="Home"
         component={Home}
       />
       <Stack.Screen
@@ -86,6 +86,12 @@ const Tabs = () => {
         name="Profile"
         component={Profile}
       />
+        <Stack.Screen
+        options={{title: 'Film Yıldızları'}}
+        name="MovieStars"
+        component={MovieStars}
+      />
+
     </Stack.Navigator>
   );
 };

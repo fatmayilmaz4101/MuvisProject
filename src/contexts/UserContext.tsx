@@ -9,9 +9,11 @@ import {
 } from 'react';
 
 export type User = {
-  userName: string | null;
-  password: string | null;
-  phone: number | null;
+  name?: string;
+  lastname?: string;
+  userName: string | undefined;
+  password: string | undefined;
+  phone?: number;
 };
 
 export interface UserContextInterface {
@@ -20,7 +22,7 @@ export interface UserContextInterface {
 }
 
 const defaultState: UserContextInterface = {
-  user: {userName: '', password: '', phone:0 },
+  user: {name: '', lastname: '', userName: '', password: '', phone:0 },
   setUser: () => {},
 } as UserContextInterface;
 
@@ -34,7 +36,7 @@ type UserProvideProps = {
 //Comsumer: component içinden verilere erişmek. İhtiyaç duyduğu verileri alır
 export function UserProvider({children}: UserProvideProps) {
   //useState olarak kullanılmazsa başka bileşenlerde değiştirsek bile değişiklik yansıtılmaz
-  const [user, setUser] = useState<User>({userName: '', password: '', phone: 0});
+  const [user, setUser] = useState<User>({name: undefined, lastname: undefined, userName: '', password: '', phone: undefined});
 
   return (
     <UserContext.Provider value={{user, setUser}}>

@@ -4,14 +4,13 @@ import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import Icon from 'react-native-vector-icons/Ionicons';
-import Color from '../../components/Color/Color';
 const {textStyle, greetingText, homeButtons, homeScreen} = styles;
 const Home = () => {
   const navigation = useNavigation<any>();
   const {user} = useUser();
   const onPressSayac = () => navigation.navigate('Counter');
   const onPressMovieList = () => navigation.navigate('MovieList');
+  const onPressMovieStars = () => navigation.navigate('MovieStars');
   return (
     <SafeAreaView style={homeScreen}>
       <View style={textStyle}>
@@ -24,7 +23,12 @@ const Home = () => {
           onPress={onPressMovieList}
           type="menu"
         />
-        <Icon name="person" size={40} color={Color.light}/>
+          <CustomButton
+          title="Film Yıldızları"
+          onPress={onPressMovieStars}
+          type="menu"
+        />
+
       </View>
     </SafeAreaView>
   );

@@ -21,6 +21,7 @@ React Navigation
 - 1.4 https://disk.yandex.com.tr/i/046bcFjBxAxd6g
 - 1.5 https://disk.yandex.com.tr/i/QmKmg2q8f5Ypkw
 - 1.6 https://disk.yandex.com.tr/d/HaLnC0U7Z4-dQg
+- 1.7 https://disk.yandex.com.tr/i/3LYy2Pjs_hdnSA
 
 ### For iOS
 <img src="assets/images/ios-login.png" alt="Login Page" width="300">

@@ -11,16 +11,20 @@ import {Controller, SubmitHandler, useForm} from 'react-hook-form';
 interface FormInput {
   username: string;
   password: string;
-  phone: number;
 }
 
 const Login = () => {
   const {container, center, input, image, errorMessage, CustomText} = styles;
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
-  const {control, handleSubmit} = useForm<FormInput>();
   const [error, setError] = useState<string>('');
   const navigation = useNavigation<any>();
-  const {setUser} = useUser();
+  const {user, setUser} = useUser();
+  const {control, handleSubmit, reset} = useForm<FormInput>({
+    defaultValues: {
+      username: user.userName, 
+      password: user.password,
+    },
+  });
 
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
@@ -37,7 +41,6 @@ const Login = () => {
     const newUserData = {
       userName: data.username,
       password: data.password,
-      phone: data.phone,
     };
     setUser(newUserData);
     if (isEnabled) {
@@ -51,6 +54,10 @@ const Login = () => {
         userCredentials,
       );
     } else {
+      reset({
+        username: '',
+        password: ''
+      })
       await AsyncStorage.removeItem('userCredentials');
       console.log('Storage temizlendi. İnputlar set edildi');
     }
@@ -91,21 +98,6 @@ const Login = () => {
             />
           )}
           name="password"
-        />
-          <Controller
-          control={control}
-          render={({field: {onBlur, onChange, value}}) => (
-            <TextInput
-              style={input}
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value ? value.toString() : ''}
-              placeholder="Cep Telefonu"
-              placeholderTextColor="gray"
-              keyboardType='numeric'
-            />
-          )}
-          name="phone"
         />
         <Switch
           trackColor={{false: Color.dark, true: Color.customGreen}}

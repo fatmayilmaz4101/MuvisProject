@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   customGreenButtonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 17,
   },
   menuButtonText: {
     color: 'white',

@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
+  listContainer: {
     padding: 12,
   },
   itemContainer: {
@@ -30,5 +30,12 @@ export const styles = StyleSheet.create({
   movieImg: {
     width: 150,
     height: 150,
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  mainContainer: {
+    flex: 1,
   },
 });

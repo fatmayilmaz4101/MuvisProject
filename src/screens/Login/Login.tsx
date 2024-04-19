@@ -14,14 +14,18 @@ interface FormInput {
 }
 
 const Login = () => {
-  const {container, center, input, image, errorMessage, CustomText} = styles;
+  const {container, center, input, image, CustomText} = styles;
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
-  const [error, setError] = useState<string>('');
   const navigation = useNavigation<any>();
   const {user, setUser} = useUser();
-  const {control, handleSubmit, reset} = useForm<FormInput>({
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: {errors},
+  } = useForm<FormInput>({
     defaultValues: {
-      username: user.userName, 
+      username: user.userName,
       password: user.password,
     },
   });
@@ -32,12 +36,6 @@ const Login = () => {
     await AsyncStorage.setItem('isEnabled', value.toString());
   };
   const onSubmit: SubmitHandler<FormInput> = async data => {
-    if (!data || !data.username || !data.password) {
-      setError('Kullanıcı adı veya şifre boş bırakılamaz.');
-      return;
-    } else {
-    }
-    setError(''); //reset error if password and username are not empty
     const newUserData = {
       userName: data.username,
       password: data.password,
@@ -56,8 +54,8 @@ const Login = () => {
     } else {
       reset({
         username: '',
-        password: ''
-      })
+        password: '',
+      });
       await AsyncStorage.removeItem('userCredentials');
       console.log('Storage temizlendi. İnputlar set edildi');
     }
@@ -72,6 +70,13 @@ const Login = () => {
         />
         <Controller
           control={control}
+          rules={{
+            required: true,
+            minLength: {
+              value: 2,
+              message: 'Geçerli bir kullanıcı adı girin',
+            },
+          }}
           render={({field: {onBlur, onChange, value}}) => (
             <TextInput
               style={input}
@@ -84,8 +89,18 @@ const Login = () => {
           )}
           name="username"
         />
+        {errors.username && (
+          <Text style={{color: Color.danger}}>{errors.username.message}</Text>
+        )}
         <Controller
           control={control}
+          rules={{
+            required: true,
+            minLength: {
+              value: 5,
+              message: 'Geçerli bir şifre girin',
+            },
+          }}
           render={({field: {onBlur, onChange, value}}) => (
             <TextInput
               style={input}
@@ -99,13 +114,15 @@ const Login = () => {
           )}
           name="password"
         />
+        {errors.password && (
+          <Text style={{color: Color.danger}}>{errors.password.message}</Text>
+        )}
         <Switch
           trackColor={{false: Color.dark, true: Color.customGreen}}
           thumbColor={isEnabled ? Color.light : Color.secondary}
           onValueChange={toggleSwitch}
           value={isEnabled}
         />
-        <Text style={[{color: Color.danger}, errorMessage]}>{error}</Text>
         <View>
           <CustomButton title="Giriş Yap" onPress={handleSubmit(onSubmit)} />
         </View>

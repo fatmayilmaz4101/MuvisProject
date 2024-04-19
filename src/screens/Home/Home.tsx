@@ -23,12 +23,11 @@ const Home = () => {
           onPress={onPressMovieList}
           type="menu"
         />
-          <CustomButton
+        <CustomButton
           title="Film Yıldızları"
           onPress={onPressMovieStars}
           type="menu"
         />
-
       </View>
     </SafeAreaView>
   );

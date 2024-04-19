@@ -5,6 +5,7 @@ import {styles} from './profile.style';
 import {useUser} from '../../contexts/UserContext';
 import {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
+import Color from '../../components/Color/Color';
 
 interface InitialValues {
   Username: string;
@@ -50,14 +51,14 @@ const Profile = () => {
   }, []);
 
   const onSubmit: SubmitHandler<FormInput> = async data => {
-    if (
-      data.name &&
-      data.lastname &&
-      data.username &&
-      data.password &&
-      data.phone
-    ) {
-    }
+    // if (
+    //   data.name &&
+    //   data.lastname &&
+    //   data.username &&
+    //   data.password &&
+    //   data.phone
+    // ) {
+    // }
 
     const isUsernameChanged = initialValues.Username !== data.username;
     const isPasswordChanged = initialValues.Password !== data.password;
@@ -90,15 +91,17 @@ const Profile = () => {
     <SafeAreaView style={updateForm}>
       <Controller
         control={control}
-        rules={{required: true,
+        rules={{
+          required: true,
           minLength: {
             value: 2,
-            message: 'Geçerli bir isim girin'
+            message: 'Geçerli bir isim girin',
           },
           pattern: {
-          value: /^[a-zA-ZğüşöçİĞÜŞÖÇ]+$/,
-          message: 'Geçerli bir isim girin.'
-        }}}
+            value: /^[a-zA-ZğüşöçİĞÜŞÖÇ]+$/,
+            message: 'Geçerli bir isim girin.',
+          },
+        }}
         render={({field: {onBlur, onChange, value}}) => (
           <TextInput
             style={textInput}
@@ -110,18 +113,22 @@ const Profile = () => {
         )}
         name="name"
       />
-       {errors.name && <Text style={{ color: 'red' }}>{errors.name.message}</Text>}
+      {errors.name && (
+        <Text style={{color: Color.danger}}>{errors.name.message}</Text>
+      )}
       <Controller
         control={control}
-        rules={{required: true,
+        rules={{
+          required: true,
           minLength: {
             value: 2,
-            message: 'Geçerli bir soyisim girin'
+            message: 'Geçerli bir soyisim girin',
           },
           pattern: {
-          value: /^[a-zA-ZğüşöçİĞÜŞÖÇ]+$/,
-          message: 'Geçerli bir soyisim girin'
-        }}}
+            value: /^[a-zA-ZğüşöçİĞÜŞÖÇ]+$/,
+            message: 'Geçerli bir soyisim girin',
+          },
+        }}
         render={({field: {onBlur, onChange, value}}) => (
           <TextInput
             style={textInput}
@@ -133,7 +140,9 @@ const Profile = () => {
         )}
         name="lastname"
       />
-       {errors.lastname && <Text style={{ color: 'red' }}>{errors.lastname.message}</Text>}
+      {errors.lastname && (
+        <Text style={{color: 'red'}}>{errors.lastname.message}</Text>
+      )}
       <Controller
         control={control}
         rules={{required: true}}
@@ -184,7 +193,9 @@ const Profile = () => {
         )}
         name="phone"
       />
-      {errors.phone && <Text style={{ color: 'red' }}>{errors.phone.message}</Text>}
+      {errors.phone && (
+        <Text style={{color: 'red'}}>{errors.phone.message}</Text>
+      )}
       <View style={customButton}>
         <CustomButton
           title="Güncelle"

@@ -10,8 +10,16 @@ import {
 import {styles} from './movieList.styles.ts';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
-const {itemContainer, title, emptyContainer, emptyText, container, movieImg} =
-  styles;
+const {
+  itemContainer,
+  title,
+  emptyContainer,
+  emptyText,
+  listContainer,
+  movieImg,
+  activityIndicator,
+  mainContainer,
+} = styles;
 type Movie = {
   id: number;
   title: string;
@@ -69,17 +77,19 @@ const MovieList = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={mainContainer}>
       {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
+        <View style={activityIndicator}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
       ) : (
         <FlatList
-          style={container}
+          style={listContainer}
           data={data}
           keyExtractor={({id}) => id.toString()}
           renderItem={RenderItem}
           ListEmptyComponent={MoviesEmptyComponent}
-          initialNumToRender={10} //ilk etapta 10 öğe render edilir
+          initialNumToRender={10}
           numColumns={2}
         />
       )}

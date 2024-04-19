@@ -25,9 +25,6 @@ export const styles = StyleSheet.create({
     height: 100,
     marginBottom: 20,
   },
-  errorMessage: {
-    marginBottom: 10,
-  },
   CustomText: {
     color: 'white',
     fontFamily: 'Lora-Italic',

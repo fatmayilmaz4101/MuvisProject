@@ -36,6 +36,7 @@ const MovieList = () => {
   const [data, setData] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const navigation = useNavigation<any>();
+
   const getTodos = async () => {
     setLoading(true);
     try {
@@ -49,13 +50,14 @@ const MovieList = () => {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 1000);
     }
   };
 
   useEffect(() => {
     getTodos();
   }, []);
+
   const handlePress = (item: Movie) => {
     navigation.navigate('MovieDetail', {movie: item});
   };
@@ -64,7 +66,6 @@ const MovieList = () => {
   const RenderItem = ({item}: {item: Movie}) => {
     const newTitle =
       item.title.length > 30 ? `${item.title.slice(0, 35)}...` : item.title;
-    // 30'dan büyükse ilk 30 karakteri al ... ekle, aksi halde title olduğu gibi kalsın.
 
     return (
       <TouchableOpacity onPress={() => handlePress(item)}>

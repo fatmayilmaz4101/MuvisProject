@@ -5,7 +5,7 @@ import Stacks from './src/navigation/StackNavigator/Stacks';
 import 'react-native-safe-area-context';
 import {enableScreens} from 'react-native-screens';
 import {UserProvider} from './src/contexts/UserContext';
-import {CounterProvider, TitleContext} from './src/contexts/context';
+import {CounterProvider, TitleContext} from './src/contexts/Context';
 
 enableScreens();
 

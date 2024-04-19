@@ -21,7 +21,7 @@ const ProfileIcon = () => {
   const onPressProfile = () => navigation.navigate('Profile');
   return (
     <TouchableOpacity onPress={onPressProfile}>
-    <Icon style={styles.personIcon} name="person" color={Color.light}/>
+      <Icon style={styles.personIcon} name="person" color={Color.light}/>
     </TouchableOpacity>
   )
 }
@@ -35,7 +35,7 @@ const LogoutButton = () => {
   );
 };
 
-const Tabs = () => {
+const Stacks = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -50,19 +50,19 @@ const Tabs = () => {
         component={Login}
       />
       <Stack.Screen
-        options={({route}) => ({
+        options={{
           title: 'Ana Sayfa',
           headerRight: () => (
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={styles.headerStyle}>
              <LogoutButton />
             </View>
           ),
           headerLeft: () => (
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={styles.headerStyle}>
              <ProfileIcon/>
             </View>
           )
-        })}
+        }}
       name="Home"
         component={Home}
       />
@@ -96,4 +96,4 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;
+export default Stacks;

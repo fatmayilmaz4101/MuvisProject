@@ -21,21 +21,14 @@ export interface UserContextInterface {
   setUser: Dispatch<SetStateAction<User>>;
 }
 
-const defaultState: UserContextInterface = {
-  user: {name: '', lastname: '', userName: '', password: '', phone:0 },
-  setUser: () => {},
-} as UserContextInterface;
 
-export const UserContext = createContext(defaultState);
+export const UserContext = createContext({} as UserContextInterface);
 
-type UserProvideProps = {
+type Props = {
   children: ReactNode;
 };
 
-//Provide: context'in oluşturulması yönetilmesimden sorumlu. Kullanıcının bilgilerini içeren contexti oluşturur
-//Comsumer: component içinden verilere erişmek. İhtiyaç duyduğu verileri alır
-export function UserProvider({children}: UserProvideProps) {
-  //useState olarak kullanılmazsa başka bileşenlerde değiştirsek bile değişiklik yansıtılmaz
+export function UserProvider({children}: Props) {
   const [user, setUser] = useState<User>({name: undefined, lastname: undefined, userName: '', password: '', phone: undefined});
 
   return (

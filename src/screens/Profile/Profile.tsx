@@ -29,7 +29,7 @@ const Profile = () => {
   const {
     control,
     handleSubmit,
-    formState: {isValid, errors},
+    formState: {errors},
   } = useForm<FormInput>({
     mode: 'onChange',
     defaultValues: {
@@ -51,14 +51,6 @@ const Profile = () => {
   }, []);
 
   const onSubmit: SubmitHandler<FormInput> = async data => {
-    // if (
-    //   data.name &&
-    //   data.lastname &&
-    //   data.username &&
-    //   data.password &&
-    //   data.phone
-    // ) {
-    // }
 
     const isUsernameChanged = initialValues.Username !== data.username;
     const isPasswordChanged = initialValues.Password !== data.password;

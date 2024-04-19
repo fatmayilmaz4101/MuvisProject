@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {SafeAreaView, View, Text, Button} from 'react-native';
-import {CounterContext, TitleContext} from '../../contexts/context';
+import {CounterContext, TitleContext} from '../../contexts/Context';
 import {styles} from './counter.styles';
 
 const Counter = () => {

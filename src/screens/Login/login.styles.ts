@@ -12,14 +12,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
-  input: {
-    color: 'white',
-    borderBottomWidth: 1,
-    borderBottomColor: 'gray',
-    marginBottom: 10,
-    width: '75%',
-    padding: 15
-  },
   image: {
     width: 100,
     height: 100,
@@ -30,4 +22,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Lora-Italic',
     marginTop: 100,
   },
+  submit: {
+    marginTop: 10
+  }
 });

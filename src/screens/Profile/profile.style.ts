@@ -9,12 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  textInput: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#169D6B',
-    marginBottom: 10,
-    padding: 10,
-    width: '75%',
+    backgroundColor: '#0F1E21'
   },
 });

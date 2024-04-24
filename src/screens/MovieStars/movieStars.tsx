@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, SafeAreaView, View, Image} from 'react-native';
+import {Dimensions, View, Image} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {styles} from './movieStars.style';
 
@@ -12,7 +12,7 @@ const MovieStars = () => {
   ];
   const width = Dimensions.get('window').width;
   return (
-    <View style={{flex: 1, backgroundColor: '#0F1E21', paddingTop: 40}}>
+    <View style={styles.body}>
       <Carousel
         loop
         width={width}

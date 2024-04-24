@@ -1,5 +1,6 @@
 import React, {Dispatch, ReactNode, SetStateAction} from 'react';
 import {createContext, useState} from 'react';
+
 type ContextType = {
   counter: number;
   setCounter: Dispatch<SetStateAction<number>>;

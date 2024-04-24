@@ -7,12 +7,12 @@ interface CustomButtonProps {
   onPress: () => void;
   type?: 'customGreen' | 'menu';
 }
-
-const CustomButton: React.FC<CustomButtonProps> = ({
+const CustomButton= ({
   title,
   onPress,
   type = 'customGreen',
-}) => {
+} : CustomButtonProps ) => {
+  
   const buttonStyles =
     type === 'customGreen' ? styles.customGreenButton : styles.menuButton;
     

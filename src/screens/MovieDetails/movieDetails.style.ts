@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 10,
   },
-  title: {
+  titleStyle: {
     fontFamily: 'Lora-Regular',
     fontSize: 24,
     fontWeight: 'bold',

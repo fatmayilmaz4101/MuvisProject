@@ -21,7 +21,6 @@ export interface UserContextInterface {
   setUser: Dispatch<SetStateAction<User>>;
 }
 
-
 export const UserContext = createContext({} as UserContextInterface);
 
 type Props = {

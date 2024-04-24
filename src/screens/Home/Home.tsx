@@ -4,19 +4,21 @@ import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
-const {textStyle, greetingText, homeButtons, homeScreen} = styles;
+
 const Home = () => {
   const navigation = useNavigation<any>();
   const {user} = useUser();
+  
   const onPressSayac = () => navigation.navigate('Counter');
   const onPressMovieList = () => navigation.navigate('MovieList');
   const onPressMovieStars = () => navigation.navigate('MovieStars');
+
   return (
-    <SafeAreaView style={homeScreen}>
-      <View style={textStyle}>
-        <Text style={greetingText}> Hoşgeldin {user.userName}! </Text>
+    <SafeAreaView style={styles.homeScreen}>
+      <View style={styles.textStyle}>
+        <Text style={styles.greetingText}> Hoşgeldin {user.userName}! </Text>
       </View>
-      <View style={homeButtons}>
+      <View style={styles.homeButtons}>
         <CustomButton title="Sayaç" onPress={onPressSayac} type="menu" />
         <CustomButton
           title="Film Listesi"
@@ -28,7 +30,7 @@ const Home = () => {
           onPress={onPressMovieStars}
           type="menu"
         />
-      </View>
+      </View> 
     </SafeAreaView>
   );
 };

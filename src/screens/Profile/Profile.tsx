@@ -1,25 +1,25 @@
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import {TextInput, View, SafeAreaView, Text} from 'react-native';
+import { View, SafeAreaView, Text, Alert} from 'react-native';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {styles} from './profile.style';
 import {useUser} from '../../contexts/UserContext';
 import {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import Color from '../../components/Color/Color';
+import { Color } from '../../utilities/Color';
+import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 
 interface InitialValues {
   Username: string;
   Password: string;
 }
 interface FormInput {
-  name?: string;
-  lastname?: string;
+  name: string;
+  lastname: string;
   username: string;
   password: string;
-  phone?: number;
+  phone: number;
 }
 const Profile = () => {
-  const {updateForm, customButton, textInput} = styles;
   const {user, setUser} = useUser();
   const [initialValues, setInitialValues] = useState<InitialValues>({
     Username: '',
@@ -62,29 +62,31 @@ const Profile = () => {
       password: data.password,
       phone: data.phone,
     };
-    setUser(updatedUserData);
-
-    console.log('Kullanıcı güncellendi:', updatedUserData);
-
-    if (isUsernameChanged || isPasswordChanged) {
-      navigation.navigate('Login');
-    } else {
-      console.log(
-        'Kullanıcı bilgileri güncellendi ancak kullanıcı adı ve şifre değişmedi.',
-      );
-    }
-  };
+    try {
+      setUser(updatedUserData);
+      console.log('Kullanıcı güncellendi:', updatedUserData);
+      
+      if (isUsernameChanged || isPasswordChanged) {
+        Alert.alert("Başarılı", "Kullanıcı adı veya şifre değişti. Lütfen tekrar giriş yapın.");
+        navigation.navigate('Login');
+      } else {
+        Alert.alert("Başarılı", "Kullanıcı bilgileri güncellendi.");
+      }
+    } catch (error) {
+      console.error("Kullanıcı güncelleme hatası:", error);
+      Alert.alert("Hata", "Güncelleme yapılamadı.");
+    }  };
 
   useEffect(() => {
     console.log('Güncellenmiş user nesnesi:', user);
   }, [user]);
 
   return (
-    <SafeAreaView style={updateForm}>
+    <SafeAreaView style={styles.updateForm}>
       <Controller
         control={control}
         rules={{
-          required: true,
+          required: 'Bu alan boş bırakılamaz',
           minLength: {
             value: 2,
             message: 'Geçerli bir isim girin',
@@ -95,23 +97,23 @@ const Profile = () => {
           },
         }}
         render={({field: {onBlur, onChange, value}}) => (
-          <TextInput
-            style={textInput}
+          <CustomTextInput
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             placeholder="İsim"
+            placeholderTextColor={Color.Gray}
           />
         )}
         name="name"
       />
       {errors.name && (
-        <Text style={{color: Color.danger}}>{errors.name.message}</Text>
+        <Text style={{color: Color.Danger}}>{errors.name.message}</Text>
       )}
       <Controller
         control={control}
         rules={{
-          required: true,
+          required: 'Bu alan boş bırakılamaz',
           minLength: {
             value: 2,
             message: 'Geçerli bir soyisim girin',
@@ -122,12 +124,12 @@ const Profile = () => {
           },
         }}
         render={({field: {onBlur, onChange, value}}) => (
-          <TextInput
-            style={textInput}
+          <CustomTextInput
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             placeholder="Soyisim"
+            placeholderTextColor={Color.Gray}
           />
         )}
         name="lastname"
@@ -137,29 +139,40 @@ const Profile = () => {
       )}
       <Controller
         control={control}
-        rules={{required: true}}
+        rules={{required: 'Bu alan boş bırakılamaz',
+        minLength: {
+          value: 2,
+          message: 'Geçerli bir kullanıcı adı girin',
+        },
+
+        }}
         render={({field: {onBlur, onChange, value}}) => (
-          <TextInput
-            style={textInput}
+          <CustomTextInput
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             placeholder="Kullanıcı Adı"
+            placeholderTextColor={Color.Gray}
           />
         )}
         name="username"
       />
       <Controller
         control={control}
-        rules={{required: true}}
+        rules={{required: 'Bu alan boş bırakılamaz',
+        minLength: {
+          value: 5,
+          message: 'Geçerli bir şifre girin',
+        },
+        }}
         render={({field: {onBlur, onChange, value}}) => (
-          <TextInput
-            style={textInput}
+          <CustomTextInput
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             placeholder="Şifre"
             secureTextEntry
+            placeholderTextColor={Color.Gray}
           />
         )}
         name="password"
@@ -167,20 +180,20 @@ const Profile = () => {
       <Controller
         control={control}
         rules={{
-          required: true,
+          required: 'Bu alan boş bırakılamaz',
           pattern: {
             value: /^(?:\+90|90)(\d{10})$/,
             message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
           },
         }}
         render={({field: {onBlur, onChange, value}}) => (
-          <TextInput
-            style={textInput}
+          <CustomTextInput
             onBlur={onBlur}
             onChangeText={onChange}
             value={value ? value.toString() : ''}
             placeholder="Cep Telefonu"
             keyboardType="phone-pad"
+            placeholderTextColor={Color.Gray}
           />
         )}
         name="phone"
@@ -188,7 +201,7 @@ const Profile = () => {
       {errors.phone && (
         <Text style={{color: 'red'}}>{errors.phone.message}</Text>
       )}
-      <View style={customButton}>
+      <View style={styles.customButton}>
         <CustomButton
           title="Güncelle"
           onPress={handleSubmit(onSubmit)}

@@ -9,9 +9,10 @@ export const styles = StyleSheet.create({
   },
   menuButton: {
     backgroundColor: 'gray',
-    width: 300,
+    width: 320,
     margin: 10,
     padding: 12,
+    borderRadius: 30
   },
   customGreenButtonText: {
     color: 'white',

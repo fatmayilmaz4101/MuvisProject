@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import Stacks from './src/navigation/StackNavigator/Stacks';
+import Stacks from './src/navigation/MainStackNavigator/MainStacks';
 import 'react-native-safe-area-context';
 import {enableScreens} from 'react-native-screens';
 import {UserProvider} from './src/contexts/UserContext';

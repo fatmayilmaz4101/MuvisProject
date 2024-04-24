@@ -10,31 +10,23 @@ import {
 import {styles} from './movieList.styles.ts';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
-const {
-  itemContainer,
-  title,
-  emptyContainer,
-  emptyText,
-  listContainer,
-  movieImg,
-  activityIndicator,
-  mainContainer,
-} = styles;
+import { Color } from '../../utilities/Color.ts';
+
 type Movie = {
   id: number;
   title: string;
   thumbnailUrl: string;
 };
 
-const MoviesEmptyComponent = () => (
-  <View style={emptyContainer}>
-    <Text style={emptyText}>Liste Boş</Text>
+const moviesEmptyComponent = () => (
+  <View style={styles.emptyContainer}>
+    <Text style={styles.emptyText}>Liste Boş</Text>
   </View>
 );
 
 const MovieList = () => {
   const [data, setData] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation<any>();
 
   const getTodos = async () => {
@@ -63,33 +55,30 @@ const MovieList = () => {
   };
 
   // eslint-disable-next-line react/no-unstable-nested-components
-  const RenderItem = ({item}: {item: Movie}) => {
-    const newTitle =
-      item.title.length > 30 ? `${item.title.slice(0, 35)}...` : item.title;
-
+  const renderItem = ({item}: {item: Movie}) => {
     return (
       <TouchableOpacity onPress={() => handlePress(item)}>
-        <View style={itemContainer}>
-          <Image source={{uri: item.thumbnailUrl}} style={movieImg} />
-          <Text style={title}>{newTitle}</Text>
+        <View style={styles.itemContainer}>
+          <Image source={{uri: item.thumbnailUrl}} style={styles.movieImg} />
+          <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
         </View>
       </TouchableOpacity>
     );
   };
 
   return (
-    <SafeAreaView style={mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       {loading ? (
-        <View style={activityIndicator}>
-          <ActivityIndicator size="large" color="#0000ff" />
+        <View style={styles.activityIndicator}>
+          <ActivityIndicator size="large" color={Color.Info} />
         </View>
       ) : (
         <FlatList
-          style={listContainer}
+          style={styles.listContainer}
           data={data}
           keyExtractor={({id}) => id.toString()}
-          renderItem={RenderItem}
-          ListEmptyComponent={MoviesEmptyComponent}
+          renderItem={renderItem}
+          ListEmptyComponent={moviesEmptyComponent}
           initialNumToRender={10}
           numColumns={2}
         />

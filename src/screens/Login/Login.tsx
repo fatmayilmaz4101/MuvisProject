@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, TextInput, Image, Text, Switch} from 'react-native';
+import {SafeAreaView, View, Image, Text, Switch} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useUser} from '../../contexts/UserContext';
 import {styles} from './login.styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import Color from '../../components/Color/Color';
+import { Color } from '../../utilities/Color';
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
+import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 
 interface FormInput {
   username: string;
@@ -14,7 +15,6 @@ interface FormInput {
 }
 
 const Login = () => {
-  const {container, center, input, image, CustomText} = styles;
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const navigation = useNavigation<any>();
   const {user, setUser} = useUser();
@@ -33,7 +33,7 @@ const Login = () => {
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
     console.log(`Switch'in değeri: ${value}`);
-    await AsyncStorage.setItem('isEnabled', value.toString());
+    await AsyncStorage.setItem('isEnabled', value.toString()); 
   };
   const onSubmit: SubmitHandler<FormInput> = async data => {
     const newUserData = {
@@ -62,72 +62,69 @@ const Login = () => {
     navigation.navigate('Home');
   };
   return (
-    <SafeAreaView style={container}>
-      <View style={center}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.center}>
         <Image
           source={require('/Users/fatmayilmaz/Documents/GitHub/MuvisProject/assets/images/muvis-logo.jpg')}
-          style={image}
+          style={styles.image}
         />
         <Controller
           control={control}
           rules={{
-            required: true,
+            required: 'Bu alan boş bırakılamaz',
             minLength: {
               value: 2,
               message: 'Geçerli bir kullanıcı adı girin',
             },
           }}
           render={({field: {onBlur, onChange, value}}) => (
-            <TextInput
-              style={input}
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Kullanıcı Adı"
-              placeholderTextColor="gray"
-            />
+            <CustomTextInput               
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="Kullanıcı Adı"
+            placeholderTextColor={Color.Gray}/>
           )}
           name="username"
         />
         {errors.username && (
-          <Text style={{color: Color.danger}}>{errors.username.message}</Text>
+          <Text style={{color: Color.Danger}}>{errors.username.message}</Text>
         )}
         <Controller
           control={control}
           rules={{
-            required: true,
+            required: 'Bu alan boş bırakılamaz',
             minLength: {
               value: 5,
               message: 'Geçerli bir şifre girin',
             },
           }}
           render={({field: {onBlur, onChange, value}}) => (
-            <TextInput
-              style={input}
+            <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
               placeholder="Şifre"
-              placeholderTextColor="gray"
+              placeholderTextColor={Color.Gray}
               secureTextEntry
             />
           )}
           name="password"
         />
         {errors.password && (
-          <Text style={{color: Color.danger}}>{errors.password.message}</Text>
+          <Text style={{color: Color.Danger}}>{errors.password.message}</Text>
         )}
         <Switch
-          trackColor={{false: Color.dark, true: Color.customGreen}}
-          thumbColor={isEnabled ? Color.light : Color.secondary}
+          trackColor={{false: Color.Dark, true: Color.CustomGreen}}
+          thumbColor={isEnabled ? Color.Light : Color.Secondary}
           onValueChange={toggleSwitch}
           value={isEnabled}
         />
-        <View>
+        <View style={styles.submit}>
           <CustomButton title="Giriş Yap" onPress={handleSubmit(onSubmit)} />
         </View>
       </View>
-      <Text style={CustomText}>Created by FatmaYilmsz</Text>
+      <Text style={styles.CustomText}>Created by FatmaYilmsz</Text>
     </SafeAreaView>
   );
 };

@@ -3,16 +3,15 @@ import {View, Text, Image} from 'react-native';
 import {styles} from './movieDetails.style';
 
 const MovieDetails = ({route}: any) => {
-  const {movie} = route.params;
-  const {container, detailsContainer, title, text} = styles;
+  const {thumbnailUrl, id, title} = route?.params.movie;
 
   return (
-    <View style={container}>
-      <Image source={{uri: movie.thumbnailUrl}} style={styles.image} />
-      <View style={detailsContainer}>
-        <Text style={title}>Movie Name</Text>
-        <Text style={text}>Id: {movie.id}</Text>
-        <Text style={text}>Title: {movie.title}</Text>
+    <View style={styles.container}>
+      <Image source={{uri: thumbnailUrl}} style={styles.image} />
+      <View style={styles.detailsContainer}>
+        <Text style={styles.titleStyle}>Movie Name</Text>
+        <Text style={styles.text}>Id: {id}</Text>
+        <Text style={styles.text}>Title: {title}</Text>
       </View>
     </View>
   );

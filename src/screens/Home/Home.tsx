@@ -4,7 +4,6 @@ import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import Deneme from '../Deneme/Deneme';
 
 const Home = () => {
   const navigation = useNavigation<any>();

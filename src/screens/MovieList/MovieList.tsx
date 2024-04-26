@@ -1,89 +1,60 @@
-import React, {useEffect, useState} from 'react';
-import {
-  SafeAreaView,
-  FlatList,
-  Text,
-  View,
-  ActivityIndicator,
-  Image,
-} from 'react-native';
-import {styles} from './movieList.styles.ts';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useNavigation} from '@react-navigation/native';
-import { Color } from '../../utilities/Color.ts';
+import React, { useEffect } from "react";
+import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../redux/store";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { styles } from "../MovieList/movieList.styles";
+import { MovieType, fetchMovies } from "../../redux/actions/movieActions";
+import { useNavigation } from "@react-navigation/native";
+import CustomLoading from "../../components/CustomLoading/CustomLoading";
 
-type Movie = {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-};
+const Deneme = () => {
+    const dispatch = useAppDispatch();
+    const navigation = useNavigation<any>();
+    const { movies, loading, error } = useSelector((state:RootState) => state.movies);
 
-const moviesEmptyComponent = () => (
-  <View style={styles.emptyContainer}>
-    <Text style={styles.emptyText}>Liste Boş</Text>
-  </View>
-);
+    useEffect(() => {
+        dispatch(fetchMovies());
+      }, [dispatch]);
+      
+      const handlePress = (item: MovieType) => {
+        navigation.navigate('MovieDetail', {movie: item});
+      };
+      const moviesEmptyComponent = () => (
+        <View style={styles.centered}>
+        {error ? (
+          <Text style={styles.errorText}>Error: {error}</Text>
+        ) : (
+          <Text>No movies available.</Text>
+        )}
+      </View>
+        );
+      
+      const renderItem = ({item}: {item: MovieType}) => {
+        return (
+          <TouchableOpacity onPress={() => handlePress(item)}>
+            <View style={styles.itemContainer}>
+              <Image source={{uri: item.thumbnailUrl}} style={styles.movieImg} />
+              <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
+            </View>
+          </TouchableOpacity>
+        );
+      };
 
-const MovieList = () => {
-  const [data, setData] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState(false);
-  const navigation = useNavigation<any>();
-
-  const getTodos = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/photos',
+    return(
+        <SafeAreaView style={styles.mainContainer}>
+        {loading ? <CustomLoading isLoading={true} text="Yükleniyor"/> : (
+          <FlatList
+            style={styles.listContainer}
+            data={movies}
+            keyExtractor={({id}) => id.toString()}
+            renderItem={renderItem}
+            initialNumToRender={10}
+            ListEmptyComponent={moviesEmptyComponent}
+            numColumns={2}
+          />
+        )}
+      </SafeAreaView>
       );
-      const json = await response.json();
-      setData(json);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
-    }
-  };
-
-  useEffect(() => {
-    getTodos();
-  }, []);
-
-  const handlePress = (item: Movie) => {
-    navigation.navigate('MovieDetail', {movie: item});
-  };
-
-  // eslint-disable-next-line react/no-unstable-nested-components
-  const renderItem = ({item}: {item: Movie}) => {
-    return (
-      <TouchableOpacity onPress={() => handlePress(item)}>
-        <View style={styles.itemContainer}>
-          <Image source={{uri: item.thumbnailUrl}} style={styles.movieImg} />
-          <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
-
-  return (
-    <SafeAreaView style={styles.mainContainer}>
-      {loading ? (
-        <View style={styles.activityIndicator}>
-          <ActivityIndicator size="large" color={Color.Info} />
-        </View>
-      ) : (
-        <FlatList
-          style={styles.listContainer}
-          data={data}
-          keyExtractor={({id}) => id.toString()}
-          renderItem={renderItem}
-          ListEmptyComponent={moviesEmptyComponent}
-          initialNumToRender={10}
-          numColumns={2}
-        />
-      )}
-    </SafeAreaView>
-  );
 };
-export default MovieList;
+export default Deneme;

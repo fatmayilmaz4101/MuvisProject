@@ -4,6 +4,7 @@ import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import Deneme from '../Deneme/Deneme';
 
 const Home = () => {
   const navigation = useNavigation<any>();
@@ -12,6 +13,7 @@ const Home = () => {
   const onPressSayac = () => navigation.navigate('Counter');
   const onPressMovieList = () => navigation.navigate('MovieList');
   const onPressMovieStars = () => navigation.navigate('MovieStars');
+  const Deneme = () => navigation.navigate('Deneme');
 
   return (
     <SafeAreaView style={styles.homeScreen}>
@@ -28,6 +30,11 @@ const Home = () => {
         <CustomButton
           title="Film Yıldızları"
           onPress={onPressMovieStars}
+          type="menu"
+        />
+        <CustomButton
+          title="Deneme"
+          onPress={Deneme}
           type="menu"
         />
       </View> 

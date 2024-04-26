@@ -14,6 +14,7 @@ import { View } from 'react-native';
 import Profile from '../../screens/Profile/Profile';
 import { styles } from './mainStacks.styles';
 import MovieStars from '../../screens/MovieStars/MovieStars';
+import Deneme from '../../screens/Deneme/Deneme';
 const Stack = createStackNavigator();
 
 const ProfileIcon = () => {
@@ -90,6 +91,11 @@ const Stacks = () => {
         options={{title: 'Film Yıldızları'}}
         name="MovieStars"
         component={MovieStars}
+      />
+              <Stack.Screen
+        options={{title: 'Deneme'}}
+        name="Deneme"
+        component={Deneme}
       />
 
     </Stack.Navigator>

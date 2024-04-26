@@ -6,20 +6,23 @@ import 'react-native-safe-area-context';
 import {enableScreens} from 'react-native-screens';
 import {UserProvider} from './src/contexts/UserContext';
 import {CounterProvider, TitleContext} from './src/contexts/Context';
-
+import {Provider} from 'react-redux';
+import store from "./src/redux/store"
 enableScreens();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <UserProvider>
-        <CounterProvider>
-          <TitleContext.Provider value="Sayaç">
-            <Stacks />
-          </TitleContext.Provider>
-        </CounterProvider>
-      </UserProvider>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <UserProvider>
+          <CounterProvider>
+            <TitleContext.Provider value="Sayaç">
+              <Stacks />
+            </TitleContext.Provider>
+          </CounterProvider>
+        </UserProvider>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

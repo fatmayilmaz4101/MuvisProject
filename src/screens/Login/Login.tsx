@@ -25,7 +25,7 @@ const Login = () => {
     formState: {errors},
   } = useForm<FormInput>({
     defaultValues: {
-      username: user.userName,
+      username: user.userName, 
       password: user.password,
     },
   });

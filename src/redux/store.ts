@@ -6,7 +6,7 @@ const store = configureStore({
     reducer: {
       movies: moviesReducer
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck:false,immutableCheck: false,}).concat(thunk)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck:false}).concat(thunk)
   });
   
 export type RootState = ReturnType<typeof store.getState>;

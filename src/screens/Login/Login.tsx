@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux/store';
 import { loginUser } from '../../redux/actions/userActions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LOGIN_FAILURE } from '../../redux/types';
 
 interface FormInput {
   userName: string;
@@ -17,9 +18,9 @@ interface FormInput {
 }
 
 const Login = () => {
-  const navigation = useNavigation<any>();
+    const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
-  const {login} = useSelector((state:RootState)=>state.user)
+  const {login, error} = useSelector((state:RootState)=>state.user)
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const { control, handleSubmit, reset, formState: { errors } } = useForm({
     defaultValues: {
@@ -32,16 +33,20 @@ const Login = () => {
     if (login && login.userName) {
       console.log("User bilgileri (Login.tsx): ", login);
       navigation.navigate('Home');
-    }
-  }, [login, navigation]);
+    } 
 
+  }, [login, navigation]);
   
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
   };
   
   const onSubmit: SubmitHandler<FormInput> = async data => {
-    if (isEnabled) {
+    if (isEnabled && !error) {
+      reset({
+        userName: login.userName,
+        password: login.password
+      });
       const userCredentials = data;
       await AsyncStorage.setItem(
         'userCredentials',
@@ -52,6 +57,11 @@ const Login = () => {
         userCredentials,
       );
     } else{
+      reset({
+        userName: '',
+        password: ''
+      });
+      dispatch({type: LOGIN_FAILURE, payload: false})
       await AsyncStorage.removeItem('userCredentials');
   }
     console.log("Form bilgileri: ", data)

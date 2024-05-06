@@ -44,7 +44,8 @@ export const loginUser = (requestUser: UserLoginModel) => {
           dispatch({ type: LOGIN_SUCCESS, payload: user });
           dispatch({ type: UPDATE_SUCCESS, payload: user });
         } else {
-          throw new Error('Kullanıcı bulunamadı');
+          dispatch({ type: LOGIN_FAILURE, payload: true });
+
         }
   
       } catch (error: any) {

@@ -1,10 +1,11 @@
 import { UserProfileModel } from '../actions/userActions';
 import { UserLoginModel } from '../actions/userActions';
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, UPDATE_REQUEST, UPDATE_SUCCESS } from '../types';
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, UPDATE_REQUEST, UPDATE_SUCCESS } from '../types';
 
 export interface UserState {
   login: UserLoginModel;
   profile: UserProfileModel;
+  error: boolean;  // Error field added
 }
 const initialState : UserState = {
   login: {userName: '',password: ''},
@@ -15,7 +16,9 @@ const initialState : UserState = {
     userName: '', 
     password: '', 
     phone: 0,    
-}};
+},
+  error: false
+};
 
 const userReducer = (state = initialState, action: { type: string; payload?: any }): UserState => {
   switch (action.type) {
@@ -26,6 +29,8 @@ const userReducer = (state = initialState, action: { type: string; payload?: any
           return { ...state, login: action.payload };
       case UPDATE_SUCCESS:
           return { ...state, profile: action.payload };
+          case LOGIN_FAILURE:
+            return { ...state, error: action.payload };  
       case LOGOUT:
           return { ...initialState, login: initialState.login };
       default:

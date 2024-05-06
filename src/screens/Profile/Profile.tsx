@@ -6,8 +6,9 @@ import {Color} from '../../utilities/Color';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 import {RootState, useAppDispatch} from '../../redux/store';
 import {useSelector} from 'react-redux';
-import { getUserById, updateProfile } from '../../redux/actions/userActions';
-import { useEffect } from 'react';
+import { updateProfile } from '../../redux/actions/userActions';
+import { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 interface FormInput {
   firstName: string;
@@ -17,8 +18,13 @@ interface FormInput {
   phone: number;
 }
 const Profile = () => {
+  const navigation = useNavigation<any>();
   const {profile} = useSelector((state: RootState) => state.user);
   const dispatch = useAppDispatch();
+  const [initialCredentials, setInitialCredentials] = useState({
+    userName: profile.userName,
+    password: profile.password,
+  });
   const {
     control,
     handleSubmit,
@@ -51,12 +57,34 @@ const Profile = () => {
       password: profile.password || '',
       phone: profile.phone || 0,
     });
+    setInitialCredentials({
+      userName: profile.userName,
+      password: profile.password,
+    });
   }, [profile, reset]);
   
   const onSubmit: SubmitHandler<FormInput> = async data => {
+    const isUsernameChanged = initialCredentials.userName !== data.userName;
+    const isPasswordChanged = initialCredentials.password !== data.password;
+
+    if (isUsernameChanged || isPasswordChanged) {
+      Alert.alert(
+        "Değişiklikler Kaydedildi",
+        "Kullanıcı adı veya şifre değişti. Lütfen yeniden giriş yapın.",
+        [
+          {
+            text: "Tamam",
+            onPress: () => navigation.navigate('Login'),
+          }
+        ]
+      );
+      // Burada kullanıcıyı logout yapabilir ve login sayfasına yönlendirebilirsiniz.
+    } else {
+      Alert.alert("Başarılı", "Profil güncellendi.");
+    }
+
     if (typeof profile.id === 'string') {
       dispatch(updateProfile(data, profile.id));
-      Alert.alert('Başarılı','Güncelleme başarılı')
     } else {
       Alert.alert('Hata', 'Geçerli bir kullanıcı ID\'si bulunamadı. Güncelleme yapılamıyor.');
     }

@@ -1,14 +1,14 @@
 import React from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
-import {useUser} from '../../contexts/UserContext';
 import {styles} from './home.styles';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import { RootState } from '../../redux/store';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
   const navigation = useNavigation<any>();
-  const {user} = useUser();
-  
+  const login = useSelector((state:RootState)=>state.user)
   const onPressSayac = () => navigation.navigate('Counter');
   const onPressMovieList = () => navigation.navigate('MovieList');
   const onPressMovieStars = () => navigation.navigate('MovieStars');
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.homeScreen}>
       <View style={styles.textStyle}>
-        <Text style={styles.greetingText}> Hoşgeldin {user.userName}! </Text>
+        <Text style={styles.greetingText}> Hoşgeldin {login.login.userName}! </Text>
       </View>
       <View style={styles.homeButtons}>
         <CustomButton title="Sayaç" onPress={onPressSayac} type="menu" />

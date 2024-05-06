@@ -8,7 +8,7 @@ import { MovieType, fetchMovies } from "../../redux/actions/movieActions";
 import { useNavigation } from "@react-navigation/native";
 import CustomLoading from "../../components/CustomLoading/CustomLoading";
 
-const Deneme = () => {
+const MovieList = () => {
     const dispatch = useAppDispatch();
     const navigation = useNavigation<any>();
     const { movies, loading, error } = useSelector((state:RootState) => state.movies);
@@ -57,4 +57,4 @@ const Deneme = () => {
       </SafeAreaView>
       );
 };
-export default Deneme;
+export default MovieList;

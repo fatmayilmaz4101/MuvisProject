@@ -15,10 +15,12 @@ import Profile from '../../screens/Profile/Profile';
 import { styles } from './mainStacks.styles';
 import MovieStars from '../../screens/MovieStars/MovieStars';
 import Deneme from '../../screens/Deneme/Deneme';
+
 const Stack = createStackNavigator();
 
 const ProfileIcon = () => {
   const navigation = useNavigation<any>();
+
   const onPressProfile = () => navigation.navigate('Profile');
   return (
     <TouchableOpacity onPress={onPressProfile}>
@@ -29,7 +31,8 @@ const ProfileIcon = () => {
 
 const LogoutButton = () => {
   const navigation = useNavigation<any>();
-  const onPressLogin = () => navigation.navigate('Login');
+  const onPressLogin = () => {
+    navigation.navigate('Login');}
 
   return (
     <CustomButton title="Çıkış Yap" onPress={onPressLogin} type="customGreen" />

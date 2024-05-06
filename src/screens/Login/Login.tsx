@@ -1,48 +1,48 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView, View, Image, Text, Switch} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useUser} from '../../contexts/UserContext';
 import {styles} from './login.styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import { Color } from '../../utilities/Color';
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { loginUser } from '../../redux/actions/userActions';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface FormInput {
-  username: string;
+  userName: string;
   password: string;
 }
 
 const Login = () => {
-  const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const navigation = useNavigation<any>();
-  const {user, setUser} = useUser();
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState: {errors},
-  } = useForm<FormInput>({
+  const dispatch = useAppDispatch();
+  const {login} = useSelector((state:RootState)=>state.user)
+  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+  const { control, handleSubmit, reset, formState: { errors } } = useForm({
     defaultValues: {
-      username: user.userName, 
-      password: user.password,
-    },
+      userName: '',
+      password: ''
+    }
   });
 
+  useEffect(() => {
+    if (login && login.userName) {
+      console.log("User bilgileri (Login.tsx): ", login);
+      navigation.navigate('Home');
+    }
+  }, [login, navigation]);
+
+  
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
-    console.log(`Switch'in değeri: ${value}`);
-    await AsyncStorage.setItem('isEnabled', value.toString()); 
   };
+  
   const onSubmit: SubmitHandler<FormInput> = async data => {
-    const newUserData = {
-      userName: data.username,
-      password: data.password,
-    };
-    setUser(newUserData);
     if (isEnabled) {
-      const userCredentials = newUserData;
+      const userCredentials = data;
       await AsyncStorage.setItem(
         'userCredentials',
         JSON.stringify(userCredentials),
@@ -51,16 +51,14 @@ const Login = () => {
         "Switch true: Storage'a kaydedilen değerler: ",
         userCredentials,
       );
-    } else {
-      reset({
-        username: '',
-        password: '',
-      });
+    } else{
       await AsyncStorage.removeItem('userCredentials');
-      console.log('Storage temizlendi. İnputlar set edildi');
-    }
-    navigation.navigate('Home');
+  }
+    console.log("Form bilgileri: ", data)
+    console.log("login nesnesi: ", login)
+    dispatch(loginUser(data))
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.center}>
@@ -85,10 +83,10 @@ const Login = () => {
             placeholder="Kullanıcı Adı"
             placeholderTextColor={Color.Gray}/>
           )}
-          name="username"
+          name="userName"
         />
-        {errors.username && (
-          <Text style={{color: Color.Danger}}>{errors.username.message}</Text>
+        {errors.userName && (
+          <Text style={{color: Color.Danger}}>{errors.userName.message}</Text>
         )}
         <Controller
           control={control}

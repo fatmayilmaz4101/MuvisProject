@@ -1,85 +1,66 @@
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import { View, SafeAreaView, Text, Alert} from 'react-native';
+import {View, SafeAreaView, Text, Alert} from 'react-native';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {styles} from './profile.style';
-import {useUser} from '../../contexts/UserContext';
-import {useEffect, useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import { Color } from '../../utilities/Color';
+import {Color} from '../../utilities/Color';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
+import {RootState, useAppDispatch} from '../../redux/store';
+import {useSelector} from 'react-redux';
+import { getUserById, updateProfile } from '../../redux/actions/userActions';
+import { useEffect } from 'react';
 
-interface InitialValues {
-  Username: string;
-  Password: string;
-}
 interface FormInput {
-  name: string;
-  lastname: string;
-  username: string;
+  firstName: string;
+  lastName: string;
+  userName: string;
   password: string;
   phone: number;
 }
 const Profile = () => {
-  const {user, setUser} = useUser();
-  const [initialValues, setInitialValues] = useState<InitialValues>({
-    Username: '',
-    Password: '',
-  });
-
+  const {profile} = useSelector((state: RootState) => state.user);
+  const dispatch = useAppDispatch();
   const {
     control,
     handleSubmit,
     formState: {errors},
+    reset,
   } = useForm<FormInput>({
     mode: 'onChange',
     defaultValues: {
-      name: user.name,
-      lastname: user.lastname,
-      username: user.userName,
-      password: user.password,
-      phone: user.phone,
+      firstName: profile.firstName || '',
+      lastName: profile.lastName || '',
+      userName: profile.userName || '',
+      password: profile.password || '',
+      phone: profile.phone || 0,
     },
   });
-  const navigation = useNavigation<any>();
   useEffect(() => {
-    if (user.userName && user.password) {
-      setInitialValues({
-        Username: user.userName,
-        Password: user.password,
-      });
+    if (profile && profile.userName) {
+      console.log("User bilgileri (profile.tsx): ", profile);
     }
-  }, []);
-
-  const onSubmit: SubmitHandler<FormInput> = async data => {
-
-    const isUsernameChanged = initialValues.Username !== data.username;
-    const isPasswordChanged = initialValues.Password !== data.password;
-
-    const updatedUserData = {
-      name: data.name,
-      lastname: data.lastname,
-      userName: data.username,
-      password: data.password,
-      phone: data.phone,
-    };
-    try {
-      setUser(updatedUserData);
-      console.log('Kullanıcı güncellendi:', updatedUserData);
-      
-      if (isUsernameChanged || isPasswordChanged) {
-        Alert.alert("Başarılı", "Kullanıcı adı veya şifre değişti. Lütfen tekrar giriş yapın.");
-        navigation.navigate('Login');
-      } else {
-        Alert.alert("Başarılı", "Kullanıcı bilgileri güncellendi.");
-      }
-    } catch (error) {
-      console.error("Kullanıcı güncelleme hatası:", error);
-      Alert.alert("Hata", "Güncelleme yapılamadı.");
-    }  };
+  }, [profile]);
 
   useEffect(() => {
-    console.log('Güncellenmiş user nesnesi:', user);
-  }, [user]);
+    console.log('profile nesnesi: ',profile)
+    console.log('profile id: ',profile.id)
+    console.log(typeof profile.id)
+    reset({
+      firstName: profile.firstName || '',
+      lastName: profile.lastName || '',
+      userName: profile.userName || '',
+      password: profile.password || '',
+      phone: profile.phone || 0,
+    });
+  }, [profile, reset]);
+  
+  const onSubmit: SubmitHandler<FormInput> = async data => {
+    if (typeof profile.id === 'string') {
+      dispatch(updateProfile(data, profile.id));
+      Alert.alert('Başarılı','Güncelleme başarılı')
+    } else {
+      Alert.alert('Hata', 'Geçerli bir kullanıcı ID\'si bulunamadı. Güncelleme yapılamıyor.');
+    }
+  };
 
   return (
     <SafeAreaView style={styles.updateForm}>
@@ -105,10 +86,10 @@ const Profile = () => {
             placeholderTextColor={Color.Gray}
           />
         )}
-        name="name"
+        name="firstName"
       />
-      {errors.name && (
-        <Text style={{color: Color.Danger}}>{errors.name.message}</Text>
+      {errors.firstName && (
+        <Text style={{color: Color.Danger}}>{errors.firstName.message}</Text>
       )}
       <Controller
         control={control}
@@ -132,19 +113,19 @@ const Profile = () => {
             placeholderTextColor={Color.Gray}
           />
         )}
-        name="lastname"
+        name="lastName"
       />
-      {errors.lastname && (
-        <Text style={{color: 'red'}}>{errors.lastname.message}</Text>
+      {errors.lastName && (
+        <Text style={{color: 'red'}}>{errors.lastName.message}</Text>
       )}
       <Controller
         control={control}
-        rules={{required: 'Bu alan boş bırakılamaz',
-        minLength: {
-          value: 2,
-          message: 'Geçerli bir kullanıcı adı girin',
-        },
-
+        rules={{
+          required: 'Bu alan boş bırakılamaz',
+          minLength: {
+            value: 2,
+            message: 'Geçerli bir kullanıcı adı girin',
+          },
         }}
         render={({field: {onBlur, onChange, value}}) => (
           <CustomTextInput
@@ -155,15 +136,16 @@ const Profile = () => {
             placeholderTextColor={Color.Gray}
           />
         )}
-        name="username"
+        name="userName"
       />
       <Controller
         control={control}
-        rules={{required: 'Bu alan boş bırakılamaz',
-        minLength: {
-          value: 5,
-          message: 'Geçerli bir şifre girin',
-        },
+        rules={{
+          required: 'Bu alan boş bırakılamaz',
+          minLength: {
+            value: 5,
+            message: 'Geçerli bir şifre girin',
+          },
         }}
         render={({field: {onBlur, onChange, value}}) => (
           <CustomTextInput

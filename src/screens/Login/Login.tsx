@@ -59,7 +59,6 @@ const Login = () => {
       dispatch({type: LOGIN_FAILURE, payload: false})
       await AsyncStorage.removeItem('userCredentials');
   }
-    console.log("Login Nesnesi(Login.tsx): ", login)
     dispatch(loginUser(data))
   };
 

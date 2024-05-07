@@ -18,7 +18,7 @@ interface FormInput {
 }
 
 const Login = () => {
-    const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const {login, error} = useSelector((state:RootState)=>state.user)
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
@@ -34,7 +34,6 @@ const Login = () => {
       console.log("User bilgileri (Login.tsx): ", login);
       navigation.navigate('Home');
     } 
-
   }, [login, navigation]);
   
   const toggleSwitch = async (value: boolean) => {
@@ -52,10 +51,6 @@ const Login = () => {
         'userCredentials',
         JSON.stringify(userCredentials),
       );
-      console.log(
-        "Switch true: Storage'a kaydedilen değerler: ",
-        userCredentials,
-      );
     } else{
       reset({
         userName: '',
@@ -64,8 +59,7 @@ const Login = () => {
       dispatch({type: LOGIN_FAILURE, payload: false})
       await AsyncStorage.removeItem('userCredentials');
   }
-    console.log("Form bilgileri: ", data)
-    console.log("login nesnesi: ", login)
+    console.log("Login Nesnesi(Login.tsx): ", login)
     dispatch(loginUser(data))
   };
 

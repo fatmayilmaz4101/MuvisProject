@@ -5,7 +5,7 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, UPDATE_REQUEST, UP
 export interface UserState {
   login: UserLoginModel;
   profile: UserProfileModel;
-  error: boolean;  // Error field added
+  error: boolean; 
 }
 const initialState : UserState = {
   login: {userName: '',password: ''},

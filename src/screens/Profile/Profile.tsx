@@ -17,6 +17,7 @@ interface FormInput {
   password: string;
   phone: number;
 }
+
 const Profile = () => {
   const navigation = useNavigation<any>();
   const {profile} = useSelector((state: RootState) => state.user);
@@ -25,6 +26,7 @@ const Profile = () => {
     userName: profile.userName,
     password: profile.password,
   });
+
   const {
     control,
     handleSubmit,
@@ -40,16 +42,9 @@ const Profile = () => {
       phone: profile.phone || 0,
     },
   });
-  useEffect(() => {
-    if (profile && profile.userName) {
-      console.log("User bilgileri (profile.tsx): ", profile);
-    }
-  }, [profile]);
 
   useEffect(() => {
-    console.log('profile nesnesi: ',profile)
-    console.log('profile id: ',profile.id)
-    console.log(typeof profile.id)
+    console.log('Profile Nesnesi(Profile.tsx): ',profile)
     reset({
       firstName: profile.firstName || '',
       lastName: profile.lastName || '',
@@ -78,7 +73,6 @@ const Profile = () => {
           }
         ]
       );
-      // Burada kullanıcıyı logout yapabilir ve login sayfasına yönlendirebilirsiniz.
     } else {
       Alert.alert("Başarılı", "Profil güncellendi.");
     }

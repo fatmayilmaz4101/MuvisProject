@@ -32,7 +32,7 @@ const Home = () => {
           type="menu"
         />
         <CustomButton
-          title="Deneme"
+          title="TansStack Query Deneme"
           onPress={Deneme}
           type="menu"
         />

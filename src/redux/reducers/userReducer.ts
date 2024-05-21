@@ -10,7 +10,7 @@ export interface UserState {
 const initialState : UserState = {
   login: {userName: '',password: ''},
   profile: {
-    id: -1,
+    id: '',
     firstName: '', 
     lastName: '', 
     userName: '', 
@@ -23,6 +23,7 @@ const initialState : UserState = {
 const userReducer = (state = initialState, action: { type: string; payload?: any }): UserState => {
   switch (action.type) {
       case LOGIN_REQUEST:
+        return { ...state };
       case UPDATE_REQUEST:
           return { ...state };
       case LOGIN_SUCCESS:

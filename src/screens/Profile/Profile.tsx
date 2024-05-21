@@ -77,11 +77,8 @@ const Profile = () => {
       Alert.alert("Başarılı", "Profil güncellendi.");
     }
 
-    if (typeof profile.id === 'string') {
-      dispatch(updateProfile(data, profile.id));
-    } else {
-      Alert.alert('Hata', 'Geçerli bir kullanıcı ID\'si bulunamadı. Güncelleme yapılamıyor.');
-    }
+      dispatch(updateProfile(data, profile?.id as string));
+    
   };
 
   return (

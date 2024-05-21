@@ -2,7 +2,7 @@ import { Alert } from "react-native";
 import { AppDispatch } from "../store";
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, UPDATE_REQUEST, UPDATE_SUCCESS } from "../types";
 export interface UserProfileModel {
-        id?: number,
+        id?: string,
         firstName: string,
         lastName: string,
         userName: string,
@@ -34,7 +34,7 @@ export const loginUser = (requestUser: UserLoginModel) => {
     return async (dispatch: AppDispatch) => {
       dispatch(loginRequest());
       try {
-        const response = await fetch("http://192.168.1.72:4000/users");
+        const response = await fetch("http://192.168.1.68:4000/users");
         const text = await response.text();
         const users = JSON.parse(text);
         const user = users.find((u: UserLoginModel) => u.userName === requestUser.userName && u.password === requestUser.password);
@@ -52,10 +52,10 @@ export const loginUser = (requestUser: UserLoginModel) => {
     };
   };
 
-  export const updateProfile = (requestUser : UserProfileModel, userId : number) => async (dispatch : AppDispatch) => {
+  export const updateProfile = (requestUser : UserProfileModel, userId : string) => async (dispatch : AppDispatch) => {
     dispatch(updateRequest());
     try {
-      const response = await fetch(`http://192.168.1.72:4000/users/${userId}`, {
+      const response = await fetch(`http://192.168.1.68:4000/users/${userId}`, {
         method: 'PATCH', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestUser),

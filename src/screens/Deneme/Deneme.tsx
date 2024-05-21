@@ -22,14 +22,16 @@ const Deneme = () => {
     return response.data;
   };
 
-  const {
+  const { //Bu hook fetchMovies fonk çağırarak verileri getirir. movies, isLoading ve error durumları döner
     data: movies,
     isLoading,
     error,
   } = useQuery<MovieType[], Error>({
     queryKey: ['movies'],
     queryFn: fetchMovies,
-  });
+    staleTime: 300000, //veriler 5 dakika boyunca güncel kalacak. 5 dakika sonunda veriler stale olarak işaretlenir ve tekrar fetch işlemi yapılır. 
+    refetchOnReconnect: true, //İnternet bağlantısı yeniden kurulduğunda stale veriler yeniden çekilsin
+  }); 
 
   const handlePress = (item: MovieType) => {
     navigation.navigate('MovieDetail', {movie: item});

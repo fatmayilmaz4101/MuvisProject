@@ -15,23 +15,24 @@ export interface MovieType {
 const Deneme = () => {
   const navigation = useNavigation<any>();
 
-  const fetchMovies = async (): Promise<MovieType[]> => {
+  const getMovies = async (): Promise<MovieType[]> => {
     const response = await axios.get(
       'https://jsonplaceholder.typicode.com/photos',
     );
     return response.data;
   };
 
-  const { //Bu hook fetchMovies fonk çağırarak verileri getirir. movies, isLoading ve error durumları döner
+  const {
+    //Bu hook fetchMovies fonk çağırarak verileri getirir. movies, isLoading ve error durumları döner
     data: movies,
     isLoading,
     error,
   } = useQuery<MovieType[], Error>({
-    queryKey: ['movies'],
-    queryFn: fetchMovies,
-    staleTime: 300000, //veriler 5 dakika boyunca güncel kalacak. 5 dakika sonunda veriler stale olarak işaretlenir ve tekrar fetch işlemi yapılır. 
+    queryKey: ['movies'], //query'nin benzersiz tanımlayıcısı, önbellek yönetimi ve yeniden getirme işlemlerinde kullanılır.
+    queryFn: getMovies, //Verileri getirecek asenkron fonksiyon
+    staleTime: 300000, //veriler 5 dakika boyunca güncel kalacak. 5 dakika sonunda veriler stale olarak işaretlenir ve belirli olaylar tetiklendiğinde yeniden getirilirler.
     refetchOnReconnect: true, //İnternet bağlantısı yeniden kurulduğunda stale veriler yeniden çekilsin
-  }); 
+  });
 
   const handlePress = (item: MovieType) => {
     navigation.navigate('MovieDetail', {movie: item});

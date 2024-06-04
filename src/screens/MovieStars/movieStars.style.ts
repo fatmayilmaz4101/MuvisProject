@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
     height: '100%', // Resmin yüksekliğini konteynerin yüksekliği ile eşleştir
   },
   body: {
-    flex: 1, backgroundColor: '#0F1E21', paddingTop: 40
+    flex: 1, paddingTop: 40
   }
 });

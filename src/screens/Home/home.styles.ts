@@ -18,4 +18,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+
 });

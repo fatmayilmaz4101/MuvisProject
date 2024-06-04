@@ -2,6 +2,7 @@ import React from 'react';
 import {Dimensions, View, Image} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {styles} from './movieStars.style';
+import Categories from '../Categories/Categories';
 
 const MovieStars = () => {
   const images = [
@@ -27,6 +28,10 @@ const MovieStars = () => {
             <Image style={styles.image} source={{uri: images[index]}} />
           </View>
         )}></Carousel>
+            <View>
+      
+    </View>
+    <Categories></Categories>  
     </View>
   );
 };

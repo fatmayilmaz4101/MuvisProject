@@ -11,8 +11,11 @@ import { useNetInfo } from "@react-native-community/netinfo";
 
 const Deneme = () => {
     const navigation = useNavigation<any>();
+
     const {data: movies, isLoading, error, refetch} = useMovies();
+
     const { type, isConnected } = useNetInfo();
+    
       const handlePress = (item: MovieType) => {
         navigation.navigate('MovieDetail', {movie: item});
       };
@@ -25,6 +28,7 @@ const Deneme = () => {
         )}
       </View>
         );
+
         console.log(isConnected)
         useEffect(() => {
           (async()=>{

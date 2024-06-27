@@ -6,11 +6,12 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import { RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import CustomBottomSheet, { BottomSheetRef } from '../../components/CustomBottomSheet/CustomBottomSheet';
+import { useTheme } from 'react-native-paper';
 
 const Home = () => {
   const navigation = useNavigation<any>();
   const login = useSelector((state: RootState) => state.user);
-
+  const theme = useTheme(); // Theme özellikleri kullanabilmek için hook
   const snapPoints = useMemo(() => ['25%', '50%'], []);
   const welcomeMessage = useRef<BottomSheetRef>(null);
 
@@ -29,6 +30,7 @@ const Home = () => {
     <SafeAreaView style={styles.homeScreen}>
       <SafeAreaView style={styles.container}>
         <View style={styles.homeButtons}>
+          <Text style={{backgroundColor: theme.colors.primary}}>Deneme</Text> 
           <CustomButton title="Sayaç" onPress={onPressSayac} type="menu" />
           <CustomButton title="Film Listesi" onPress={onPressMovieList} type="menu" />
           <CustomButton title="Film Yıldızları" onPress={onPressMovieStars} type="menu" />

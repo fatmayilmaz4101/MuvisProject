@@ -8,7 +8,10 @@ import {enableScreens} from 'react-native-screens';
 import {UserProvider} from './src/contexts/UserContext';
 import {CounterProvider, TitleContext} from './src/contexts/Context';
 import {Provider} from 'react-redux';
+import { PaperProvider } from 'react-native-paper';
 import store from "./src/redux/store"
+import { theme } from './src/styles/themes/themes';
+
 enableScreens();
 const queryClient = new QueryClient();
 
@@ -16,15 +19,17 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
     <Provider store={store}>
+    <PaperProvider theme={theme}>
       <NavigationContainer>
         <UserProvider>
           <CounterProvider>
             <TitleContext.Provider value="Sayaç">
-              <Stacks />
+                 <Stacks />
             </TitleContext.Provider>
           </CounterProvider>
         </UserProvider>
       </NavigationContainer>
+      </PaperProvider>
     </Provider>
     </QueryClientProvider>
   );

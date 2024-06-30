@@ -15,6 +15,7 @@ import Profile from '../../screens/Profile/Profile';
 import { styles } from './mainStacks.styles';
 import MovieStars from '../../screens/MovieStars/MovieStars';
 import Deneme from '../../screens/Deneme/Deneme';
+import Registration from '../../screens/Registration/Registration';
 
 const Stack = createStackNavigator();
 
@@ -48,11 +49,17 @@ const Stacks = () => {
         headerTitleAlign: 'center',  
       }}>
       <Stack.Screen
-        options={{title: 'Giriş Yap',
+        options={{title: 'Giriş Yap', headerShown: false
         }}
         name="Login"
         component={Login}
       />
+       <Stack.Screen
+        options={{title: 'Kayıt', headerShown: false}}
+        name="Registration"
+        component={Registration}
+      />
+
       <Stack.Screen
         options={{
           title: 'Ana Sayfa',

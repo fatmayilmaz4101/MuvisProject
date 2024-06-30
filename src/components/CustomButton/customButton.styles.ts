@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   customGreenButton: {
-    padding: 10,
+    padding: 5,
   },
   menuButton: {
     backgroundColor: 'gray',
@@ -16,7 +16,8 @@ export const styles = StyleSheet.create({
   },
   customGreenButtonText: {
     color: 'white',
-    fontSize: 17,
+    width: 150,
+    fontSize: 15,
   },
   menuButtonText: {
     color: 'white',

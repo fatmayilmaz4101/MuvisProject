@@ -19,7 +19,8 @@ interface FormInput {
   password: string;
 }
 
-const Login = () => {
+const Login = ({ route }: any) => {
+  const avatar = route?.params?.selectedAvatar;
   const navigation = useNavigation<any>();
   const dispatch = useAppDispatch();
   const { login, error } = useSelector((state: RootState) => state.user);
@@ -81,10 +82,10 @@ const Login = () => {
         userName: '',
         password: ''
       });
-      dispatch({ type: LOGIN_FAILURE, payload: false })
+      dispatch({ type: LOGIN_FAILURE, payload: false });
       await AsyncStorage.removeItem('userCredentials');
     }
-    dispatch(loginUser(data))
+    dispatch(loginUser(data));
   };
 
   return (
@@ -94,10 +95,18 @@ const Login = () => {
     >
       <SafeAreaView style={styles.container}>
         <View style={[styles.avatarContainer, keyboardOpen && styles.avatarContainerKeyboardOpen]}>
-          <CustomAvatar
+          {avatar ? (
+            <CustomAvatar
+              size={80}
+              source={avatar}
+            />
+          ) : (
+            <CustomAvatar
             size={80}
-            source={require('../../../assets/images/rick-avatar.png')}
+            source={require('../../../assets/images/anonim-avatar.png')}
           />
+
+          )}
         </View>
         <View style={[styles.center, styles.inputContainer]}>
           <View style={[styles.center]}>
@@ -151,11 +160,11 @@ const Login = () => {
           <View style={styles.rowStyle}>
             <Text style={styles.rememberMe}>Beni hatırla</Text>
             <Switch
-            trackColor={{ false: Color.Dark, true: Color.Orange }}
-            thumbColor={isEnabled ? Color.Light : Color.Secondary}
-            onValueChange={toggleSwitch}
-            value={isEnabled}
-          />
+              trackColor={{ false: Color.Dark, true: Color.Orange }}
+              thumbColor={isEnabled ? Color.Light : Color.Secondary}
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
           </View>
           <View style={styles.submit}>
             <CustomButton title="Giriş Yap" onPress={handleSubmit(onSubmit)} />
@@ -164,11 +173,10 @@ const Login = () => {
 
         <Text>Parolamı unuttum</Text>
         <View style={styles.rowStyle}>
-        <Text style={styles.customText}>Hesabınız yok mu?</Text>
-        <Button mode="text" onPress={onPressRegistration} textColor='white'>
-        Şimdi kaydolun.
-        </Button>
-
+          <Text style={styles.customText}>Hesabınız yok mu?</Text>
+          <Button mode="text" onPress={onPressRegistration} textColor='white'>
+            Şimdi kaydolun.
+          </Button>
         </View>
       </SafeAreaView>
     </KeyboardAvoidingView>
@@ -176,4 +184,3 @@ const Login = () => {
 };
 
 export default Login;
-

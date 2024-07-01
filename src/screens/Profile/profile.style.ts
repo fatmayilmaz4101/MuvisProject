@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#0F1E21'
+    backgroundColor: 'black'
   },
 });

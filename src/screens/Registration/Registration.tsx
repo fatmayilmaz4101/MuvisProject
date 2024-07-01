@@ -3,14 +3,13 @@ import {
   SafeAreaView,
   View,
   Text,
-  Switch,
   KeyboardAvoidingView,
   Platform,
   Keyboard,
   TouchableOpacity,
   Modal,
-  ScrollView,
   FlatList,
+  ImageSourcePropType,
 } from 'react-native';
 import {styles} from './registration.style';
 import CustomButton from '../../components/CustomButton/CustomButton';
@@ -38,12 +37,11 @@ const avatarImages = [
 
 const Registration = () => {
   const navigation = useNavigation<any>();
-  const [selectedAvatar, setSelectedAvatar] = useState<any>(avatarImages[0]);
+  const [selectedAvatar, setSelectedAvatar] = useState<any>(require('../../../assets/images/anonim-avatar.png'));
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const {
     control,
     handleSubmit,
-    reset,
     formState: {errors},
   } = useForm({
     defaultValues: {
@@ -56,11 +54,12 @@ const Registration = () => {
   });
 
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
-  const onPressLogin = () => navigation.navigate('Login');
+  const handleNavigateLogin = () => {
+    navigation.navigate('Login',{selectedAvatar});
+  }
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   };
-
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
@@ -82,11 +81,26 @@ const Registration = () => {
   }, []);
 
   const onSubmit: SubmitHandler<FormInput> = async data => {};
-  const handleAvatarPress = (avatar: any) => {
+  const handleAvatarPress = async (avatar: any) => {
     setSelectedAvatar(avatar);
     setModalVisible(false);
   };
 
+  const renderAvatar = ({item} : {item: ImageSourcePropType}) => {
+    return(
+      <TouchableOpacity onPress={() => handleAvatarPress(item)}>
+      <CustomAvatar
+        style={[
+          styles.avatarOption,
+          selectedAvatar === selectedAvatar && styles.selectedAvatar,
+        ]}
+        size={80}
+        source={item}
+      />
+    </TouchableOpacity>
+
+    )
+  }
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -244,7 +258,7 @@ const Registration = () => {
 
         <View style={styles.rowStyle}>
           <Text style={styles.customText}>Hesabınız varsa</Text>
-          <Button mode="text" onPress={onPressLogin} textColor="white">
+          <Button mode="text" onPress={handleNavigateLogin} textColor="white">
             Giriş yapın.
           </Button>
         </View>
@@ -264,18 +278,7 @@ const Registration = () => {
                   data={avatarImages}
                   keyExtractor={(item, index) => index.toString()}
                   numColumns={2}
-                  renderItem={({item}) => (
-                    <TouchableOpacity onPress={() => handleAvatarPress(item)}>
-                      <CustomAvatar
-                        style={[
-                          styles.avatarOption,
-                          selectedAvatar === item && styles.selectedAvatar,
-                        ]}
-                        size={80}
-                        source={item}
-                      />
-                    </TouchableOpacity>
-                  )}
+                  renderItem={renderAvatar}
                 />
               </View>
             </TouchableOpacity>

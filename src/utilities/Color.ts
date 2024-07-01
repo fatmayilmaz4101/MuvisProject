@@ -10,6 +10,7 @@ export const Color = {
     CustomGreen: '#169D6B',
     HeaderGreen: '#0F1E21',
     Gray: 'gray',
-    Orange: '#FF7F00'
+    Orange: '#FF7F00',
+    BackgroundColor: '#17181a'
   } as const;
   

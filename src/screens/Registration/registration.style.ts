@@ -72,16 +72,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
-
   modalContent: {
     backgroundColor: 'grey',
     padding: 20,
     borderRadius: 10,
     justifyContent: 'center',
-
     alignItems: 'center',
     height: 350,
-    
   },
   closeButton: {
     marginTop: 10,

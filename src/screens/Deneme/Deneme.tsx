@@ -1,68 +1,62 @@
-import React, { useEffect } from "react";
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { styles } from "../MovieList/movieList.styles";
-import { MovieType } from "../../redux/actions/movieActions";
-import { useNavigation } from "@react-navigation/native";
-import CustomLoading from "../../components/CustomLoading/CustomLoading";
-import { useMovies } from "../../hooks/useMovie";
-import { useNetInfo } from "@react-native-community/netinfo";
-
+import React, { useCallback, useMemo, useRef } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import {
+  BottomSheetModal,
+  BottomSheetView,
+  BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
 
 const Deneme = () => {
-    const navigation = useNavigation<any>();
+  // ref
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
-    const {data: movies, isLoading, error, refetch} = useMovies();
+  // variables
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
 
-    const { type, isConnected } = useNetInfo();
-    
-      const handlePress = (item: MovieType) => {
-        navigation.navigate('MovieDetail', {movie: item});
-      };
-      const moviesEmptyComponent = () => (
-        <View style={styles.centered}>
-        {error ? (
-          <Text style={styles.errorText}>Error: {error.message}</Text>
-        ) : (
-          <Text>No movies available.</Text>
-        )}
+  // callbacks
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  // renders
+  return (
+    <BottomSheetModalProvider>
+      <View style={styles.container}>
+        <Button
+          onPress={handlePresentModalPress}
+          title="Present Modal"
+          color="black"
+        />
+        <BottomSheetModal
+          ref={bottomSheetModalRef}
+          index={1}
+          snapPoints={snapPoints}
+          onChange={handleSheetChanges}
+        >
+          <BottomSheetView style={styles.contentContainer}>
+            <Text style={{color: 'black'}}>Awesome 🎉</Text>
+          </BottomSheetView>
+        </BottomSheetModal>
       </View>
-        );
-
-        console.log(isConnected)
-        useEffect(() => {
-          (async()=>{
-            if(isConnected && !movies){
-              await refetch()
-            }
-          })()
-        },[isConnected])
-      
-      const renderItem = ({item}: {item: MovieType}) => {
-        return (
-          <TouchableOpacity onPress={() => handlePress(item)}>
-            <View style={styles.itemContainer}>
-              <Image source={{uri: item.thumbnailUrl}} style={styles.movieImg} />
-              <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        );
-      };
-
-    return(
-        <SafeAreaView style={styles.mainContainer}>
-        {isLoading ? <CustomLoading isLoading={true} text="Yükleniyor"/> : (
-          <FlatList
-            style={styles.listContainer}
-            data={movies}
-            keyExtractor={({id}) => id.toString()}
-            renderItem={renderItem}
-            initialNumToRender={10}
-            ListEmptyComponent={moviesEmptyComponent}
-            numColumns={2}
-          />
-        )}
-      </SafeAreaView>
-      );
+    </BottomSheetModalProvider>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    justifyContent: 'center',
+    backgroundColor: 'grey',
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: 'grey'
+  },
+});
+
 export default Deneme;

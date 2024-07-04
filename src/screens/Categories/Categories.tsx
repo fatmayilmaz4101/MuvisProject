@@ -1,41 +1,32 @@
-import React, { useRef } from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import React from 'react';
+import {  ImageBackground, SafeAreaView, View } from 'react-native';
 import { styles } from './categories.styles';
-
-const { width: viewportWidth } = Dimensions.get('window');
-
-interface Category {
-  id: number;
-  title: string;
-  imageUrl: string;
-}
-const categories: Category[] = [
-  { id: 1, title: 'Dram', imageUrl: 'https://source.unsplash.com/1024x768/?movie' },
-  { id: 2, title: 'Aksiyon', imageUrl: 'https://source.unsplash.com/1024x768/?actor' },
-  { id: 3, title: 'Korku', imageUrl: 'https://source.unsplash.com/1024x768/?harry-potter' },
+import { Card, Text, Title } from 'react-native-paper';
+import { ScrollView } from 'react-native-gesture-handler';
+const data = [
+  { id: '1', src: 'https://picsum.photos/300/200', title: 'Komedi'},
+  { id: '2', src: 'https://picsum.photos/300/200', title: 'Komedi' },
+  { id: '3', src: require('../../../assets/images/rick-avatar.png'), title: 'Bilim Kurgu', description: 'Description for Image 3' },
+  { id: '4', src: require('../../../assets/images/rick-avatar.png'), title: 'Tarih', description: 'Description for Image 4' },
 ];
-const renderItem = ({ item }: { item: Category }) => (
-  <View style={styles.slide}>
-    <Image source={{ uri: item.imageUrl }} style={styles.image} />
-    <View style={styles.textContainer}>
-      <Text style={styles.title}>{item.title}</Text>
-    </View>
-  </View>
-);
+
 const Categories = () => {
-  const carouselRef = useRef<Carousel<any>>(null);
   return (
-    <View style={styles.container}>
-      <Carousel
-        ref={carouselRef}
-        data={categories}
-        renderItem={renderItem}
-        sliderWidth={viewportWidth}
-        itemWidth={viewportWidth * 0.8}
-        layout="stack"
-      />
-    </View>
-  );
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Kategoriler</Text>
+    <ScrollView contentContainerStyle={styles.scrollView}>
+      {data.map((item) => (
+        <Card key={item.id} style={styles.card}>
+          <ImageBackground source={typeof item.src === 'string' ? { uri: item.src } : item.src} 
+           style={styles.image}>
+            <View style={styles.overlay}>
+              <Title style={styles.categoryTitle}>{item.title}</Title>
+            </View>
+          </ImageBackground>
+        </Card>
+      ))}
+    </ScrollView>
+  </SafeAreaView>
+);
 };
 export default Categories;

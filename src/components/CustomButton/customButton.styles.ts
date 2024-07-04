@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     padding: 5,
   },
   menuButton: {
-    backgroundColor: 'gray',
     width: 320,
     margin: 10,
     padding: 12,
@@ -23,4 +22,13 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
   },
+  linearGradient: {
+    width: 320,
+
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+
+
 });

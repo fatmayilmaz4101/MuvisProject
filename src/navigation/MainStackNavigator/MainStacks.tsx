@@ -1,9 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Text, TouchableOpacity, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { DrawerActions, useNavigation } from '@react-navigation/native';
-import { styles } from './mainStacks.styles';
 import Login from '../../screens/Login/Login';
 import Home from '../../screens/Home/Home';
 import Counter from '../../screens/Counter/Counter';
@@ -13,15 +9,26 @@ import Profile from '../../screens/Profile/Profile';
 import MovieStars from '../../screens/MovieStars/MovieStars';
 import Deneme from '../../screens/Deneme/Deneme';
 import Registration from '../../screens/Registration/Registration';
-import MyDrawer from '../DrawerNavigator/DrawerNavigator';
+import MyDrawer, { LogoTitle, MenuIcon } from '../DrawerNavigator/DrawerNavigator';
 
 const Stack = createStackNavigator();
 
-
-
 const Stacks = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: 'black',
+        borderBottomWidth: 0,
+        shadowOpacity: 0,
+        elevation: 0,
+      },
+      headerLeft: () => <MenuIcon />,
+      headerTitle: () => <LogoTitle />,
+      headerTitleAlign: 'center',
+
+    }}
+>
       <Stack.Screen
         options={{ headerShown: false }}
         name="Login"

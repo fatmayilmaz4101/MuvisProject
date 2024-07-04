@@ -2,37 +2,48 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#f5f5f5',
+      flex:1,
+      backgroundColor: 'black',
     },
-    slide: {
-      backgroundColor: '#fff',
-      borderRadius: 10,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.8,
-      shadowRadius: 5,
-      elevation: 5,
-      height: 200,
-      margin: 10,
-      overflow: 'hidden',
+    cardContainer: {
+      width: '90%',
+      backgroundColor: 'black',  
     },
-    image: {
-      width: '100%',
-      height: '70%',
+    card: {
+      backgroundColor: 'rgba(255, 255, 255, 0.8)', // Kartları opak yapar
+      marginVertical: 10,
+      borderRadius: 50,
     },
-    textContainer: {
-      padding: 10,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#fff',
-    },
-    title: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: '#333',
-    },
+    scrollView: {
+      width: '90%',
+      margin:20
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Siyah yarı saydam kaplama
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  },
+  categoryTitle: {
+    color: 'white',
+    fontSize: 25,
+    fontWeight: 'bold',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 10
+  },
+  image: {
+    height: 200,
+    borderRadius: 20
+
+  },
+  title:{
+    color: 'white',
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 5
+  }
+  
   });
     

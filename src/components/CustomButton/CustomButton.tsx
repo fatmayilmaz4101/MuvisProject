@@ -2,18 +2,19 @@ import React from 'react';
 import { Button, useTheme } from 'react-native-paper';
 import { styles } from './customButton.styles';
 import { Color } from '../../utilities/Color';
+import LinearGradient from 'react-native-linear-gradient';
 
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
-  type?: 'customGreen' | 'menu';
+  type?: 'login' | 'update';
 }
 
-const CustomButton = ({ title, onPress, type = 'customGreen' }: CustomButtonProps) => {
+const CustomButton = ({ title, onPress, type = 'login' }: CustomButtonProps) => {
   const theme = useTheme();
 
-  const buttonStyles = type === 'customGreen' ? styles.customGreenButton : styles.menuButton;
-  const buttonTextStyles = type === 'customGreen' ? styles.customGreenButtonText : styles.menuButtonText;
+  const buttonStyles = type === 'login' ? styles.customGreenButton : styles.menuButton;
+  const buttonTextStyles = type === 'login' ? styles.customGreenButtonText : styles.menuButtonText;
 
   return (
     <Button

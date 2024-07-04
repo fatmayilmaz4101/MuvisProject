@@ -1,60 +1,71 @@
-import React, { useEffect } from "react";
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "../../redux/store";
+import React, { useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "../MovieList/movieList.styles";
-import { MovieType, fetchMovies } from "../../redux/actions/movieActions";
-import { useNavigation } from "@react-navigation/native";
+import { Dimensions, Image, ImageSourcePropType, ScrollView, Text, View } from "react-native";
+import Carousel from "react-native-snap-carousel";
+import { useCategories } from "../../hooks/useCategories"; 
+import { CategoryType, MovieType } from "../../types";
 import CustomLoading from "../../components/CustomLoading/CustomLoading";
+import { useMovies } from "../../hooks/useMovie";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+
+const {width: viewportWidth} = Dimensions.get('window');
+interface Director {  
+  name: string;
+  imageUrl: ImageSourcePropType;
+}
+
+const datas: Director[] = [
+  {name: 'Yılmaz', imageUrl: require('../../../assets/images/bojack-horseman-avatar.jpg')},
+  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/boss-baby-avatar.png'),  },
+  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/jworld-avatar.png'),  },
+  {name: 'Erdoğan', imageUrl: require('../../../assets/images/shera-avatar.jpg'),  },
+  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/rick-avatar.png'),  }
+];
 
 const MovieList = () => {
-    const dispatch = useAppDispatch();
-    const navigation = useNavigation<any>();
-    const { movies, loading, error } = useSelector((state:RootState) => state.movies);
+  const navigation = useNavigation<any>();
 
-    useEffect(() => {
-        dispatch(fetchMovies());
-      }, [dispatch]);
-      
-      const handlePress = (item: MovieType) => {
-        navigation.navigate('MovieDetail', {movie: item});
-      };
-      const moviesEmptyComponent = () => (
-        <View style={styles.centered}>
-        {error ? (
-          <Text style={styles.errorText}>Error: {error}</Text>
-        ) : (
-          <Text>No movies available.</Text>
-        )}
+  const carouselRef = useRef<Carousel<any>>(null);
+  const {data: categories=[], isLoading, error, refetch} = useCategories();
+  
+  const renderMovieItem = ({ item }: { item: MovieType }) => (
+    <TouchableOpacity onPress={() => handlePress(item)} style={styles.slide}>
+      <Image source={typeof item.src === 'string' ? { uri: item.src } : item.src} style={styles.image} />
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>{item.name}</Text>
       </View>
-        );
-      
-      const renderItem = ({item}: {item: MovieType}) => {
-        return (
-          <TouchableOpacity onPress={() => handlePress(item)}>
-            <View style={styles.itemContainer}>
-              <Image source={{uri: item.thumbnailUrl}} style={styles.movieImg} />
-              <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        );
-      };
-
+    </TouchableOpacity>
+  );
+  const handlePress = (item: MovieType) => {
+    navigation.navigate('MovieDetail', {movie: item});
+  };
+  
     return(
-        <SafeAreaView style={styles.mainContainer}>
-        {loading ? <CustomLoading isLoading={true} text="Yükleniyor"/> : (
-          <FlatList
-            style={styles.listContainer}
-            data={movies}
-            keyExtractor={({id}) => id.toString()}
-            renderItem={renderItem}
-            initialNumToRender={10}
-            ListEmptyComponent={moviesEmptyComponent}
-            numColumns={2}
-          />
-        )}
-      </SafeAreaView>
-      );
-};
+      <SafeAreaView style={styles.mainContainer}>
+      <ScrollView>
+      {categories.map((category: CategoryType) => (
+          <View key={category.id}>
+            <View style={{flexDirection: 'row'}}>
+            <Text style={styles.categoryTitle}>{category.name}</Text>
+            <Text style={styles.categoryTitleDetail}>Tümüne göz at</Text>
+            </View>
+            {Array.isArray(category.movies) && category.movies.length > 0 ? (
+              <Carousel
+                ref={carouselRef}
+                data={category.movies}
+                renderItem={renderMovieItem}
+                sliderWidth={viewportWidth}
+                itemWidth={viewportWidth * 0.8}
+                layout="default"
+              />
+            ) : (
+              <Text style={{ marginLeft: 25 }}>Bu kategoride film bulunmamaktadır.</Text>
+            )}
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+)};
 export default MovieList;

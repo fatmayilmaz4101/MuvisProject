@@ -63,7 +63,6 @@ const datas: Director[] = [
 ];
 
 const Home = () => {
-  const [active, setActive] = React.useState('');
 
   const login = useSelector((state: RootState) => state.user);
   const carouselRef = useRef<Carousel<any>>(null);

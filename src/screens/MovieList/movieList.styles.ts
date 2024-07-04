@@ -1,6 +1,49 @@
 import {StyleSheet} from 'react-native';
+import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: 'black'
+  },
+  slide: {
+    backgroundColor: Color.BackgroundColor,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 5,
+    elevation: 5,
+    height: 200,
+    margin: 10,
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '70%',
+    backgroundColor: 'grey'
+  },
+  textContainer: {
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Color.BackgroundColor,
+  },
+  categoryTitle: {
+    fontSize: 18,
+    color: 'white',
+    fontFamily: 'Lora-Bold',
+    padding: 20,
+  },
+  categoryTitleDetail: {
+    fontFamily: 'Lora-Bold',
+    padding: 22,
+    marginLeft: -25
+  },
+
+
+
+
   listContainer: {
     padding: 12,
   },
@@ -34,9 +77,6 @@ export const styles = StyleSheet.create({
   activityIndicator: {
     flex: 1,
     justifyContent: 'center',
-  },
-  mainContainer: {
-    flex: 1,
   },
   centered: {
     flex: 1,

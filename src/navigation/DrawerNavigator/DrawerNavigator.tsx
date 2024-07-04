@@ -11,15 +11,18 @@ import Stacks from '../MainStackNavigator/MainStacks'; // Ana yığını içeri 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
 import Login from '../../screens/Login/Login';
+import Categories from '../../screens/Categories/Categories';
+import MovieDetails from '../../screens/MovieDetails/MovieDetails';
+import Deneme from '../../screens/Deneme/Deneme';
 
 const Drawer = createDrawerNavigator();
 
- const LogoTitle = () => {
+ export const LogoTitle = () => {
     return (
       <Text style={styles.logoStyle}>MUVIS</Text>
     );
   }
-  const MenuIcon = () => {
+  export const MenuIcon = () => {
     const navigation = useNavigation();
     return (
       <View style={styles.menuIcon}>
@@ -71,9 +74,11 @@ function MyDrawer() {
       name="Stacks" component={Stacks} />
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Profile" component={Profile} />
-      <Drawer.Screen name="MovieList" component={MovieList} />
-      <Drawer.Screen options={{headerShown:false}} name="Login" component={Login} />
+      <Drawer.Screen name="Film Listesi" component={MovieList} />
+      <Drawer.Screen name="Kategoriler" component={Categories} />
+      <Drawer.Screen name="Deneme" component={Deneme} />
 
+      <Drawer.Screen options={{headerShown:false}} name="Çıkış Yap" component={Login} />
     </Drawer.Navigator>
   );
 }

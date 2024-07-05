@@ -37,8 +37,23 @@ export const styles = StyleSheet.create({
   },
   categoryTitleDetail: {
     fontFamily: 'Lora-Bold',
-    padding: 22,
-    marginLeft: -25
+    padding: 15,
+    marginLeft: -35,
+  },
+  categoryTitleDetailText: {
+    color: 'grey'
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black'
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
   },
 
 

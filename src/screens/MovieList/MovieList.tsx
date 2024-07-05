@@ -9,6 +9,7 @@ import CustomLoading from "../../components/CustomLoading/CustomLoading";
 import { useMovies } from "../../hooks/useMovie";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import { ActivityIndicator, Button } from "react-native-paper";
 
 const {width: viewportWidth} = Dimensions.get('window');
 interface Director {  
@@ -41,7 +42,28 @@ const MovieList = () => {
   const handlePress = (item: MovieType) => {
     navigation.navigate('MovieDetail', {movie: item});
   };
-  
+  const handleDetailPress = (item: CategoryType) => {
+    navigation.navigate('CategoryDetail', {category: item});
+
+  }
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <CustomLoading  isLoading={isLoading} text="Yükleniyor"/>
+        <Text>Yükleni</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text>Hata oluştu. Lütfen tekrar deneyin.</Text>
+        <Button onPress={()=>refetch()}>Tekrar Dene</Button>
+      </View>
+    );
+  }
+
     return(
       <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
@@ -49,7 +71,9 @@ const MovieList = () => {
           <View key={category.id}>
             <View style={{flexDirection: 'row'}}>
             <Text style={styles.categoryTitle}>{category.name}</Text>
-            <Text style={styles.categoryTitleDetail}>Tümüne göz at</Text>
+            <Button style={styles.categoryTitleDetail} labelStyle={styles.categoryTitleDetailText} icon="chevron-double-right" mode="text" onPress={() => handleDetailPress(category)}>
+            Tümüne göz at
+            </Button>
             </View>
             {Array.isArray(category.movies) && category.movies.length > 0 ? (
               <Carousel

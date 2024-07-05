@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Dimensions,
   FlatList,
@@ -14,66 +14,56 @@ import {RootState} from '../../redux/store';
 import {useSelector} from 'react-redux';
 import Carousel from 'react-native-snap-carousel';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-
+import { useNavigation } from '@react-navigation/native';
+import { DirectorType, MovieType } from '../../types';
+import { useDirector } from '../../hooks/useDirectors';
+import { useMovies } from '../../hooks/useMovie';
 
 const {width: viewportWidth} = Dimensions.get('window');
-interface Category {
-  id: number;
-  title: string;
-  imageUrl: string;
-}
-interface Director {  
-  name: string;
-  imageUrl: ImageSourcePropType;
-}
 
-const categories: Category[] = [
-  {
-    id: 1,
-    title: 'Dram',
-    imageUrl:
-      'https://unsplash.com/photos/the-beatles-vinyl-record-sleeve-BQTHOGNHo08',
-  },
-  {
-    id: 2,
-    title: 'Aksiyon',
-    imageUrl:
-      'https://unsplash.com/photos/batman-standing-under-steel-roof-meqVd5zwylI',
-  },
-  {
-    id: 3,
-    title: 'Korku',
-    imageUrl: 'https://image.unsplash.com/1024x768/?harry-potter',
-  },
-];
-const renderItem = ({item}: {item: Category}) => (
-  <View style={styles.slide}>
-    <Image source={{uri: item.imageUrl}} style={styles.image} />
-    <View style={styles.textContainer}>
-      <Text style={styles.title}>{item.title}</Text>
-    </View>
-  </View>
-);
-const datas: Director[] = [
-  {name: 'Yılmaz', imageUrl: require('../../../assets/images/bojack-horseman-avatar.jpg')},
-  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/boss-baby-avatar.png'),  },
-  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/jworld-avatar.png'),  },
-  {name: 'Erdoğan', imageUrl: require('../../../assets/images/shera-avatar.jpg'),  },
-  {name: 'Yılmaz Erdoğan', imageUrl: require('../../../assets/images/rick-avatar.png'),  }
-];
+const getRandomMovies = (movies: MovieType[], count: number) => {
+  const shuffled = movies.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
 
 const Home = () => {
-
+  const [randomMovies, setRandomMovies] = useState<MovieType[]>([]);
+  const navigation = useNavigation<any>();
   const login = useSelector((state: RootState) => state.user);
+  const { data: movies = [], isLoading, error, refetch } = useMovies();
+
   const carouselRef = useRef<Carousel<any>>(null);
-    const handleAvatarPress = (item: Director) => {
-    console.log(`${item.name} avatarına tıklandı`);
+  const {data: directors=[]} = useDirector()
+
+  const handlePress = (item: MovieType) => {
+    navigation.navigate('MovieDetail', { movie: item });
   };
-  const renderAvatar = ({item}: {item: Director}) => {
+  
+    const handleAvatarPress = (item: DirectorType) => {
+    console.log(`${item.name} avatarına tıklandı`);
+    navigation.navigate('DirectorsDetail', {directors: item});
+  };
+
+  useEffect(() => {
+    if (movies.length > 0) {
+      setRandomMovies(getRandomMovies(movies, 3));
+    }
+  }, [movies]);
+
+  const renderMovieItem = ({ item }: { item: MovieType }) => (
+    <TouchableOpacity onPress={() => handlePress(item)} style={styles.slide}>
+      <Image source={typeof item.src === 'string' ? { uri: item.src } : item.src} style={styles.image} />
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>{item.name}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+
+  const renderAvatar = ({item}: {item: DirectorType}) => {
     return (
       <TouchableOpacity onPress={() => handleAvatarPress(item)}>
         <View style={styles.avatarOption}>
-          <CustomAvatar style={[styles.avatarOption]} size={80} source={item.imageUrl} />
+          <CustomAvatar style={[styles.avatarOption]} size={80} source={{uri: item.src}} />
           <Text style={styles.directorName}>{item.name}</Text>
         </View>
       </TouchableOpacity>
@@ -87,8 +77,8 @@ const Home = () => {
       </Text>
       <Carousel
         ref={carouselRef}
-        data={categories}
-        renderItem={renderItem}
+        data={randomMovies}
+        renderItem={renderMovieItem}
         sliderWidth={viewportWidth}
         itemWidth={viewportWidth * 0.8}
         layout="default"
@@ -97,7 +87,7 @@ const Home = () => {
       <Text style={styles.welcomeMessage}>En Beğenilen Yönetmenler</Text>
       <View style={styles.directorAvatar}>
         <FlatList
-          data={datas}
+          data={directors}
           keyExtractor={(item, index) => index.toString()}
           numColumns={3}
           renderItem={renderAvatar}

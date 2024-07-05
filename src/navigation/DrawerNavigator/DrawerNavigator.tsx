@@ -14,6 +14,7 @@ import Login from '../../screens/Login/Login';
 import Categories from '../../screens/Categories/Categories';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
 import Deneme from '../../screens/Deneme/Deneme';
+import FavoriteList from '../../screens/FavoriteList/FavoriteList';
 
 const Drawer = createDrawerNavigator();
 
@@ -72,13 +73,13 @@ function MyDrawer() {
     drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen options={{ headerShown: false }} // Login ekranında header'ı gizlemek için 
       name="Stacks" component={Stacks} />
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Profile" component={Profile} />
+      <Drawer.Screen name="Anasayfa" component={Home} />
+      <Drawer.Screen name="Profil Bilgilerim" component={Profile} />
       <Drawer.Screen name="Film Listesi" component={MovieList} />
       <Drawer.Screen name="Kategoriler" component={Categories} />
       <Drawer.Screen name="Deneme" component={Deneme} />
+      <Drawer.Screen name="Favorilerim" component={FavoriteList} />
 
-      <Drawer.Screen options={{headerShown:false}} name="Çıkış Yap" component={Login} />
     </Drawer.Navigator>
   );
 }

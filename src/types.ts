@@ -29,3 +29,9 @@ export interface CommentType {
   content: string;
   date: Date;
 }
+export interface DirectorType {
+  id: number,
+  name: string,
+  src: string,
+  movies: MovieType[]
+}

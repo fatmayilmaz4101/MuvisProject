@@ -7,7 +7,7 @@ export interface UserProfileModel {
         lastName: string,
         userName: string,
         password: string,
-        phone: number
+        phone: number,
 }
 export interface UserLoginModel {
   userName: string,
@@ -34,7 +34,7 @@ export const loginUser = (requestUser: UserLoginModel) => {
     return async (dispatch: AppDispatch) => {
       dispatch(loginRequest());
       try {
-        const response = await fetch("http://192.168.1.58:4000/users");
+        const response = await fetch("http://192.168.1.66:4000/users");
         const text = await response.text();
         const users = JSON.parse(text);
         const user = users.find((u: UserLoginModel) => u.userName === requestUser.userName && u.password === requestUser.password);
@@ -55,7 +55,7 @@ export const loginUser = (requestUser: UserLoginModel) => {
   export const updateProfile = (requestUser : UserProfileModel, userId : string) => async (dispatch : AppDispatch) => {
     dispatch(updateRequest());
     try {
-      const response = await fetch(`http://192.168.1.58:4000/users/${userId}`, {
+      const response = await fetch(`http://192.168.1.66:4000/users/${userId}`, {
         method: 'PATCH', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestUser),

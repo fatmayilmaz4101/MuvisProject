@@ -3,11 +3,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import userReducer from "./reducers/userReducer";
 import moviesReducer from "./reducers/movieReducer";
+import favoriteReducer from "./reducers/favoriteReducer";
 
 const store = configureStore({
     reducer: {
       movies: moviesReducer,
-      user: userReducer
+      user: userReducer,
+      favori: favoriteReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck:false, immutableCheck: false}).concat(thunk)
   });

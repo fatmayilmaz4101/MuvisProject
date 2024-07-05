@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {View, Text, Image, TouchableOpacity, Button, FlatList} from 'react-native';
 import {styles} from './movieDetails.style';
 import LinearGradient from 'react-native-linear-gradient';
@@ -9,17 +9,29 @@ import CustomBottomSheet, { BottomSheetRef } from '../../components/CustomBottom
 import { useComments } from '../../hooks/useComments';
 import { CommentType } from '../../types';
 import { Avatar, Card } from 'react-native-paper';
-import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { addToFavorites, removeFromFavorites } from '../../redux/actions/favoriteActions';
+
+
 
 const MovieDetails = ({route}: any) => {
   const {src, name, category, director, summary} = route?.params.movie;
   const {data : comments, isLoading, refetch} = useComments();
+  const dispatch = useAppDispatch();
   const [isFavorite, setIsFavorite] = useState(false);
   const bottomSheetRef = useRef<BottomSheetRef>(null);
   const handleOpen = () => {
     bottomSheetRef.current?.present();
   };
- 
+  const { favorites, loading, error } = useSelector((state: RootState) => state.favori);
+  useEffect(() => {
+    const favorite = favorites.find((movie) => movie.id === route?.params.movie.id);
+    if (favorite) {
+      setIsFavorite(true);
+    }
+  }, [favorites, route?.params.movie.id]);
+
   const renderComments = ({ item }: { item: CommentType }) => (
     <View style={{  width: '100%', margin: 1  }}>
           <Card style={{ borderRadius: 5 }}>
@@ -40,7 +52,14 @@ const MovieDetails = ({route}: any) => {
     </View>
 
   )
-
+  const handlePressFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(route?.params.movie.id));
+    } else {
+      dispatch(addToFavorites(route?.params.movie));
+    }
+    setIsFavorite(!isFavorite);
+  };
   
   return (
     <View style={styles.container}>
@@ -50,7 +69,7 @@ const MovieDetails = ({route}: any) => {
       </LinearGradient>
       <TouchableOpacity
           style={styles.favoriteIcon}
-          onPress={() => setIsFavorite(!isFavorite)}
+          onPress={handlePressFavorite}
         >
           <Ionicons
             name={isFavorite ? 'heart' : 'heart-outline'}

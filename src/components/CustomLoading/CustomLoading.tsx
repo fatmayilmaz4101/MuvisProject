@@ -13,7 +13,7 @@ const LoadingComponent = ({ isLoading, text } : LoadingComponentProps)  => {
   }
   return (
     <View style={styles.loadingContainer}>
-      <ActivityIndicator size="large" color={Color.Info} />
+      <ActivityIndicator size="large" color={Color.Danger} />
       {text && <Text style={styles.loadingText}>{text}</Text>}
     </View>
   );

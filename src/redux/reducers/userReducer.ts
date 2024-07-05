@@ -6,6 +6,8 @@ export interface UserState {
   login: UserLoginModel;
   profile: UserProfileModel;
   error: boolean; 
+  isLoggedIn: boolean; // Giriş durumunu ekliyoruz
+
 }
 const initialState : UserState = {
   login: {userName: '',password: ''},
@@ -17,7 +19,9 @@ const initialState : UserState = {
     password: '', 
     phone: 0,    
 },
-  error: false
+  error: false,
+  isLoggedIn: false, // Başlangıçta giriş yapılmamış
+
 };
 
 const userReducer = (state = initialState, action: { type: string; payload?: any }): UserState => {
@@ -27,13 +31,13 @@ const userReducer = (state = initialState, action: { type: string; payload?: any
       case UPDATE_REQUEST:
           return { ...state };
       case LOGIN_SUCCESS:
-          return { ...state, login: action.payload };
+          return { ...state, login: action.payload, isLoggedIn: true };
       case UPDATE_SUCCESS:
           return { ...state, profile: action.payload };
           case LOGIN_FAILURE:
             return { ...state, error: action.payload };  
       case LOGOUT:
-          return { ...initialState, login: initialState.login };
+          return { ...initialState, login: initialState.login, isLoggedIn: false};
       default:
           return state;
   }

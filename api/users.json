@@ -44,8 +44,8 @@
       "id": "6",
       "firstName": "Fatma",
       "lastName": "Yilmaz",
-      "userName": "fatma",
-      "password": "fatma",
+      "userName": "Fatma",
+      "password": "Fatma",
       "phone": "+905392424565"
     },
     {
@@ -89,15 +89,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -105,7 +105,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -113,7 +113,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -121,7 +121,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -129,7 +129,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -137,7 +137,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -145,7 +145,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -153,7 +153,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -161,7 +161,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -176,15 +176,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -192,7 +192,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -200,7 +200,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -208,7 +208,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -216,7 +216,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -224,7 +224,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -232,7 +232,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -240,7 +240,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -248,7 +248,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -263,15 +263,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -279,7 +279,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -287,7 +287,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -295,7 +295,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -303,7 +303,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -311,7 +311,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -319,7 +319,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -327,7 +327,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -335,7 +335,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -350,15 +350,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -366,7 +366,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -374,7 +374,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -382,7 +382,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -390,7 +390,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -398,7 +398,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -406,7 +406,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -414,7 +414,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -422,7 +422,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -437,15 +437,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -453,7 +453,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -461,7 +461,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -469,7 +469,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -477,7 +477,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -485,7 +485,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -493,7 +493,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -501,7 +501,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -509,7 +509,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -524,15 +524,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -540,7 +540,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -548,7 +548,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -556,7 +556,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -564,7 +564,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -572,7 +572,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -580,7 +580,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -588,7 +588,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -596,7 +596,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -611,15 +611,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -627,7 +627,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -635,7 +635,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -643,7 +643,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -651,7 +651,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -659,7 +659,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -667,7 +667,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -675,7 +675,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -683,7 +683,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -698,15 +698,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -714,7 +714,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -722,7 +722,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -730,7 +730,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -738,7 +738,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -746,7 +746,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -754,7 +754,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -762,7 +762,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -770,7 +770,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -785,15 +785,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -801,7 +801,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -809,7 +809,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -817,7 +817,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -825,7 +825,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -833,7 +833,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -841,7 +841,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -849,7 +849,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -857,7 +857,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -872,15 +872,15 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
@@ -888,7 +888,7 @@
         },
         {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
@@ -896,7 +896,7 @@
         },
         {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
@@ -904,7 +904,7 @@
         },
         {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
@@ -912,7 +912,7 @@
         },
         {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
@@ -920,7 +920,7 @@
         },
         {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
           "director": "Wachowski Kardeşler",
@@ -928,7 +928,7 @@
         },
         {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
           "director": "Ridley Scott",
@@ -936,7 +936,7 @@
         },
         {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
           "director": "Peter Jackson",
@@ -944,7 +944,7 @@
         },
         {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
           "director": "Andrew Stanton",
@@ -956,15 +956,15 @@
   "movies": [
     {
       "id": 1,
-      "src": "https://picsum.photos/700/1000",
-      "name": "Kara Şövalye",
+      "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+      "name": "Batman",
       "category": "Aksiyon",
       "director": "Christopher Nolan",
       "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
     },
     {
       "id": 2,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
       "name": "Yeşil Yol",
       "category": "Dram",
       "director": "Frank Darabont",
@@ -972,7 +972,7 @@
     },
     {
       "id": 3,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
       "name": "Başlangıç",
       "category": "Bilim Kurgu",
       "director": "Christopher Nolan",
@@ -980,7 +980,7 @@
     },
     {
       "id": 4,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
       "name": "Zor Ölüm",
       "category": "Aksiyon",
       "director": "John McTiernan",
@@ -988,7 +988,7 @@
     },
     {
       "id": 5,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
       "name": "Forrest Gump",
       "category": "Dram",
       "director": "Robert Zemeckis",
@@ -996,7 +996,7 @@
     },
     {
       "id": 6,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
       "name": "Titanik",
       "category": "Romantik",
       "director": "James Cameron",
@@ -1004,7 +1004,7 @@
     },
     {
       "id": 7,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
       "name": "Matrix",
       "category": "Bilim Kurgu",
       "director": "Wachowski Kardeşler",
@@ -1012,7 +1012,7 @@
     },
     {
       "id": 8,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
       "name": "Gladyatör",
       "category": "Tarih",
       "director": "Ridley Scott",
@@ -1020,7 +1020,7 @@
     },
     {
       "id": 9,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
       "name": "Yüzüklerin Efendisi",
       "category": "Fantastik",
       "director": "Peter Jackson",
@@ -1028,7 +1028,7 @@
     },
     {
       "id": 10,
-      "src": "https://picsum.photos/700/1000",
+      "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
       "name": "Kayıp Balık Nemo",
       "category": "Animasyon",
       "director": "Andrew Stanton",
@@ -1115,19 +1115,83 @@
       "movies": [
         {
           "id": 1,
-          "src": "https://picsum.photos/700/1000",
-          "name": "Kara Şövalye",
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
           "category": "Aksiyon",
           "director": "Christopher Nolan",
           "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
         },
         {
+          "id": 2,
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
+          "name": "Yeşil Yol",
+          "category": "Dram",
+          "director": "Frank Darabont",
+          "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
+        },
+        {
           "id": 3,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
           "name": "Başlangıç",
           "category": "Bilim Kurgu",
           "director": "Christopher Nolan",
           "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
+          "id": 4,
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
+          "name": "Zor Ölüm",
+          "category": "Aksiyon",
+          "director": "John McTiernan",
+          "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
+        },
+        {
+          "id": 5,
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
+          "name": "Forrest Gump",
+          "category": "Dram",
+          "director": "Robert Zemeckis",
+          "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
+        },
+        {
+          "id": 6,
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
+          "name": "Titanik",
+          "category": "Romantik",
+          "director": "James Cameron",
+          "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
+        },
+        {
+          "id": 7,
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
+          "name": "Matrix",
+          "category": "Bilim Kurgu",
+          "director": "Wachowski Kardeşler",
+          "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
+          "id": 8,
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
+          "name": "Gladyatör",
+          "category": "Tarih",
+          "director": "Ridley Scott",
+          "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
+          "id": 9,
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
+          "name": "Yüzüklerin Efendisi",
+          "category": "Fantastik",
+          "director": "Peter Jackson",
+          "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
+          "id": 10,
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
+          "name": "Kayıp Balık Nemo",
+          "category": "Animasyon",
+          "director": "Andrew Stanton",
+          "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
     },
@@ -1137,20 +1201,84 @@
       "src": "https://picsum.photos/300",
       "movies": [
         {
+          "id": 1,
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
+          "category": "Aksiyon",
+          "director": "Christopher Nolan",
+          "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
+        },
+        {
           "id": 2,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
           "name": "Yeşil Yol",
           "category": "Dram",
           "director": "Frank Darabont",
           "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
         },
         {
+          "id": 3,
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
+          "name": "Başlangıç",
+          "category": "Bilim Kurgu",
+          "director": "Christopher Nolan",
+          "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
+          "id": 4,
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
+          "name": "Zor Ölüm",
+          "category": "Aksiyon",
+          "director": "John McTiernan",
+          "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
+        },
+        {
+          "id": 5,
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
+          "name": "Forrest Gump",
+          "category": "Dram",
+          "director": "Robert Zemeckis",
+          "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
+        },
+        {
+          "id": 6,
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
+          "name": "Titanik",
+          "category": "Romantik",
+          "director": "James Cameron",
+          "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
+        },
+        {
           "id": 7,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
           "name": "Matrix",
           "category": "Bilim Kurgu",
-          "director": "Frank Darabont",
+          "director": "Wachowski Kardeşler",
           "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
+          "id": 8,
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
+          "name": "Gladyatör",
+          "category": "Tarih",
+          "director": "Ridley Scott",
+          "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
+          "id": 9,
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
+          "name": "Yüzüklerin Efendisi",
+          "category": "Fantastik",
+          "director": "Peter Jackson",
+          "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
+          "id": 10,
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
+          "name": "Kayıp Balık Nemo",
+          "category": "Animasyon",
+          "director": "Andrew Stanton",
+          "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
     },
@@ -1160,20 +1288,84 @@
       "src": "https://picsum.photos/300",
       "movies": [
         {
+          "id": 1,
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
+          "category": "Aksiyon",
+          "director": "Christopher Nolan",
+          "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
+        },
+        {
+          "id": 2,
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
+          "name": "Yeşil Yol",
+          "category": "Dram",
+          "director": "Frank Darabont",
+          "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
+        },
+        {
+          "id": 3,
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
+          "name": "Başlangıç",
+          "category": "Bilim Kurgu",
+          "director": "Christopher Nolan",
+          "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
           "id": 4,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
           "name": "Zor Ölüm",
           "category": "Aksiyon",
           "director": "John McTiernan",
           "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
         },
         {
+          "id": 5,
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
+          "name": "Forrest Gump",
+          "category": "Dram",
+          "director": "Robert Zemeckis",
+          "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
+        },
+        {
+          "id": 6,
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
+          "name": "Titanik",
+          "category": "Romantik",
+          "director": "James Cameron",
+          "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
+        },
+        {
+          "id": 7,
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
+          "name": "Matrix",
+          "category": "Bilim Kurgu",
+          "director": "Wachowski Kardeşler",
+          "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
           "id": 8,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
           "name": "Gladyatör",
           "category": "Tarih",
-          "director": "John McTiernan",
+          "director": "Ridley Scott",
           "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
+          "id": 9,
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
+          "name": "Yüzüklerin Efendisi",
+          "category": "Fantastik",
+          "director": "Peter Jackson",
+          "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
+          "id": 10,
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
+          "name": "Kayıp Balık Nemo",
+          "category": "Animasyon",
+          "director": "Andrew Stanton",
+          "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
     },
@@ -1183,19 +1375,83 @@
       "src": "https://picsum.photos/300",
       "movies": [
         {
+          "id": 1,
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
+          "category": "Aksiyon",
+          "director": "Christopher Nolan",
+          "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
+        },
+        {
+          "id": 2,
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
+          "name": "Yeşil Yol",
+          "category": "Dram",
+          "director": "Frank Darabont",
+          "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
+        },
+        {
+          "id": 3,
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
+          "name": "Başlangıç",
+          "category": "Bilim Kurgu",
+          "director": "Christopher Nolan",
+          "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
+          "id": 4,
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
+          "name": "Zor Ölüm",
+          "category": "Aksiyon",
+          "director": "John McTiernan",
+          "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
+        },
+        {
           "id": 5,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
           "name": "Forrest Gump",
           "category": "Dram",
           "director": "Robert Zemeckis",
           "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
         },
         {
+          "id": 6,
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
+          "name": "Titanik",
+          "category": "Romantik",
+          "director": "James Cameron",
+          "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
+        },
+        {
+          "id": 7,
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
+          "name": "Matrix",
+          "category": "Bilim Kurgu",
+          "director": "Wachowski Kardeşler",
+          "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
+          "id": 8,
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
+          "name": "Gladyatör",
+          "category": "Tarih",
+          "director": "Ridley Scott",
+          "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
+          "id": 9,
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
+          "name": "Yüzüklerin Efendisi",
+          "category": "Fantastik",
+          "director": "Peter Jackson",
+          "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
           "id": 10,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
           "name": "Kayıp Balık Nemo",
           "category": "Animasyon",
-          "director": "Robert Zemeckis",
+          "director": "Andrew Stanton",
           "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
@@ -1206,20 +1462,171 @@
       "src": "https://picsum.photos/300",
       "movies": [
         {
+          "id": 1,
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
+          "category": "Aksiyon",
+          "director": "Christopher Nolan",
+          "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
+        },
+        {
+          "id": 2,
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
+          "name": "Yeşil Yol",
+          "category": "Dram",
+          "director": "Frank Darabont",
+          "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
+        },
+        {
+          "id": 3,
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
+          "name": "Başlangıç",
+          "category": "Bilim Kurgu",
+          "director": "Christopher Nolan",
+          "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
+          "id": 4,
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
+          "name": "Zor Ölüm",
+          "category": "Aksiyon",
+          "director": "John McTiernan",
+          "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
+        },
+        {
+          "id": 5,
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
+          "name": "Forrest Gump",
+          "category": "Dram",
+          "director": "Robert Zemeckis",
+          "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
+        },
+        {
           "id": 6,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
           "name": "Titanik",
           "category": "Romantik",
           "director": "James Cameron",
           "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
         },
         {
+          "id": 7,
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
+          "name": "Matrix",
+          "category": "Bilim Kurgu",
+          "director": "Wachowski Kardeşler",
+          "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
+          "id": 8,
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
+          "name": "Gladyatör",
+          "category": "Tarih",
+          "director": "Ridley Scott",
+          "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
           "id": 9,
-          "src": "https://picsum.photos/700/1000",
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
           "name": "Yüzüklerin Efendisi",
           "category": "Fantastik",
-          "director": "James Cameron",
+          "director": "Peter Jackson",
           "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
+          "id": 10,
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
+          "name": "Kayıp Balık Nemo",
+          "category": "Animasyon",
+          "director": "Andrew Stanton",
+          "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Wachowski kardeşler",
+      "src": "https://picsum.photos/300",
+      "movies": [
+        {
+          "id": 1,
+          "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
+          "name": "Batman",
+          "category": "Aksiyon",
+          "director": "Christopher Nolan",
+          "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
+        },
+        {
+          "id": 2,
+          "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
+          "name": "Yeşil Yol",
+          "category": "Dram",
+          "director": "Frank Darabont",
+          "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
+        },
+        {
+          "id": 3,
+          "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
+          "name": "Başlangıç",
+          "category": "Bilim Kurgu",
+          "director": "Christopher Nolan",
+          "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
+        },
+        {
+          "id": 4,
+          "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
+          "name": "Zor Ölüm",
+          "category": "Aksiyon",
+          "director": "John McTiernan",
+          "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
+        },
+        {
+          "id": 5,
+          "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
+          "name": "Forrest Gump",
+          "category": "Dram",
+          "director": "Robert Zemeckis",
+          "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
+        },
+        {
+          "id": 6,
+          "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
+          "name": "Titanik",
+          "category": "Romantik",
+          "director": "James Cameron",
+          "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
+        },
+        {
+          "id": 7,
+          "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
+          "name": "Matrix",
+          "category": "Bilim Kurgu",
+          "director": "Wachowski Kardeşler",
+          "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
+        },
+        {
+          "id": 8,
+          "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
+          "name": "Gladyatör",
+          "category": "Tarih",
+          "director": "Ridley Scott",
+          "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
+        },
+        {
+          "id": 9,
+          "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
+          "name": "Yüzüklerin Efendisi",
+          "category": "Fantastik",
+          "director": "Peter Jackson",
+          "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
+        },
+        {
+          "id": 10,
+          "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
+          "name": "Kayıp Balık Nemo",
+          "category": "Animasyon",
+          "director": "Andrew Stanton",
+          "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
     }

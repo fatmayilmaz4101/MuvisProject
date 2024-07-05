@@ -5,11 +5,13 @@ import Home from '../../screens/Home/Home';
 import Counter from '../../screens/Counter/Counter';
 import MovieList from '../../screens/MovieList/MovieList';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
+import CategoryDetail from '../../screens/CategoryDetails/CategoryDetail';
 import Profile from '../../screens/Profile/Profile';
 import MovieStars from '../../screens/MovieStars/MovieStars';
 import Deneme from '../../screens/Deneme/Deneme';
 import Registration from '../../screens/Registration/Registration';
 import MyDrawer, { LogoTitle, MenuIcon } from '../DrawerNavigator/DrawerNavigator';
+import DirectorsDetail from '../../screens/DirectorsDetail/DirectorsDetail';
 
 const Stack = createStackNavigator();
 
@@ -54,7 +56,7 @@ const Stacks = () => {
         component={MovieList}
       />
       <Stack.Screen
-        options={{ title: 'Film Detayı' }}
+        options={{ title: 'Film Detayı', headerShown: false }}
         name="MovieDetail"
         component={MovieDetails}
       />
@@ -73,6 +75,17 @@ const Stacks = () => {
         name="Deneme"
         component={Deneme}
       />
+        <Stack.Screen
+        options={{ title: 'CategoryDetail' }}
+        name="CategoryDetail"
+        component={CategoryDetail}
+      />
+        <Stack.Screen
+        options={{ title: 'DirectorsDetail' }}
+        name="DirectorsDetail"
+        component={DirectorsDetail}
+      />
+
       <Stack.Screen name="Main" component={MyDrawer} />
     </Stack.Navigator>
   );

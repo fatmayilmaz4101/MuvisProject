@@ -28,47 +28,19 @@ const Stacks = () => {
       headerLeft: () => <MenuIcon />,
       headerTitle: () => <LogoTitle />,
       headerTitleAlign: 'center',
+    }}>
+          <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}/>
+    <Stack.Screen name='Registration' component={Registration} options={{ headerShown: false }}/>
 
-    }}
->
-      <Stack.Screen
-        options={{ headerShown: false }}
-        name="Login"
-        component={Login}
-      />
-      <Stack.Screen
-        options={{ title: 'Kayıt', headerShown: false }}
-        name="Registration"
-        component={Registration}
-      />
-      <Stack.Screen
+            <Stack.Screen
+        options={{ title: 'Home'}}
         name="Home"
         component={Home}
-      />
-      <Stack.Screen
-        options={{ title: 'Sayaç' }}
-        name="Counter"
-        component={Counter}
-      />
-      <Stack.Screen
-        options={{ title: 'Film Listesi' }}
-        name="MovieList"
-        component={MovieList}
       />
       <Stack.Screen
         options={{ title: 'Film Detayı', headerShown: false }}
         name="MovieDetail"
         component={MovieDetails}
-      />
-      <Stack.Screen
-        options={{ title: 'Profil' }}
-        name="Profile"
-        component={Profile}
-      />
-      <Stack.Screen
-        options={{ title: 'Film Yıldızları' }}
-        name="MovieStars"
-        component={MovieStars}
       />
       <Stack.Screen
         options={{ title: 'Deneme' }}
@@ -90,5 +62,4 @@ const Stacks = () => {
     </Stack.Navigator>
   );
 };
-
 export default Stacks;

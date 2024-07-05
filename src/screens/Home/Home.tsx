@@ -81,7 +81,7 @@ const Home = () => {
         renderItem={renderMovieItem}
         sliderWidth={viewportWidth}
         itemWidth={viewportWidth * 0.8}
-        layout="default"
+        layout="stack"
       />
       </View>
       <Text style={styles.welcomeMessage}>En Beğenilen Yönetmenler</Text>

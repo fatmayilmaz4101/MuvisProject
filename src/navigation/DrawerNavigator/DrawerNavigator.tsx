@@ -7,7 +7,7 @@ import Profile from '../../screens/Profile/Profile';
 import MovieList from '../../screens/MovieList/MovieList';
 import { styles } from './drawerNavigator.style';
 import { Color } from '../../utilities/Color';
-import Stacks from '../MainStackNavigator/MainStacks'; // Ana yığını içeri aktarıyoruz
+import Stacks from '../StackNavigator/StackNavigator'; // Ana yığını içeri aktarıyoruz
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
 import Login from '../../screens/Login/Login';
@@ -51,7 +51,7 @@ function CustomDrawerContent(props:any) {
   );
 }
 
-function MyDrawer() {
+function DrawerNavigator() {
   return (
     <Drawer.Navigator 
     screenOptions={{
@@ -71,17 +71,14 @@ function MyDrawer() {
       }}
 
     drawerContent={(props) => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen options={{ headerShown: false }} // Login ekranında header'ı gizlemek için 
-      name="Stacks" component={Stacks} />
-      <Drawer.Screen name="Anasayfa" component={Home} />
+      <Drawer.Screen options={{ headerShown: false, title: 'Anasayfa' }} name="Stacks" component={Stacks} />
       <Drawer.Screen name="Profil Bilgilerim" component={Profile} />
       <Drawer.Screen name="Film Listesi" component={MovieList} />
       <Drawer.Screen name="Kategoriler" component={Categories} />
-      <Drawer.Screen name="Deneme" component={Deneme} />
       <Drawer.Screen name="Favorilerim" component={FavoriteList} />
 
     </Drawer.Navigator>
   );
 }
 
-export default MyDrawer;
+export default DrawerNavigator;

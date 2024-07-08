@@ -1,16 +1,7 @@
 import React from 'react';
-import { KeyboardTypeOptions } from 'react-native';
-import { TextInput } from 'react-native-paper';
-import { styles } from './customTextInput.styles';
-interface CustomTextInputProps {
-  onBlur: () => void;
-  onChangeText: (text: string) => void; // onChangeText'in parametre aldığından emin olun
-  value: string;
-  placeholder?: string;
-  secureTextEntry?: boolean;
-  keyboardType?: KeyboardTypeOptions;
-  placeholderTextColor?: string;
-}
+import {TextInput} from 'react-native-paper';
+import {styles} from './customTextInput.styles';
+import {CustomTextInputProps} from '../../types';
 
 const CustomTextInput = ({
   onBlur,
@@ -23,7 +14,7 @@ const CustomTextInput = ({
 }: CustomTextInputProps) => {
   return (
     <TextInput
-      mode='outlined'
+      mode="outlined"
       onBlur={onBlur}
       onChangeText={onChangeText}
       value={value}
@@ -31,9 +22,9 @@ const CustomTextInput = ({
       secureTextEntry={secureTextEntry}
       keyboardType={keyboardType}
       placeholderTextColor={placeholderTextColor}
-      outlineColor='black'
-      activeOutlineColor='red'
-      style={styles.input} // Custom styles can be applied here
+      outlineColor="black"
+      activeOutlineColor="red"
+      style={styles.input}
     />
   );
 };

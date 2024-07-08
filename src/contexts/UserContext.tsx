@@ -28,7 +28,13 @@ type Props = {
 };
 
 export function UserProvider({children}: Props) {
-  const [user, setUser] = useState<User>({name: undefined, lastname: undefined, userName: '', password: '', phone: undefined});
+  const [user, setUser] = useState<User>({
+    name: undefined,
+    lastname: undefined,
+    userName: '',
+    password: '',
+    phone: undefined,
+  });
 
   return (
     <UserContext.Provider value={{user, setUser}}>

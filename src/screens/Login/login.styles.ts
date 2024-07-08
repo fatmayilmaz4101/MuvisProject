@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Color} from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,23 +22,31 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 35,
     alignItems: 'center',
-    marginBottom: 30
+    marginBottom: 30,
   },
   center: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   customText: {
-    marginTop: 9
+    marginTop: 9,
+    color: 'gray',
   },
   submit: {
     marginTop: 10,
   },
   rowStyle: {
     flexDirection: 'row',
-    marginTop: 10
+    marginTop: 10,
   },
   rememberMe: {
     marginTop: 5,
-  }
+    color: 'gray',
+  },
+  rememberPassword: {
+    color: 'gray',
+  },
+  errorText: {
+    color: Color.Danger,
+  },
 });

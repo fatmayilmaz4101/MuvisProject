@@ -1,16 +1,14 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../../screens/Login/Login';
 import Home from '../../screens/Home/Home';
-import Counter from '../../screens/Counter/Counter';
-import MovieList from '../../screens/MovieList/MovieList';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
 import CategoryDetail from '../../screens/CategoryDetails/CategoryDetail';
-import Profile from '../../screens/Profile/Profile';
-import MovieStars from '../../screens/MovieStars/MovieStars';
-import Deneme from '../../screens/Deneme/Deneme';
 import Registration from '../../screens/Registration/Registration';
-import MyDrawer, { LogoTitle, MenuIcon } from '../DrawerNavigator/DrawerNavigator';
+import MyDrawer, {
+  LogoTitle,
+  MenuIcon,
+} from '../DrawerNavigator/DrawerNavigator';
 import DirectorsDetail from '../../screens/DirectorsDetail/DirectorsDetail';
 
 const Stack = createStackNavigator();
@@ -18,42 +16,40 @@ const Stack = createStackNavigator();
 const Stacks = () => {
   return (
     <Stack.Navigator
-    screenOptions={{
-      headerStyle: {
-        backgroundColor: 'black',
-        borderBottomWidth: 0,
-        shadowOpacity: 0,
-        elevation: 0,
-      },
-      headerLeft: () => <MenuIcon />,
-      headerTitle: () => <LogoTitle />,
-      headerTitleAlign: 'center',
-    }}>
-          <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}/>
-    <Stack.Screen name='Registration' component={Registration} options={{ headerShown: false }}/>
-
-            <Stack.Screen
-        options={{ title: 'Home'}}
-        name="Home"
-        component={Home}
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: 'black',
+          borderBottomWidth: 0,
+          shadowOpacity: 0,
+          elevation: 0,
+        },
+        headerLeft: () => <MenuIcon />,
+        headerTitle: () => <LogoTitle />,
+        headerTitleAlign: 'center',
+      }}>
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
       />
       <Stack.Screen
-        options={{ title: 'Film Detayı', headerShown: false }}
+        name="Registration"
+        component={Registration}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen options={{title: 'Home'}} name="Home" component={Home} />
+      <Stack.Screen
+        options={{title: 'Film Detayı', headerShown: false}}
         name="MovieDetail"
         component={MovieDetails}
       />
       <Stack.Screen
-        options={{ title: 'Deneme' }}
-        name="Deneme"
-        component={Deneme}
-      />
-        <Stack.Screen
-        options={{ title: 'CategoryDetail' }}
+        options={{title: 'CategoryDetail'}}
         name="CategoryDetail"
         component={CategoryDetail}
       />
-        <Stack.Screen
-        options={{ title: 'DirectorsDetail' }}
+      <Stack.Screen
+        options={{title: 'DirectorsDetail'}}
         name="DirectorsDetail"
         component={DirectorsDetail}
       />

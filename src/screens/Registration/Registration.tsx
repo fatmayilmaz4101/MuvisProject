@@ -19,47 +19,32 @@ import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
 import {Button} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
-
-interface FormInput {
-  registration_name: string;
-  registration_lastName: string;
-  registration_userName: string;
-  registration_password: string;
-  registration_phoneNumber: number;
-}
-const avatarImages = [
-  require('../../../assets/images/bojack-horseman-avatar.jpg'),
-  require('../../../assets/images/boss-baby-avatar.png'),
-  require('../../../assets/images/jworld-avatar.png'),
-  require('../../../assets/images/shera-avatar.jpg'),
-  require('../../../assets/images/rick-avatar.png'),
-];
+import {useUser} from '../../hooks/useUser';
+import {avatarImages} from '../../../api/getAvatarDatas';
+import {UserFormInput} from '../../types';
 
 const Registration = () => {
   const navigation = useNavigation<any>();
-  const [selectedAvatar, setSelectedAvatar] = useState<any>(require('../../../assets/images/anonim-avatar.png'));
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
+  const [selectedAvatar, setSelectedAvatar] = useState<any>(
+    require('../../../assets/images/anonim-avatar.png'),
+  );
+  const {addUser} = useUser();
   const {
     control,
     handleSubmit,
     formState: {errors},
   } = useForm({
     defaultValues: {
-      registration_name: '',
-      registration_lastName: '',
-      registration_userName: '',
-      registration_password: '',
-      registration_phoneNumber: 0,
+      firstName: '',
+      lastName: '',
+      userName: '',
+      password: '',
+      phone: 0,
     },
   });
 
-  const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
-  const handleNavigateLogin = () => {
-    navigation.navigate('Login',{selectedAvatar});
-  }
-  const toggleModal = () => {
-    setModalVisible(!modalVisible);
-  };
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
@@ -79,32 +64,51 @@ const Registration = () => {
       keyboardDidHideListener.remove();
     };
   }, []);
-
-  const onSubmit: SubmitHandler<FormInput> = async data => {};
+  const handleNavigateLogin = () => {
+    navigation.navigate('Login', {selectedAvatar});
+  };
   const handleAvatarPress = async (avatar: any) => {
     setSelectedAvatar(avatar);
     setModalVisible(false);
   };
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
+  const onSubmit: SubmitHandler<UserFormInput> = async data => {
+    console.log('kayıt ola tıklandı, data: ', data);
+    try {
+      addUser(data, {
+        onSuccess: () => {
+          console.log('Başarılı kayıt');
+          navigation.navigate('Login');
+        },
+        onError: (error: any) => {
+          console.error('Kullanıcı oluşturma hatası:', error);
+        },
+      });
+    } catch (error) {
+      console.error('Beklenmedik hata:', error);
+    }
+  };
 
-  const renderAvatar = ({item} : {item: ImageSourcePropType}) => {
-    return(
+  const renderAvatar = ({item}: {item: ImageSourcePropType}) => {
+    return (
       <TouchableOpacity onPress={() => handleAvatarPress(item)}>
-      <CustomAvatar
-        style={[
-          styles.avatarOption,
-          selectedAvatar === selectedAvatar && styles.selectedAvatar,
-        ]}
-        size={80}
-        source={item}
-      />
-    </TouchableOpacity>
-
-    )
-  }
+        <CustomAvatar
+          style={[
+            styles.avatarOption,
+            selectedAvatar === selectedAvatar && styles.selectedAvatar,
+          ]}
+          size={80}
+          source={item}
+        />
+      </TouchableOpacity>
+    );
+  };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={styles.keyboardStyle}>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={[
@@ -140,12 +144,10 @@ const Registration = () => {
                   placeholderTextColor={Color.Gray}
                 />
               )}
-              name="registration_name"
+              name="firstName"
             />
-            {errors.registration_name && (
-              <Text style={{color: Color.Danger}}>
-                {errors.registration_name.message}
-              </Text>
+            {errors.firstName && (
+              <Text style={styles.errorText}>{errors.firstName.message}</Text>
             )}
             <Controller
               control={control}
@@ -165,12 +167,10 @@ const Registration = () => {
                   placeholderTextColor={Color.Gray}
                 />
               )}
-              name="registration_lastName"
+              name="lastName"
             />
-            {errors.registration_lastName && (
-              <Text style={{color: Color.Danger}}>
-                {errors.registration_lastName.message}
-              </Text>
+            {errors.lastName && (
+              <Text style={styles.errorText}>{errors.lastName.message}</Text>
             )}
 
             <Controller
@@ -191,12 +191,10 @@ const Registration = () => {
                   placeholderTextColor={Color.Gray}
                 />
               )}
-              name="registration_userName"
+              name="userName"
             />
-            {errors.registration_userName && (
-              <Text style={{color: Color.Danger}}>
-                {errors.registration_userName.message}
-              </Text>
+            {errors.userName && (
+              <Text style={styles.errorText}>{errors.userName.message}</Text>
             )}
             <Controller
               control={control}
@@ -217,12 +215,10 @@ const Registration = () => {
                   secureTextEntry
                 />
               )}
-              name="registration_password"
+              name="password"
             />
-            {errors.registration_password && (
-              <Text style={{color: Color.Danger}}>
-                {errors.registration_password.message}
-              </Text>
+            {errors.password && (
+              <Text style={styles.errorText}>{errors.password.message}</Text>
             )}
             <Controller
               control={control}
@@ -243,12 +239,10 @@ const Registration = () => {
                   placeholderTextColor={Color.Gray}
                 />
               )}
-              name="registration_phoneNumber"
+              name="phone"
             />
-            {errors.registration_phoneNumber && (
-              <Text style={{color: 'red'}}>
-                {errors.registration_phoneNumber.message}
-              </Text>
+            {errors.phone && (
+              <Text style={styles.errorText}>{errors.phone.message}</Text>
             )}
           </View>
           <View style={styles.submit}>

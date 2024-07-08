@@ -3,5 +3,7 @@
     "/api/categories": "/categories",
     "/api/movies": "/movies",
     "/api/comments": "/comments",
-    "/api/directors": "/directors"
+    "/api/directors": "/directors",
+    "/api/avatars": "/avatars"
+
 }

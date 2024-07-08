@@ -1,47 +1,36 @@
-import React, { forwardRef, useImperativeHandle, useRef, ReactNode } from 'react';
-import { BottomSheetModal, BottomSheetView, BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { StyleSheet, View } from 'react-native';
-import { Color } from '../../utilities/Color';
-import { styles } from './customBottomSheet.style';
+import React, {forwardRef, useImperativeHandle, useRef} from 'react';
+import {
+  BottomSheetModal,
+  BottomSheetView,
+  BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
+import {styles} from './customBottomSheet.style';
+import {BottomSheetProps, BottomSheetRef} from '../../types';
 
-interface BottomSheetProps {
-  children: ReactNode;
-  snapPoints: string[];
-}
+const CustomBottomSheet = forwardRef<BottomSheetRef, BottomSheetProps>(
+  ({children, snapPoints}, ref) => {
+    const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
-export interface BottomSheetRef {
-  present: () => void;
-  close: () => void;
-}
+    useImperativeHandle(ref, () => ({
+      present: () => {
+        bottomSheetModalRef.current?.present();
+      },
+      close: () => {
+        bottomSheetModalRef.current?.close();
+      },
+    }));
 
-const CustomBottomSheet = forwardRef<BottomSheetRef, BottomSheetProps>(({ children, snapPoints }, ref) => {
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-
-  useImperativeHandle(ref, () => ({
-    present: () => {
-      bottomSheetModalRef.current?.present();
-    },
-    close: () => {
-      bottomSheetModalRef.current?.close();
-    }
-  }));
-
-  return (
-    <BottomSheetModalProvider>
-      <BottomSheetModal
-        ref={bottomSheetModalRef}
-        snapPoints={snapPoints}
-        handleStyle={{backgroundColor: Color.BackgroundColor }}
-      >
-        <View style={styles.container}>
-          <BottomSheetView style={styles.contentContainer}>
-            {children}
-          </BottomSheetView>
-        </View>
-      </BottomSheetModal>
-    </BottomSheetModalProvider>
-  );
-});
+    return (
+      <BottomSheetModalProvider>
+        <BottomSheetModal
+          ref={bottomSheetModalRef}
+          snapPoints={snapPoints}
+          handleStyle={styles.handleStyle}>
+          <BottomSheetView style={styles.container}>{children}</BottomSheetView>
+        </BottomSheetModal>
+      </BottomSheetModalProvider>
+    );
+  },
+);
 
 export default CustomBottomSheet;
-

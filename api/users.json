@@ -79,11 +79,43 @@
       "userName": "nuran",
       "password": "nuran",
       "phone": "+05392424569"
+    },
+    {
+      "id": "0e5e",
+      "firstName": "Ayşe",
+      "lastName": "Gök",
+      "userName": "Ayshe",
+      "password": "Ayshe",
+      "phone": "905392424565"
+    },
+    {
+      "id": "79c3",
+      "firstName": "Hajsjs",
+      "lastName": "Djodkdk",
+      "userName": "Aaa",
+      "password": "Aaaaa",
+      "phone": "+905392424565"
+    },
+    {
+      "id": "9c26",
+      "firstName": "Yüsra",
+      "lastName": "Yesil",
+      "userName": "yüsra",
+      "password": "yüsra",
+      "phone": "905392424565"
+    },
+    {
+      "id": "2f20",
+      "firstName": "Tunahan",
+      "lastName": "Ak",
+      "userName": "tada",
+      "password": "tadas",
+      "phone": "905392424565"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Aksiyon",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -170,7 +202,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Komedi",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -257,7 +289,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dram",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -344,7 +376,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Korku",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -431,7 +463,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Bilim Kurgu",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -518,7 +550,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Romantik",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -605,7 +637,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Macera",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -692,7 +724,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Fantastik",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -779,7 +811,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Belgesel",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -866,7 +898,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Gerilim",
       "src": "https://picsum.photos/300/200",
       "movies": [
@@ -955,7 +987,7 @@
   ],
   "movies": [
     {
-      "id": 1,
+      "id": "1",
       "src": "https://posters.movieposterdb.com/22_02/2022/1877830/l_1877830_764432ad.jpg",
       "name": "Batman",
       "category": "Aksiyon",
@@ -963,7 +995,7 @@
       "summary": "Gotham şehri, Joker adlı suçlunun tehdidi altındadır. Batman, Joker'i durdurmak için elinden geleni yapar."
     },
     {
-      "id": 2,
+      "id": "2",
       "src": "https://posters.movieposterdb.com/24_03/2024/22022452/s_inside-out-2-movie-poster_4b749fa4.jpg",
       "name": "Yeşil Yol",
       "category": "Dram",
@@ -971,7 +1003,7 @@
       "summary": "Paul Edgecomb, ölüm hücresinde gardiyandır. John Coffey adlı mahkumun doğaüstü yetenekleri olduğunu keşfeder."
     },
     {
-      "id": 3,
+      "id": "3",
       "src": "https://posters.movieposterdb.com/10_06/2010/1375666/s_1375666_07030c72.jpg",
       "name": "Başlangıç",
       "category": "Bilim Kurgu",
@@ -979,7 +1011,7 @@
       "summary": "Dom Cobb, insanların rüyalarına girerek bilgi çalan bir hırsızdır. Son görevi, bir fikri zihinlere yerleştirmektir."
     },
     {
-      "id": 4,
+      "id": "4",
       "src": "https://posters.movieposterdb.com/22_11/1992/301197/s_die-hard-movie-poster_d05bc36f.jpg",
       "name": "Zor Ölüm",
       "category": "Aksiyon",
@@ -987,7 +1019,7 @@
       "summary": "New York polisi John McClane, bir terörist saldırıyı durdurmak için Los Angeles'taki bir binaya gider."
     },
     {
-      "id": 5,
+      "id": "5",
       "src": "https://posters.movieposterdb.com/12_04/1994/109830/s_109830_58524cd6.jpg",
       "name": "Forrest Gump",
       "category": "Dram",
@@ -995,7 +1027,7 @@
       "summary": "Forrest Gump, düşük IQ'suna rağmen inanılmaz hayat deneyimleri yaşayan basit bir adamdır."
     },
     {
-      "id": 6,
+      "id": "6",
       "src": "https://posters.movieposterdb.com/09_01/1996/115392/s_115392_1de94bf3.jpg",
       "name": "Titanik",
       "category": "Romantik",
@@ -1003,7 +1035,7 @@
       "summary": "Genç âşıklar Jack ve Rose, Titanic adlı devasa geminin trajik batışı sırasında aşklarını yaşarlar."
     },
     {
-      "id": 7,
+      "id": "7",
       "src": "https://posters.movieposterdb.com/06_01/1999/0133093/s_77607_0133093_ab8bc972.jpg",
       "name": "Matrix",
       "category": "Bilim Kurgu",
@@ -1011,7 +1043,7 @@
       "summary": "Neo, gerçekliği sorgulayan bir hacker, insanlığın bir makine tarafından yaratılmış sanal bir dünyada yaşadığını keşfeder."
     },
     {
-      "id": 8,
+      "id": "8",
       "src": "https://posters.movieposterdb.com/08_12/2000/172495/s_172495_93f99923.jpg",
       "name": "Gladyatör",
       "category": "Tarih",
@@ -1019,7 +1051,7 @@
       "summary": "Roma Generali Maximus, ihanetin ardından gladyatör olarak intikam peşine düşer."
     },
     {
-      "id": 9,
+      "id": "9",
       "src": "https://posters.movieposterdb.com/06_04/2002/0167261/s_107349_0167261_e890fd13.jpg",
       "name": "Yüzüklerin Efendisi",
       "category": "Fantastik",
@@ -1027,7 +1059,7 @@
       "summary": "Frodo ve arkadaşları, dünyayı karanlıktan kurtarmak için tehlikeli bir yolculuğa çıkarlar."
     },
     {
-      "id": 10,
+      "id": "10",
       "src": "https://posters.movieposterdb.com/08_12/2003/266543/s_266543_535dfe6a.jpg",
       "name": "Kayıp Balık Nemo",
       "category": "Animasyon",
@@ -1037,81 +1069,214 @@
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "movieId": 1,
       "username": "onur",
       "content": "Muhteşem bir film!",
       "date": "2023-01-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "movieId": 2,
       "username": "nagihan",
       "content": "Çok beğendim, tavsiye ederim.",
       "date": "2023-01-02"
     },
     {
-      "id": 3,
+      "id": "3",
       "movieId": 3,
       "username": "yigit",
       "content": "Harika bir hikaye.",
       "date": "2023-01-03"
     },
     {
-      "id": 4,
+      "id": "4",
       "movieId": 4,
       "username": "eda",
       "content": "Beyin yakan bir film!",
       "date": "2023-01-04"
     },
     {
-      "id": 5,
+      "id": "5",
       "movieId": 5,
       "username": "fatma",
       "content": "Forrest Gump'tan daha iyisi yok.",
       "date": "2023-01-05"
     },
     {
-      "id": 6,
+      "id": "6",
       "movieId": 6,
       "username": "tadaa",
       "content": "Titanik bir klasik!",
       "date": "2023-01-06"
     },
     {
-      "id": 7,
+      "id": "7",
       "movieId": 7,
       "username": "huseyin",
       "content": "Matrix dünyayı değiştirdi.",
       "date": "2023-01-07"
     },
     {
-      "id": 8,
+      "id": "8",
       "movieId": 8,
       "username": "elcin",
       "content": "Gladyatör muhteşemdi.",
       "date": "2023-01-08"
     },
     {
-      "id": 9,
+      "id": "9",
       "movieId": 9,
       "username": "nuran",
       "content": "Yüzüklerin Efendisi efsane!",
       "date": "2023-01-09"
     },
     {
-      "id": 10,
+      "id": "10",
       "movieId": 10,
       "username": "admin",
       "content": "Nemo'yu bulmak için müthiş bir macera.",
       "date": "2023-01-10"
+    },
+    {
+      "id": "11",
+      "movieId": 1,
+      "content": "Ner cc",
+      "username": "Batman",
+      "date": "2023-01-08"
+    },
+    {
+      "id": "6151",
+      "movieId": 1,
+      "content": "New one",
+      "username": "Fatma",
+      "date": "2024-07-06T13:49:54.664Z"
+    },
+    {
+      "id": "05fa",
+      "movieId": 1,
+      "content": "Jcjcckckc",
+      "username": "Fatma",
+      "date": "2024-07-06T13:51:02.700Z"
+    },
+    {
+      "id": "9f56",
+      "movieId": 1,
+      "content": "Dneme",
+      "username": "Fatma",
+      "date": "2024-07-06T14:04:56.123Z"
+    },
+    {
+      "id": "02a7",
+      "movieId": 1,
+      "content": "Jf😅😉🙏🥲",
+      "username": "Fatma",
+      "date": "2024-07-06T14:11:32.161Z"
+    },
+    {
+      "id": "b2bc",
+      "movieId": 5,
+      "content": "oyxoyzktzkgzkt",
+      "username": "Fatma",
+      "date": "2024-07-06T14:22:02.138Z"
+    },
+    {
+      "id": "962a",
+      "movieId": 4,
+      "content": "Dkdpskd",
+      "username": "Fatma",
+      "date": "2024-07-06T14:29:30.994Z"
+    },
+    {
+      "id": "cdbf",
+      "movieId": 10,
+      "content": "Opppppyx",
+      "username": "Fatma",
+      "date": "2024-07-06T15:06:47.065Z"
+    },
+    {
+      "id": "4386",
+      "movieId": 1,
+      "content": "Vlcococ",
+      "username": "Fatma",
+      "date": "2024-07-06T15:10:46.142Z"
+    },
+    {
+      "id": "8a3f",
+      "movieId": 1,
+      "content": "Yeni",
+      "username": "Fatma",
+      "date": "Sat Jul 06 2024 18:24:26 GMT+0300"
+    },
+    {
+      "id": "3ac8",
+      "movieId": 9,
+      "content": "Bskdkdlkd",
+      "username": "Fatma",
+      "date": "Sat Jul 06 2024 18:57:21 GMT+0300"
+    },
+    {
+      "id": "db24",
+      "movieId": 2,
+      "content": "Hkxcjjjjjj🥰🥰",
+      "username": "",
+      "date": "Sun Jul 07 2024 20:21:51 GMT+0300"
+    },
+    {
+      "id": "b85a",
+      "movieId": 1,
+      "content": "AaAaaa",
+      "username": "",
+      "date": "Mon Jul 08 2024 13:52:16 GMT+0300"
+    },
+    {
+      "id": "a52f",
+      "movieId": 2,
+      "content": "aa",
+      "username": "",
+      "date": "Mon Jul 08 2024 13:53:08 GMT+0300"
+    },
+    {
+      "id": "d877",
+      "movieId": 8,
+      "content": "D",
+      "username": "",
+      "date": "Mon Jul 08 2024 13:53:45 GMT+0300"
+    },
+    {
+      "id": "926d",
+      "movieId": "1",
+      "content": "Y",
+      "username": "",
+      "date": "Mon Jul 08 2024 13:55:14 GMT+0300"
+    },
+    {
+      "id": "b743",
+      "movieId": 9,
+      "content": "Th",
+      "username": "",
+      "date": "Mon Jul 08 2024 13:58:27 GMT+0300"
+    },
+    {
+      "id": "3c73",
+      "movieId": 1,
+      "content": "jhbjhbhjb",
+      "username": "",
+      "date": "Mon Jul 08 2024 14:55:16 GMT+0300"
+    },
+    {
+      "id": "6e75",
+      "movieId": 2,
+      "content": "Efff",
+      "username": "",
+      "date": "Mon Jul 08 2024 14:55:35 GMT+0300"
     }
   ],
   "directors": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Christopher Nolan",
-      "src": "https://picsum.photos/300",
+      "src": "https://media.wired.com/photos/64875f770b67c709cbcaaa29/1:1/w_1591,h_1591,c_limit/Nolan%2014.jpg",
       "movies": [
         {
           "id": 1,
@@ -1196,9 +1361,9 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Frank Darabont",
-      "src": "https://picsum.photos/300",
+      "src": "https://static.wikia.nocookie.net/stephenking/images/f/f4/Darabont.jpg/revision/latest?cb=20170421040537",
       "movies": [
         {
           "id": 1,
@@ -1283,9 +1448,9 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "John McTiernan",
-      "src": "https://picsum.photos/300",
+      "src": "https://pbs.twimg.com/profile_images/441661732474212352/CY5zXg-Y_400x400.jpeg",
       "movies": [
         {
           "id": 1,
@@ -1370,9 +1535,9 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Robert Zemeckis",
-      "src": "https://picsum.photos/300",
+      "src": "https://vodkaster.telerama.fr/image-provider/article/6/7/0/1/670186_inline1_scale_450xauto.jpg",
       "movies": [
         {
           "id": 1,
@@ -1457,9 +1622,9 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "James Cameron",
-      "src": "https://picsum.photos/300",
+      "src": "https://plantpowertaskforce.org/wp-content/uploads/2017/03/james-cameron.jpg",
       "movies": [
         {
           "id": 1,
@@ -1544,9 +1709,9 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Wachowski kardeşler",
-      "src": "https://picsum.photos/300",
+      "src": "https://frpnet.net/wp-content/uploads/2017/05/wachowski-karde%C5%9Fler.jpg",
       "movies": [
         {
           "id": 1,
@@ -1629,6 +1794,32 @@
           "summary": "Marlin, kaybolan oğlu Nemo'yu bulmak için okyanusun derinliklerinde bir yolculuğa çıkar."
         }
       ]
+    }
+  ],
+  "avatars": [
+    {
+      "src": "https://alumni.engineering.utoronto.ca/files/2022/05/Avatar-Placeholder-400x400-1.jpg",
+      "id": "6249"
+    },
+    {
+      "src": "https://avatarfiles.alphacoders.com/206/206823.jpg",
+      "id": "59af"
+    },
+    {
+      "src": "https://i.scdn.co/image/ab67616d00001e02871f38a519e22fe4f636672e",
+      "id": "1977"
+    },
+    {
+      "src": "https://static-cdn.jtvnw.net/jtv_user_pictures/acd81d76-3646-4fcd-9fc9-844ca4daa102-profile_image-300x300.png",
+      "id": "d3f3"
+    },
+    {
+      "src": "https://static-cdn.jtvnw.net/jtv_user_pictures/c7b3a181-90ff-4021-9461-759d8a69a236-profile_image-300x300.png",
+      "id": "e069"
+    },
+    {
+      "src": "https://avatarfiles.alphacoders.com/144/144516.jpg",
+      "id": "8b95"
     }
   ]
 }

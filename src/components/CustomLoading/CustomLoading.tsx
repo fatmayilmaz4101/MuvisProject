@@ -1,13 +1,10 @@
 import React from 'react';
-import { View, ActivityIndicator, Text } from 'react-native';
+import {View, ActivityIndicator, Text} from 'react-native';
 import {styles} from './customLoading.styles';
-import { Color } from '../../utilities/Color';
+import {Color} from '../../utilities/Color';
+import {LoadingComponentProps} from '../../types';
 
-interface LoadingComponentProps{
-    isLoading: boolean;
-    text:string;
-}
-const LoadingComponent = ({ isLoading, text } : LoadingComponentProps)  => {
+const LoadingComponent = ({isLoading, text}: LoadingComponentProps) => {
   if (!isLoading) {
     return null;
   }

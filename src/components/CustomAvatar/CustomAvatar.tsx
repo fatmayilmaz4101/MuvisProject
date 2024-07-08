@@ -1,28 +1,16 @@
 import * as React from 'react';
-import { Avatar } from 'react-native-paper';
-import { View, StyleProp, ViewStyle, ImageSourcePropType } from 'react-native';
-import { styles } from './customAvatar.style';
+import {Avatar} from 'react-native-paper';
+import {View} from 'react-native';
+import {styles} from './customAvatar.style';
+import {CustomAvatarProps} from '../../types';
 
-interface CustomAvatarProps {
-  size?: number;
-  source: ImageSourcePropType;
-  borderColor?: string;
-  borderWidth?: number;
-  backgroundColor?: string;
-  style?: StyleProp<ViewStyle>;
-}
-
-const CustomAvatar: React.FC<CustomAvatarProps> = ({
-  size = 80,
-  source,
-  style,
-}) => {
+const CustomAvatar = ({size = 80, source, style}: CustomAvatarProps) => {
   return (
-    <View style={[{ alignItems: 'center', justifyContent: 'center', margin: 10 }, style]}>
+    <View style={[styles.container, style]}>
       <Avatar.Image
         size={size}
         source={source}
-        style= {[styles.avatar,styles.container]}
+        style={[styles.avatar, styles.avatarContainer]}
       />
     </View>
   );

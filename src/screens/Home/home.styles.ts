@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { Color } from '../../utilities/Color';
+import {Color} from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   homeScreen: {
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     backgroundColor: Color.BackgroundColor,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.8,
     shadowRadius: 5,
     elevation: 5,
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '70%',
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
   },
   textContainer: {
     padding: 10,
@@ -45,20 +45,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 10,
   },
-  modalContainer: {
-    width: 300,
-    flex:1,
-    padding: 20,
-    margin: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  modalBackground: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
   directorAvatar: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -67,5 +53,7 @@ export const styles = StyleSheet.create({
   directorName: {
     fontSize: 14,
     textAlign: 'center',
-  }
+    color: 'white',
+    fontFamily: 'Lora-Regular',
+  },
 });

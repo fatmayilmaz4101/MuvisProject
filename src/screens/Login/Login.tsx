@@ -1,59 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import { SafeAreaView, View, Text, Switch, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { styles } from './login.styles';
+import React, {useEffect, useState} from 'react';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Switch,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {styles} from './login.styles';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import { Color } from '../../utilities/Color';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import {Color} from '../../utilities/Color';
+import {Controller, SubmitHandler, useForm} from 'react-hook-form';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
-import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../redux/store';
-import { loginUser } from '../../redux/actions/userActions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { LOGIN_FAILURE } from '../../redux/types';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import { Button } from 'react-native-paper';
+import {Button} from 'react-native-paper';
+import {useUser} from '../../hooks/useUser';
+import {LoginFormInput} from '../../types';
 
-interface FormInput {
-  userName: string;
-  password: string;
-}
-
-const Login = ({ route }: any) => {
-  const avatar = route?.params?.selectedAvatar;
+const Login = ({route}: any) => {
   const navigation = useNavigation<any>();
-  const dispatch = useAppDispatch();
-  const { login, error } = useSelector((state: RootState) => state.user);
+  const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
+  const avatar = route?.params?.selectedAvatar;
+  const {data: users = [], refetch} = useUser();
+
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
-  const { control, handleSubmit, reset, formState: { errors } } = useForm({
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: {errors},
+  } = useForm({
     defaultValues: {
       userName: '',
-      password: ''
-    }
+      password: '',
+    },
   });
-
-  const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
-  const onPressRegistration = () => navigation.navigate('Registration');
-
-  useEffect(() => {
-    if (login && login.userName) {
-      console.log("User bilgileri (Login.tsx): ", login);
-      navigation.navigate('Home');
-    }
-  }, [login, navigation]);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
       () => {
         setKeyboardOpen(true);
-      }
+      },
     );
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       () => {
         setKeyboardOpen(false);
-      }
+      },
     );
 
     return () => {
@@ -61,51 +58,58 @@ const Login = ({ route }: any) => {
       keyboardDidHideListener.remove();
     };
   }, []);
+  
+  const onPressRegistration = () => navigation.navigate('Registration');
 
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
   };
 
-  const onSubmit: SubmitHandler<FormInput> = async data => {
-    if (isEnabled && !error) {
-      reset({
-        userName: login.userName,
-        password: login.password
-      });
-      const userCredentials = data;
-      await AsyncStorage.setItem(
-        'userCredentials',
-        JSON.stringify(userCredentials),
-      );
+  const onSubmit: SubmitHandler<LoginFormInput> = async data => {
+    refetch();
+    const currentUser = users.find(user => data.userName == user.userName);
+    if (currentUser) {
+      await AsyncStorage.setItem('currentUserId', currentUser.id);
+      navigation.navigate('Home', currentUser);
+      if (isEnabled) {
+        reset({
+          userName: currentUser.userName,
+          password: currentUser.password,
+        });
+        const userCredentials = data;
+        await AsyncStorage.setItem(
+          'userCredentials',
+          JSON.stringify(userCredentials),
+        );
+      } else {
+        reset({
+          userName: '',
+          password: '',
+        });
+        await AsyncStorage.removeItem('userCredentials');
+      }
     } else {
-      reset({
-        userName: '',
-        password: ''
-      });
-      dispatch({ type: LOGIN_FAILURE, payload: false });
-      await AsyncStorage.removeItem('userCredentials');
+      console.error('Kullanıcı bulunamadı.');
     }
-    dispatch(loginUser(data));
   };
 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}
-    >
+      style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
-        <View style={[styles.avatarContainer, keyboardOpen && styles.avatarContainerKeyboardOpen]}>
+        <View
+          style={[
+            styles.avatarContainer,
+            keyboardOpen && styles.avatarContainerKeyboardOpen,
+          ]}>
           {avatar ? (
-            <CustomAvatar
-              size={80}
-              source={avatar}
-            />
+            <CustomAvatar size={80} source={avatar} />
           ) : (
             <CustomAvatar
-            size={80}
-            source={require('../../../assets/images/anonim-avatar.png')}
-          />
-
+              size={80}
+              source={require('../../../assets/images/anonim-avatar.png')}
+            />
           )}
         </View>
         <View style={[styles.center, styles.inputContainer]}>
@@ -119,18 +123,19 @@ const Login = ({ route }: any) => {
                   message: 'Geçerli bir kullanıcı adı girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}
                   placeholder="Kullanıcı Adı"
-                  placeholderTextColor={Color.Gray} />
+                  placeholderTextColor={Color.Gray}
+                />
               )}
               name="userName"
             />
             {errors.userName && (
-              <Text style={{ color: Color.Danger }}>{errors.userName.message}</Text>
+              <Text style={styles.errorText}>{errors.userName.message}</Text>
             )}
             <Controller
               control={control}
@@ -141,7 +146,7 @@ const Login = ({ route }: any) => {
                   message: 'Geçerli bir şifre girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -154,13 +159,13 @@ const Login = ({ route }: any) => {
               name="password"
             />
             {errors.password && (
-              <Text style={{ color: Color.Danger }}>{errors.password.message}</Text>
+              <Text style={styles.errorText}>{errors.password.message}</Text>
             )}
           </View>
           <View style={styles.rowStyle}>
             <Text style={styles.rememberMe}>Beni hatırla</Text>
             <Switch
-              trackColor={{ false: Color.Dark, true: Color.Orange }}
+              trackColor={{false: Color.Dark, true: Color.Orange}}
               thumbColor={isEnabled ? Color.Light : Color.Secondary}
               onValueChange={toggleSwitch}
               value={isEnabled}
@@ -171,10 +176,10 @@ const Login = ({ route }: any) => {
           </View>
         </View>
 
-        <Text>Parolamı unuttum</Text>
+        <Text style={styles.rememberPassword}>Parolamı unuttum</Text>
         <View style={styles.rowStyle}>
           <Text style={styles.customText}>Hesabınız yok mu?</Text>
-          <Button mode="text" onPress={onPressRegistration} textColor='white'>
+          <Button mode="text" onPress={onPressRegistration} textColor="white">
             Şimdi kaydolun.
           </Button>
         </View>

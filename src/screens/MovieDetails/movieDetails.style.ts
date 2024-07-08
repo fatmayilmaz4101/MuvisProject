@@ -12,16 +12,18 @@ export const styles = StyleSheet.create({
   detailsContainer: {
     position: 'absolute',
     top: '30%',
-    left: '4%'
+    left: '4%',
   },
   titleStyle: {
     fontFamily: 'Lora-Regular',
     fontSize: 24,
     fontWeight: 'bold',
+    color: 'white',
   },
-  text: {
+  summaryText: {
     fontFamily: 'Lora-Regular',
     fontSize: 18,
+    color: 'white',
   },
   linearGradient: {
     flex: 1,
@@ -31,13 +33,13 @@ export const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
-  exampleView: {
+  movieDetailBlur: {
     width: 450,
     height: 700,
   },
   categoryDirector: {
     flexDirection: 'row',
-    marginBottom: '4%'
+    marginBottom: '4%',
   },
   favoriteIcon: {
     position: 'absolute',
@@ -45,25 +47,49 @@ export const styles = StyleSheet.create({
     right: '2%',
     width: 60,
     height: 60,
-    padding: 14
+    padding: 14,
   },
-  viewComment:{
-    marginTop: '20%'
+  viewComment: {
+    marginTop: '20%',
   },
   starTitle: {
-    margin: 20
+    margin: 20,
+    color: 'gray',
   },
   rating: {
     position: 'absolute',
     top: '90%',
-    left: '4%'
+    left: '4%',
   },
-  content: {
+  commentInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  commentInput: {
+    flex: 1,
+    paddingHorizontal: 10,
+    marginRight: 10,
+  },
+  commentContainer: {
+    flex: 1,
+    padding: 5,
+  },
+  loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor: 'black',
   },
-
-  
+  categoryDirectorText: {
+    color: 'white',
+    fontFamily: 'Lora-Regular',
+  },
+  commentText: {
+    color: 'white',
+  },
+  sendIcon: {
+    marginRight: 15,
+  },
 });

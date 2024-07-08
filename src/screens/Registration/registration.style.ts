@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { Color } from '../../utilities/Color';
+import {StyleSheet} from 'react-native';
+import {Color} from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,6 +8,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  keyboardStyle: {
+    flex: 1,
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   avatarContainer: {
     position: 'absolute',
     zIndex: 1,
@@ -17,7 +26,7 @@ export const styles = StyleSheet.create({
     top: '0%',
   },
   containerKeyboardOpen: {
-    top: 75
+    top: 75,
   },
   inputContainer: {
     position: 'absolute',
@@ -27,27 +36,22 @@ export const styles = StyleSheet.create({
     padding: 50,
     alignItems: 'center',
   },
-  center: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  errorText: {
+    color: Color.Danger,
   },
+
   customText: {
-    marginTop: 9
+    marginTop: 9,
+    color: 'white',
   },
   submit: {
     marginTop: 10,
   },
   rowStyle: {
     flexDirection: 'row',
-    marginTop: 500
+    marginTop: 500,
   },
-  rememberMe: {
-    marginTop: 5,
-  },
-  avatarList: {
-    marginTop: 10,
-    marginBottom: 20,
-  },
+
   avatarOption: {
     width: 80,
     height: 80,
@@ -60,7 +64,7 @@ export const styles = StyleSheet.create({
   },
   modalContainer: {
     width: 300,
-    flex:1,
+    flex: 1,
     padding: 20,
     margin: 30,
     alignItems: 'center',
@@ -80,9 +84,4 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     height: 350,
   },
-  closeButton: {
-    marginTop: 10,
-  },
-
-
 });

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   SafeAreaView,
@@ -7,22 +7,20 @@ import {
   Keyboard,
   TouchableOpacity,
   ImageSourcePropType,
-  FlatList,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import {useForm, Controller, SubmitHandler} from 'react-hook-form';
-import {useNavigation} from '@react-navigation/native';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
-import {getUserById} from '../../sevices/userService';
-import {UserFormInput, UserType} from '../../types';
-import {styles} from './profile.style';
-import {Color} from '../../utilities/Color';
+import { getUserById } from '../../sevices/userService';
+import { UserFormInput, UserType } from '../../types';
+import { styles } from './profile.style';
+import { Color } from '../../utilities/Color';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import {Modal} from 'react-native';
-import {avatarImages} from '../../../api/getAvatarDatas';
+import AvatarSelectionModal from '../../components/AvatarSelectionModal/AvatarSelectionModal';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -35,7 +33,7 @@ const Profile = () => {
   const {
     control,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
     reset,
   } = useForm<UserFormInput>({
     mode: 'onChange',
@@ -71,27 +69,14 @@ const Profile = () => {
       keyboardDidHideListener.remove();
     };
   }, []);
+
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   };
 
-  const handleAvatarPress = async (avatar: any) => {
+  const handleAvatarSelect = (avatar: ImageSourcePropType) => {
     setSelectedAvatar(avatar);
     setModalVisible(false);
-  };
-  const renderAvatar = ({item}: {item: ImageSourcePropType}) => {
-    return (
-      <TouchableOpacity onPress={() => handleAvatarPress(item)}>
-        <CustomAvatar
-          style={[
-            styles.avatarOption,
-            selectedAvatar === selectedAvatar && styles.selectedAvatar,
-          ]}
-          size={80}
-          source={item}
-        />
-      </TouchableOpacity>
-    );
   };
 
   const fetchUser = async () => {
@@ -158,14 +143,14 @@ const Profile = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={{ flex: 1 }}>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={[
             styles.avatarContainer,
             keyboardOpen && styles.avatarContainerKeyboardOpen,
           ]}
-          onPress={() => setModalVisible(true)}>
+          onPress={toggleModal}>
           <CustomAvatar size={100} source={selectedAvatar} />
         </TouchableOpacity>
 
@@ -182,7 +167,7 @@ const Profile = () => {
               message: 'Geçerli bir isim girin.',
             },
           }}
-          render={({field: {onBlur, onChange, value}}) => (
+          render={({ field: { onBlur, onChange, value } }) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -209,7 +194,7 @@ const Profile = () => {
               message: 'Geçerli bir soyisim girin',
             },
           }}
-          render={({field: {onBlur, onChange, value}}) => (
+          render={({ field: { onBlur, onChange, value } }) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -232,7 +217,7 @@ const Profile = () => {
               message: 'Geçerli bir kullanıcı adı girin',
             },
           }}
-          render={({field: {onBlur, onChange, value}}) => (
+          render={({ field: { onBlur, onChange, value } }) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -252,7 +237,7 @@ const Profile = () => {
               message: 'Geçerli bir şifre girin',
             },
           }}
-          render={({field: {onBlur, onChange, value}}) => (
+          render={({ field: { onBlur, onChange, value } }) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -273,7 +258,7 @@ const Profile = () => {
               message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
             },
           }}
-          render={({field: {onBlur, onChange, value}}) => (
+          render={({ field: { onBlur, onChange, value } }) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -295,28 +280,12 @@ const Profile = () => {
             type="update"
           />
         </View>
-        <Modal
-          animationType="fade"
-          transparent={true}
+        <AvatarSelectionModal
           visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}>
-          <View style={styles.modalContainer}>
-            <TouchableOpacity
-              style={styles.modalBackground}
-              onPress={toggleModal}>
-              <View style={styles.modalContent}>
-                <FlatList
-                  data={avatarImages}
-                  keyExtractor={index => index.toString()}
-                  numColumns={2}
-                  renderItem={renderAvatar}
-                />
-              </View>
-            </TouchableOpacity>
-          </View>
-        </Modal>
+          onClose={toggleModal}
+          onSelect={handleAvatarSelect}
+          selectedAvatar={selectedAvatar}
+        />
       </SafeAreaView>
     </KeyboardAvoidingView>
   );

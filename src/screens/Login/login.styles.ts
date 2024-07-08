@@ -11,10 +11,10 @@ export const styles = StyleSheet.create({
   avatarContainer: {
     position: 'absolute',
     zIndex: 1,
-    top: '17%',
+    top: '20%',
   },
   avatarContainerKeyboardOpen: {
-    top: '1%',
+    top: '5%',
   },
   inputContainer: {
     borderColor: 'white',

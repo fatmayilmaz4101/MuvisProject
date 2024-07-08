@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   View,
@@ -7,34 +7,32 @@ import {
   Platform,
   Keyboard,
   TouchableOpacity,
-  Modal,
-  FlatList,
   ImageSourcePropType,
 } from 'react-native';
-import {styles} from './registration.style';
+import { styles } from './registration.style';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import {Color} from '../../utilities/Color';
-import {Controller, SubmitHandler, useForm} from 'react-hook-form';
+import { Color } from '../../utilities/Color';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import {Button} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
-import {useUser} from '../../hooks/useUser';
-import {avatarImages} from '../../../api/getAvatarDatas';
-import {UserFormInput} from '../../types';
+import { Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { useUser } from '../../hooks/useUser';
+import { UserFormInput } from '../../types';
+import AvatarSelectionModal from '../../components/AvatarSelectionModal/AvatarSelectionModal';
 
 const Registration = () => {
   const navigation = useNavigation<any>();
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
-  const [selectedAvatar, setSelectedAvatar] = useState<any>(
+  const [selectedAvatar, setSelectedAvatar] = useState<ImageSourcePropType>(
     require('../../../assets/images/anonim-avatar.png'),
   );
-  const {addUser} = useUser();
+  const { addUser } = useUser();
   const {
     control,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm({
     defaultValues: {
       firstName: '',
@@ -64,16 +62,20 @@ const Registration = () => {
       keyboardDidHideListener.remove();
     };
   }, []);
+
   const handleNavigateLogin = () => {
-    navigation.navigate('Login', {selectedAvatar});
+    navigation.navigate('Login', { selectedAvatar });
   };
-  const handleAvatarPress = async (avatar: any) => {
-    setSelectedAvatar(avatar);
-    setModalVisible(false);
-  };
+
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   };
+
+  const handleAvatarSelect = (avatar: ImageSourcePropType) => {
+    setSelectedAvatar(avatar);
+    setModalVisible(false);
+  };
+
   const onSubmit: SubmitHandler<UserFormInput> = async data => {
     console.log('kayıt ola tıklandı, data: ', data);
     try {
@@ -91,20 +93,6 @@ const Registration = () => {
     }
   };
 
-  const renderAvatar = ({item}: {item: ImageSourcePropType}) => {
-    return (
-      <TouchableOpacity onPress={() => handleAvatarPress(item)}>
-        <CustomAvatar
-          style={[
-            styles.avatarOption,
-            selectedAvatar === selectedAvatar && styles.selectedAvatar,
-          ]}
-          size={80}
-          source={item}
-        />
-      </TouchableOpacity>
-    );
-  };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -115,7 +103,7 @@ const Registration = () => {
             styles.avatarContainer,
             keyboardOpen && styles.avatarContainerKeyboardOpen,
           ]}
-          onPress={() => setModalVisible(true)}>
+          onPress={toggleModal}>
           <CustomAvatar size={80} source={selectedAvatar} />
         </TouchableOpacity>
 
@@ -135,7 +123,7 @@ const Registration = () => {
                   message: 'Geçerli bir isim girin',
                 },
               }}
-              render={({field: {onBlur, onChange, value}}) => (
+              render={({ field: { onBlur, onChange, value } }) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -158,7 +146,7 @@ const Registration = () => {
                   message: 'Geçerli bir soyisim girin',
                 },
               }}
-              render={({field: {onBlur, onChange, value}}) => (
+              render={({ field: { onBlur, onChange, value } }) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -182,7 +170,7 @@ const Registration = () => {
                   message: 'Geçerli bir kullanıcı adı girin',
                 },
               }}
-              render={({field: {onBlur, onChange, value}}) => (
+              render={({ field: { onBlur, onChange, value } }) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -205,7 +193,7 @@ const Registration = () => {
                   message: 'Geçerli bir şifre girin',
                 },
               }}
-              render={({field: {onBlur, onChange, value}}) => (
+              render={({ field: { onBlur, onChange, value } }) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -229,7 +217,7 @@ const Registration = () => {
                   message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
                 },
               }}
-              render={({field: {onBlur, onChange, value}}) => (
+              render={({ field: { onBlur, onChange, value } }) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -256,28 +244,12 @@ const Registration = () => {
             Giriş yapın.
           </Button>
         </View>
-        <Modal
-          animationType="fade"
-          transparent={true}
+        <AvatarSelectionModal
           visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}>
-          <View style={styles.modalContainer}>
-            <TouchableOpacity
-              style={styles.modalBackground}
-              onPress={toggleModal}>
-              <View style={styles.modalContent}>
-                <FlatList
-                  data={avatarImages}
-                  keyExtractor={(item, index) => index.toString()}
-                  numColumns={2}
-                  renderItem={renderAvatar}
-                />
-              </View>
-            </TouchableOpacity>
-          </View>
-        </Modal>
+          onClose={toggleModal}
+          onSelect={handleAvatarSelect}
+          selectedAvatar={selectedAvatar}
+        />
       </SafeAreaView>
     </KeyboardAvoidingView>
   );

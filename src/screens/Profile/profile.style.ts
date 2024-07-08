@@ -25,12 +25,13 @@ export const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
     marginHorizontal: 10,
+    margin: 10,
   },
   modalContainer: {
-    width: 300,
+    width: '100%',
     flex: 1,
     padding: 20,
-    margin: 30,
+    margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -53,6 +54,6 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
   },
   errorText: {
-    color: Color.Danger
-  }
+    color: Color.Danger,
+  },
 });

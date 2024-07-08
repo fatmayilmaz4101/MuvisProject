@@ -87,3 +87,13 @@ export interface CustomTextInputProps {
   keyboardType?: KeyboardTypeOptions;
   placeholderTextColor?: string;
 }
+export  interface CustomCarouselType{
+  data: CarouselDataType[],
+  handlePress: Function,
+  layout:  "default" | "stack" | "tinder";
+  loop: boolean
+}
+export interface CarouselDataType{
+  src: string;
+  name: string;
+}

@@ -1795,31 +1795,5 @@
         }
       ]
     }
-  ],
-  "avatars": [
-    {
-      "src": "https://alumni.engineering.utoronto.ca/files/2022/05/Avatar-Placeholder-400x400-1.jpg",
-      "id": "6249"
-    },
-    {
-      "src": "https://avatarfiles.alphacoders.com/206/206823.jpg",
-      "id": "59af"
-    },
-    {
-      "src": "https://i.scdn.co/image/ab67616d00001e02871f38a519e22fe4f636672e",
-      "id": "1977"
-    },
-    {
-      "src": "https://static-cdn.jtvnw.net/jtv_user_pictures/acd81d76-3646-4fcd-9fc9-844ca4daa102-profile_image-300x300.png",
-      "id": "d3f3"
-    },
-    {
-      "src": "https://static-cdn.jtvnw.net/jtv_user_pictures/c7b3a181-90ff-4021-9461-759d8a69a236-profile_image-300x300.png",
-      "id": "e069"
-    },
-    {
-      "src": "https://avatarfiles.alphacoders.com/144/144516.jpg",
-      "id": "8b95"
-    }
   ]
 }

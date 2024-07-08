@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {
-  Dimensions,
   FlatList,
   Image,
   SafeAreaView,
@@ -9,14 +8,13 @@ import {
   View,
 } from 'react-native';
 import {styles} from './home.styles';
-import Carousel from 'react-native-snap-carousel';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
 import {useNavigation} from '@react-navigation/native';
-import {DirectorType, MovieType} from '../../types';
+import {CarouselDataType, DirectorType, MovieType} from '../../types';
 import {useDirector} from '../../hooks/useDirectors';
 import {useMovies} from '../../hooks/useMovie';
+import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
 
-const {width: viewportWidth} = Dimensions.get('window');
 
 const getRandomMovies = (movies: MovieType[], count: number) => {
   const shuffled = movies.sort(() => 0.5 - Math.random());
@@ -26,7 +24,6 @@ const getRandomMovies = (movies: MovieType[], count: number) => {
 const Home = ({route}: any) => {
   const navigation = useNavigation<any>();
   const {firstName} = route?.params || {};
-  const carouselRef = useRef<Carousel<any>>(null);
   const [randomMovies, setRandomMovies] = useState<MovieType[]>([]);
   const {data: directors = []} = useDirector();
   const {data: movies = []} = useMovies();
@@ -37,7 +34,7 @@ const Home = ({route}: any) => {
     }
   }, [movies]);
 
-  const handlePress = (item: MovieType) => {
+  const handlePress = (item: CarouselDataType) => {
     navigation.navigate('MovieDetail', {movie: item});
   };
 
@@ -46,17 +43,6 @@ const Home = ({route}: any) => {
     console.log(route.params);
   };
 
-  const renderMovieItem = ({item}: {item: MovieType}) => (
-    <TouchableOpacity onPress={() => handlePress(item)} style={styles.slide}>
-      <Image
-        source={typeof item.src === 'string' ? {uri: item.src} : item.src}
-        style={styles.image}
-      />
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{item.name}</Text>
-      </View>
-    </TouchableOpacity>
-  );
 
   const renderAvatar = ({item}: {item: DirectorType}) => {
     return (
@@ -78,13 +64,11 @@ const Home = ({route}: any) => {
         <Text style={styles.welcomeMessage}>
           {firstName}, senin için seçtiklerimize göz at
         </Text>
-        <Carousel
-          ref={carouselRef}
-          data={randomMovies}
-          renderItem={renderMovieItem}
-          sliderWidth={viewportWidth}
-          itemWidth={viewportWidth * 0.8}
-          layout="stack"
+        <CustomCarousel
+        data={randomMovies}
+        handlePress={handlePress}
+        layout='stack'
+        loop={true}
         />
       </View>
       <Text style={styles.welcomeMessage}>En Beğenilen Yönetmenler</Text>

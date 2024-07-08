@@ -1,41 +1,28 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {styles} from '../MovieList/movieList.styles';
 import {
-  Dimensions,
   Image,
   ScrollView,
   Text,
   View,
 } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
 import {useCategories} from '../../hooks/useCategories';
-import {CategoryType, MovieType} from '../../types';
+import {CarouselDataType, CategoryType, MovieType} from '../../types';
 import CustomLoading from '../../components/CustomLoading/CustomLoading';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
+import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
+import { Item } from 'react-native-paper/lib/typescript/components/Drawer/Drawer';
 
-const {width: viewportWidth} = Dimensions.get('window');
 
 const MovieList = () => {
   const navigation = useNavigation<any>();
 
-  const carouselRef = useRef<Carousel<any>>(null);
   const {data: categories = [], isLoading, error, refetch} = useCategories();
 
-  const renderMovieItem = ({item}: {item: MovieType}) => (
-    <TouchableOpacity onPress={() => handlePress(item)} style={styles.slide}>
-      <Image
-        source={typeof item.src === 'string' ? {uri: item.src} : item.src}
-        style={styles.image}
-      />
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{item.name}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-  const handlePress = (item: MovieType) => {
+  const handlePress = (item: CarouselDataType) => {
     navigation.navigate('MovieDetail', {movie: item});
   };
   const handleDetailPress = (item: CategoryType) => {
@@ -75,13 +62,11 @@ const MovieList = () => {
               </Button>
             </View>
             {Array.isArray(category.movies) && category.movies.length > 0 ? (
-              <Carousel
-                ref={carouselRef}
-                data={category.movies}
-                renderItem={renderMovieItem}
-                sliderWidth={viewportWidth}
-                itemWidth={viewportWidth * 0.8}
-                layout="default"
+              <CustomCarousel
+              data={category.movies}
+              handlePress={handlePress}
+              loop={true}
+              layout='default'
               />
             ) : (
               <Text style={styles.errorText}>

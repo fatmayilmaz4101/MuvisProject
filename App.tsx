@@ -7,6 +7,9 @@ import {Provider} from 'react-redux';
 import store from './src/redux/store';
 import {theme} from './src/styles/themes/themes';
 import DrawerNavigator from './src/navigation/DrawerNavigator/DrawerNavigator';
+import {LogBox} from 'react-native';
+
+LogBox.ignoreAllLogs();
 
 const queryClient = new QueryClient();
 

@@ -6,7 +6,7 @@ import {CustomAvatarProps} from '../../types';
 
 const CustomAvatar = ({size = 80, source, style}: CustomAvatarProps) => {
   return (
-    <View style={[styles.container, style]}>
+    <View style={style}>
       <Avatar.Image
         size={size}
         source={source}

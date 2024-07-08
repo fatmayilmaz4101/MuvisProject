@@ -26,6 +26,8 @@ export const styles = StyleSheet.create({
   },
   directorStyle: {
     marginBottom: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   movieStyle: {
     flex: 1,

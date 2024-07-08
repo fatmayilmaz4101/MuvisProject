@@ -1,15 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 10,
-  },
   avatarContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10,
   },
   avatar: {
     borderColor: 'red',

@@ -20,13 +20,13 @@ export const styles = StyleSheet.create({
   avatarContainer: {
     position: 'absolute',
     zIndex: 1,
-    top: '16%',
+    top: '20%',
   },
   avatarContainerKeyboardOpen: {
     top: '0%',
   },
   containerKeyboardOpen: {
-    top: 75,
+    top: 50,
   },
   inputContainer: {
     position: 'absolute',

@@ -12,9 +12,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {Rating} from 'react-native-ratings';
-import CustomBottomSheet, {
-  BottomSheetRef,
-} from '../../components/CustomBottomSheet/CustomBottomSheet';
+import CustomBottomSheet from '../../components/CustomBottomSheet/CustomBottomSheet';
+import { BottomSheetRef } from '../../types';
 import {useComments} from '../../hooks/useComments';
 import {CommentType} from '../../types';
 import {Avatar, Card} from 'react-native-paper';

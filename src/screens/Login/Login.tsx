@@ -59,7 +59,7 @@ const Login = ({route}: any) => {
     };
   }, []);
   
-  const onPressRegistration = () => navigation.navigate('Registration');
+  const onPressSignUp = () => navigation.navigate('SignUp');
 
   const toggleSwitch = async (value: boolean) => {
     setIsEnabled(value);
@@ -179,7 +179,7 @@ const Login = ({route}: any) => {
         <Text style={styles.rememberPassword}>Parolamı unuttum</Text>
         <View style={styles.rowStyle}>
           <Text style={styles.customText}>Hesabınız yok mu?</Text>
-          <Button mode="text" onPress={onPressRegistration} textColor="white">
+          <Button mode="text" onPress={onPressSignUp} textColor="white">
             Şimdi kaydolun.
           </Button>
         </View>

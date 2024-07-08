@@ -4,7 +4,7 @@ import Login from '../../screens/Login/Login';
 import Home from '../../screens/Home/Home';
 import MovieDetails from '../../screens/MovieDetails/MovieDetails';
 import CategoryDetail from '../../screens/CategoryDetails/CategoryDetail';
-import Registration from '../../screens/Registration/Registration';
+import SignUp from '../../screens/SignUp/SignUp';
 import MyDrawer, {
   LogoTitle,
   MenuIcon,
@@ -33,8 +33,8 @@ const Stacks = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Registration"
-        component={Registration}
+        name="SignUp"
+        component={SignUp}
         options={{headerShown: false}}
       />
       <Stack.Screen options={{title: 'Home'}} name="Home" component={Home} />

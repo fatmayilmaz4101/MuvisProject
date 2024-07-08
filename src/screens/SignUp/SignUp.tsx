@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -9,30 +9,30 @@ import {
   TouchableOpacity,
   ImageSourcePropType,
 } from 'react-native';
-import { styles } from './registration.style';
+import {styles} from './signUp.style';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import { Color } from '../../utilities/Color';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import {Color} from '../../utilities/Color';
+import {Controller, SubmitHandler, useForm} from 'react-hook-form';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import { Button } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
-import { useUser } from '../../hooks/useUser';
-import { UserFormInput } from '../../types';
-import AvatarSelectionModal from '../../components/AvatarSelectionModal/AvatarSelectionModal';
+import {Button} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
+import {useUser} from '../../hooks/useUser';
+import {UserFormInput} from '../../types';
+import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
 
-const Registration = () => {
+const SignUp = () => {
   const navigation = useNavigation<any>();
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
   const [selectedAvatar, setSelectedAvatar] = useState<ImageSourcePropType>(
     require('../../../assets/images/anonim-avatar.png'),
   );
-  const { addUser } = useUser();
+  const {addUser} = useUser();
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: {errors},
   } = useForm({
     defaultValues: {
       firstName: '',
@@ -64,7 +64,7 @@ const Registration = () => {
   }, []);
 
   const handleNavigateLogin = () => {
-    navigation.navigate('Login', { selectedAvatar });
+    navigation.navigate('Login', {selectedAvatar});
   };
 
   const toggleModal = () => {
@@ -123,7 +123,7 @@ const Registration = () => {
                   message: 'Geçerli bir isim girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -146,7 +146,7 @@ const Registration = () => {
                   message: 'Geçerli bir soyisim girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -170,7 +170,7 @@ const Registration = () => {
                   message: 'Geçerli bir kullanıcı adı girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -193,7 +193,7 @@ const Registration = () => {
                   message: 'Geçerli bir şifre girin',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -217,7 +217,7 @@ const Registration = () => {
                   message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
                 },
               }}
-              render={({ field: { onBlur, onChange, value } }) => (
+              render={({field: {onBlur, onChange, value}}) => (
                 <CustomTextInput
                   onBlur={onBlur}
                   onChangeText={onChange}
@@ -255,4 +255,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default SignUp;

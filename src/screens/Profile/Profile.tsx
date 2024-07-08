@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   SafeAreaView,
@@ -10,17 +10,17 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { useNavigation } from '@react-navigation/native';
+import {useForm, Controller, SubmitHandler} from 'react-hook-form';
+import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
-import { getUserById } from '../../sevices/userService';
-import { UserFormInput, UserType } from '../../types';
-import { styles } from './profile.style';
-import { Color } from '../../utilities/Color';
+import {getUserById} from '../../sevices/userService';
+import {UserFormInput, UserType} from '../../types';
+import {styles} from './profile.style';
+import {Color} from '../../utilities/Color';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import AvatarSelectionModal from '../../components/AvatarSelectionModal/AvatarSelectionModal';
+import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -33,7 +33,7 @@ const Profile = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: {errors},
     reset,
   } = useForm<UserFormInput>({
     mode: 'onChange',
@@ -143,7 +143,7 @@ const Profile = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}>
+      style={{flex: 1}}>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={[
@@ -167,7 +167,7 @@ const Profile = () => {
               message: 'Geçerli bir isim girin.',
             },
           }}
-          render={({ field: { onBlur, onChange, value } }) => (
+          render={({field: {onBlur, onChange, value}}) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -194,7 +194,7 @@ const Profile = () => {
               message: 'Geçerli bir soyisim girin',
             },
           }}
-          render={({ field: { onBlur, onChange, value } }) => (
+          render={({field: {onBlur, onChange, value}}) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -217,7 +217,7 @@ const Profile = () => {
               message: 'Geçerli bir kullanıcı adı girin',
             },
           }}
-          render={({ field: { onBlur, onChange, value } }) => (
+          render={({field: {onBlur, onChange, value}}) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -237,7 +237,7 @@ const Profile = () => {
               message: 'Geçerli bir şifre girin',
             },
           }}
-          render={({ field: { onBlur, onChange, value } }) => (
+          render={({field: {onBlur, onChange, value}}) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}
@@ -258,7 +258,7 @@ const Profile = () => {
               message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
             },
           }}
-          render={({ field: { onBlur, onChange, value } }) => (
+          render={({field: {onBlur, onChange, value}}) => (
             <CustomTextInput
               onBlur={onBlur}
               onChangeText={onChange}

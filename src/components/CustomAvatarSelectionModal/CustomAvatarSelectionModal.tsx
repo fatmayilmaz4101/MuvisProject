@@ -8,8 +8,8 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import CustomAvatar from '../CustomAvatar/CustomAvatar';
-import { styles } from './avatarSelectionModal.style';
-import { avatarImages } from '../../../api/getAvatarDatas';
+import {styles} from './customAvatarSelectionModal.style';
+import {avatarImages} from '../../../api/getAvatarDatas';
 
 interface AvatarSelectionModalProps {
   visible: boolean;
@@ -18,14 +18,13 @@ interface AvatarSelectionModalProps {
   selectedAvatar: ImageSourcePropType;
 }
 
-
 const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
   visible,
   onClose,
   onSelect,
   selectedAvatar,
 }) => {
-  const renderAvatar = ({ item }: { item: ImageSourcePropType }) => (
+  const renderAvatar = ({item}: {item: ImageSourcePropType}) => (
     <TouchableOpacity onPress={() => onSelect(item)}>
       <CustomAvatar
         style={[
@@ -39,7 +38,11 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
   );
 
   return (
-    <Modal animationType="fade" transparent={true} visible={visible} onRequestClose={onClose}>
+    <Modal
+      animationType="fade"
+      transparent={true}
+      visible={visible}
+      onRequestClose={onClose}>
       <View style={styles.modalBackground}>
         <View style={styles.modalContent}>
           <FlatList

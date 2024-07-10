@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   mainContainer: {
@@ -14,6 +15,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginLeft: 20,
+    marginBottom: 10
   },
   movieImage: {
     width: '90%',
@@ -29,5 +31,12 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontFamily: 'Lora-Regular'
+  },
+  closeIcon:{
+    position: 'absolute',
+    zIndex:1,
+    right:0,
+    top:0,
+    padding:10,
   }
 });

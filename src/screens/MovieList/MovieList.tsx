@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {styles} from '../MovieList/movieList.styles';
 import {
-  Image,
   ScrollView,
   Text,
   View,
@@ -10,11 +9,9 @@ import {
 import {useCategories} from '../../hooks/useCategories';
 import {CarouselDataType, CategoryType, MovieType} from '../../types';
 import CustomLoading from '../../components/CustomLoading/CustomLoading';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
 import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
-import { Item } from 'react-native-paper/lib/typescript/components/Drawer/Drawer';
 
 
 const MovieList = () => {

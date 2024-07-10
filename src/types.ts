@@ -1,5 +1,6 @@
-import {ReactNode} from 'react';
+import {Dispatch, ReactNode, SetStateAction} from 'react';
 import {
+  GestureResponderEvent,
   ImageSourcePropType,
   KeyboardTypeOptions,
   StyleProp,
@@ -20,7 +21,7 @@ export interface UserType {
   lastName: string;
   userName: string;
   password: string;
-  phone: number;
+  phone: string;
 }
 export interface CategoryType {
   id: number;
@@ -46,7 +47,7 @@ export interface UserFormInput {
   lastName: string;
   userName: string;
   password: string;
-  phone: number;
+  phone: string;
 }
 export interface LoginFormInput {
   userName: string;
@@ -97,3 +98,15 @@ export interface CarouselDataType{
   src: string;
   name: string;
 }
+export interface CustomMaskInputType {
+  value: string,
+  onChangeText: Dispatch<SetStateAction<string>>,
+  onBlur: any
+}
+export interface CustomToolTipType{
+  content: React.ReactElement,
+  placement: "top" | "right" | "left" | "center" | "bottom",
+  children: React.ReactNode,
+  isVisible: boolean,
+  onClose: (event: GestureResponderEvent) => void
+} 

@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     color: 'white',
   },
   submit: {
-    marginTop: 10,
+    marginTop: 18,
   },
   rowStyle: {
     flexDirection: 'row',

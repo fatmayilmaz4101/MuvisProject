@@ -24,6 +24,7 @@ import {
   removeFromFavorites,
 } from '../../redux/actions/favoriteActions';
 import CustomLoading from '../../components/CustomLoading/CustomLoading';
+import CustomToolTip from '../../components/CustomToolTip/CustomToolTip';
 
 const MovieDetails = ({route}: any) => {
   const dispatch = useAppDispatch();
@@ -33,6 +34,7 @@ const MovieDetails = ({route}: any) => {
   const login = useSelector((state: RootState) => state.user.login.userName);
   const bottomSheetRef = useRef<BottomSheetRef>(null);
   const {favorites} = useSelector((state: RootState) => state.favori);
+  const [toolTipVisible, setToolTipVisible] = useState(false);
 
   const {data: comments = [], isLoading, addComment, refetch} = useComments();
   const filteredComments = comments.filter(comment => comment.movieId === id);
@@ -45,6 +47,7 @@ const MovieDetails = ({route}: any) => {
       setIsFavorite(true);
     }
   }, [favorites, route?.params.movie.id]);
+
 
   const renderComments = ({item}: {item: CommentType}) => (
     <View style={{width: '100%', margin: 1}}>
@@ -77,6 +80,10 @@ const MovieDetails = ({route}: any) => {
       dispatch(addToFavorites(route?.params.movie));
     }
     setIsFavorite(!isFavorite);
+    setToolTipVisible(true);
+    setTimeout(() => {
+      setToolTipVisible(false);
+    }, 2000); 
   };
 
   const handleAddComment = () => {
@@ -106,6 +113,16 @@ const MovieDetails = ({route}: any) => {
     );
   }
 
+  const openContentToolTip = () =>{
+    return(
+        <Text style={styles.contentText}>Film favorilere eklendi.</Text>
+    )
+  }
+  const closeContentToolTip = () =>{
+    return(
+        <Text style={styles.contentText}>Film favorilerden kaldırıldı.</Text>
+    )
+  }
   return (
     <View style={styles.container}>
       <Image source={{uri: src}} style={styles.image} />
@@ -114,7 +131,14 @@ const MovieDetails = ({route}: any) => {
         style={styles.linearGradient}>
         <View style={styles.movieDetailBlur}></View>
       </LinearGradient>
-      <TouchableOpacity
+
+      <CustomToolTip
+      isVisible={toolTipVisible}
+      onClose={() => setToolTipVisible(false)}
+      content={isFavorite ? openContentToolTip() : closeContentToolTip()}
+      placement="top"
+      children={
+        <TouchableOpacity
         style={styles.favoriteIcon}
         onPress={handlePressFavorite}>
         <Ionicons
@@ -123,6 +147,8 @@ const MovieDetails = ({route}: any) => {
           color={isFavorite ? 'red' : 'white'}
         />
       </TouchableOpacity>
+      }/>
+
 
       <View style={styles.detailsContainer}>
         <Text style={styles.titleStyle}>{name}</Text>
@@ -143,7 +169,6 @@ const MovieDetails = ({route}: any) => {
           tintColor="black"
         />
       </View>
-
       <CustomBottomSheet ref={bottomSheetRef} snapPoints={['100%']}>
         <View style={styles.commentContainer}>
           <FlatList
@@ -158,6 +183,7 @@ const MovieDetails = ({route}: any) => {
               placeholderTextColor={'white'}
               value={newComment}
               onChangeText={setNewComment}
+              
             />
             <TouchableOpacity onPress={handleAddComment}>
               <Ionicons

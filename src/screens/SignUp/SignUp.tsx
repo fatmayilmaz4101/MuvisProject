@@ -20,6 +20,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useUser} from '../../hooks/useUser';
 import {UserFormInput} from '../../types';
 import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
+import CustomMaskInput from '../../components/CustomMaskInput/CustomMaskInput';
 
 const SignUp = () => {
   const navigation = useNavigation<any>();
@@ -39,7 +40,7 @@ const SignUp = () => {
       lastName: '',
       userName: '',
       password: '',
-      phone: 0,
+      phone: '',
     },
   });
 
@@ -212,19 +213,12 @@ const SignUp = () => {
               control={control}
               rules={{
                 required: 'Bu alan boş bırakılamaz',
-                pattern: {
-                  value: /^(?:\+90|90)(\d{10})$/,
-                  message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
-                },
               }}
               render={({field: {onBlur, onChange, value}}) => (
-                <CustomTextInput
+                <CustomMaskInput
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value ? value.toString() : ''}
-                  placeholder="Cep Telefonu"
-                  keyboardType="phone-pad"
-                  placeholderTextColor={Color.Gray}
                 />
               )}
               name="phone"

@@ -27,4 +27,5 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'Lora-Regular',
   },
+
 });

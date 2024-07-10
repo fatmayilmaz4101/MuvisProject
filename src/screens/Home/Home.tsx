@@ -20,12 +20,14 @@ const getRandomMovies = (movies: MovieType[], count: number) => {
   return shuffled.slice(0, count);
 };
 
+
 const Home = ({route}: any) => {
   const navigation = useNavigation<any>();
   const {firstName} = route?.params || {};
   const [randomMovies, setRandomMovies] = useState<MovieType[]>([]);
   const {data: directors = []} = useDirector();
   const {data: movies = []} = useMovies();
+
 
   useEffect(() => {
     if (movies.length > 0) {
@@ -74,12 +76,13 @@ const Home = ({route}: any) => {
       <View style={styles.directorAvatar}>
         <FlatList
           data={directors}
-          keyExtractor={(item, index) => index.toString()}
+          keyExtractor={(index) => index.toString()}
           numColumns={3}
           renderItem={renderAvatar}
           key={(3).toString()}
         />
       </View>
+
     </SafeAreaView>
   );
 };

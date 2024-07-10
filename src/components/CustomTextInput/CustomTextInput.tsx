@@ -25,6 +25,7 @@ const CustomTextInput = ({
       outlineColor="black"
       activeOutlineColor="red"
       style={styles.input}
+      cursorColor={'red'}
     />
   );
 };

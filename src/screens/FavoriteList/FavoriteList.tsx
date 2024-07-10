@@ -11,6 +11,7 @@ import {RootState} from '../../redux/store';
 import {useSelector} from 'react-redux';
 import {MovieType} from '../../types';
 import {useNavigation} from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const FavoriteList = () => {
   const navigation = useNavigation<any>();
@@ -28,16 +29,28 @@ const FavoriteList = () => {
       </TouchableOpacity>
     </View>
   );
-
+  const FavoriEmptyComponent = () => {
+    return (
+      <SafeAreaView>
+        <Text style={styles.emptyCompText}>
+          Favori filminiz bulunmamaktadır.
+        </Text>
+      </SafeAreaView>
+    );
+  };
   return (
     <SafeAreaView style={styles.mainContainer}>
       <Text style={styles.categoryTitle}>Favorilerim</Text>
       <FlatList
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={index => index.toString()}
         data={favorites}
         renderItem={renderItem}
         numColumns={2}
+        ListEmptyComponent={FavoriEmptyComponent}
       />
+      <TouchableOpacity>
+        <Ionicons name="menu" size={24} color="white" />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

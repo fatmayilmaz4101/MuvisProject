@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   container: {
@@ -43,11 +44,11 @@ export const styles = StyleSheet.create({
   },
   favoriteIcon: {
     position: 'absolute',
-    top: '30%',
-    right: '2%',
+    right: '1%',
+    bottom:'5%',
     width: 60,
     height: 60,
-    padding: 14,
+    padding: 5,
   },
   viewComment: {
     marginTop: '20%',
@@ -71,6 +72,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     marginRight: 10,
+    color: 'white'
   },
   commentContainer: {
     flex: 1,
@@ -92,4 +94,24 @@ export const styles = StyleSheet.create({
   sendIcon: {
     marginRight: 15,
   },
+  touchable: {
+    padding: 10,
+    backgroundColor: Color.BackgroundColor,
+    borderRadius: 5,
+  },
+  contentText: {
+    color: 'white',
+    textAlign: 'center'
+  },
+  toolTipContentStyle: {
+    backgroundColor: Color.BackgroundColor,
+    padding:10
+  },
+  toolTipStyle: {
+    width: '100%',
+    height:'auto',
+    position:'absolute',
+    top:'2%'
+  }
+  
 });

@@ -21,6 +21,7 @@ import {styles} from './profile.style';
 import {Color} from '../../utilities/Color';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
 import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
+import CustomMaskInput from '../../components/CustomMaskInput/CustomMaskInput';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -29,6 +30,7 @@ const Profile = () => {
   );
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
+  const [phone, setPhone] = useState<string>('');
   const [profileData, setProfileData] = useState<UserType | null>(null);
   const {
     control,
@@ -42,7 +44,7 @@ const Profile = () => {
       lastName: '',
       userName: '',
       password: '',
-      phone: 0,
+      phone: '',
     },
   });
   const [initialCredentials, setInitialCredentials] = useState({
@@ -253,19 +255,12 @@ const Profile = () => {
           control={control}
           rules={{
             required: 'Bu alan boş bırakılamaz',
-            pattern: {
-              value: /^(?:\+90|90)(\d{10})$/,
-              message: 'Telefon numarası +90 veya 90 ile başlamalıdır.',
-            },
           }}
           render={({field: {onBlur, onChange, value}}) => (
-            <CustomTextInput
+            <CustomMaskInput
               onBlur={onBlur}
               onChangeText={onChange}
               value={value ? value.toString() : ''}
-              placeholder="Cep Telefonu"
-              keyboardType="phone-pad"
-              placeholderTextColor={Color.Gray}
             />
           )}
           name="phone"

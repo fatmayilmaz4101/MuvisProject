@@ -43,7 +43,7 @@ export const loginUser = (requestUser: UserLoginModel) => {
   return async (dispatch: AppDispatch) => {
     dispatch(loginRequest());
     try {
-      const response = await fetch('http://192.168.215.110:4000/users');
+      const response = await fetch('http://192.168.1.81:4000/users');
       const text = await response.text();
       const users = JSON.parse(text);
       const user = users.find(
@@ -71,7 +71,7 @@ export const updateProfile =
     dispatch(updateRequest());
     try {
       const response = await fetch(
-        `http://192.168.215.110:4000/users/${userId}`,
+        `http://192.168.1.81:4000/users/${userId}`,
         {
           method: 'PATCH',
           headers: {'Content-Type': 'application/json'},

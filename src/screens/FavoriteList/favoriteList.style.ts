@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   movieImage: {
     width: '90%',
-    aspectRatio: 9 / 12, // Oran burada belirlenir
+    aspectRatio: 9 / 12, 
     borderRadius: 10,
     margin: 5,
   },
@@ -25,4 +25,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
   },
+  emptyCompText: {
+    textAlign: 'center',
+    color: 'white',
+    fontFamily: 'Lora-Regular'
+  }
 });

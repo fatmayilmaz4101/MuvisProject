@@ -105,8 +105,7 @@ export interface CustomMaskInputType {
 }
 export interface CustomToolTipType{
   content: React.ReactElement,
-  placement: "top" | "right" | "left" | "center" | "bottom",
   children: React.ReactNode,
-  isVisible: boolean,
-  onClose: (event: GestureResponderEvent) => void
+  style: StyleProp<ViewStyle>
+  onPress: (event: GestureResponderEvent) => void
 } 

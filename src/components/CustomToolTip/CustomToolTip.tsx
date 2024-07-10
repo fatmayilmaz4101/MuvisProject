@@ -1,26 +1,47 @@
-import { SafeAreaView } from "react-native"
-import { styles } from "./customToolTip.style"
-import Tooltip from "react-native-walkthrough-tooltip"
-import { CustomToolTipType } from "../../types"
-  
-const CustomToolTip = ({content, placement, children, isVisible, onClose}: CustomToolTipType) => {
+import {
+  GestureResponderEvent,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {styles} from './customToolTip.style';
+import {CustomToolTipType} from '../../types';
+import {useState} from 'react';
 
-    return(
-    <SafeAreaView>
-        <Tooltip
-        isVisible={isVisible}
-        content={content}
-        placement = {placement}
-        onClose={onClose}
-        contentStyle = {styles.toolTipContentStyle}
-        tooltipStyle = {styles.toolTipStyle}  
-        backgroundColor="transparent"
-        arrowSize={{width:0, height:0}}
-      >
+const CustomToolTip = ({
+  content,
+  children,
+  style,
+  onPress,
+}: CustomToolTipType) => {
+  const [visible, setVisible] = useState(false);
+
+  const handlePress = (event: GestureResponderEvent) => {
+    setVisible(!visible);
+    setTimeout(() => {
+      setVisible(false);
+    }, 2000); 
+
+    console.log('handlepresse girildi: ', !visible);
+    if (onPress) {
+      onPress(event);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={handlePress} style={style}>
         {children}
-      </Tooltip>
-
-    </SafeAreaView>
-)
-}
-export default CustomToolTip
+      </TouchableOpacity>
+      {visible && (
+        <View>
+          <View>
+            <Text style={styles.tooltipText}>{content}</Text>
+          </View>
+          <View style={styles.arrowDown} />
+        </View>
+      )}
+    </View>
+  );
+};
+export default CustomToolTip;

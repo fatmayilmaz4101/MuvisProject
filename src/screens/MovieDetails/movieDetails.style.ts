@@ -44,11 +44,12 @@ export const styles = StyleSheet.create({
   },
   favoriteIcon: {
     position: 'absolute',
-    right: '1%',
+    right: 0,
     bottom:'5%',
     width: 60,
     height: 60,
-    padding: 5,
+    padding: 10,
+    margin:5
   },
   viewComment: {
     marginTop: '20%',
@@ -101,7 +102,8 @@ export const styles = StyleSheet.create({
   },
   contentText: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Lora-Regular'
   },
   toolTipContentStyle: {
     backgroundColor: Color.BackgroundColor,

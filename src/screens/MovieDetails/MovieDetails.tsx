@@ -34,7 +34,6 @@ const MovieDetails = ({route}: any) => {
   const login = useSelector((state: RootState) => state.user.login.userName);
   const bottomSheetRef = useRef<BottomSheetRef>(null);
   const {favorites} = useSelector((state: RootState) => state.favori);
-  const [toolTipVisible, setToolTipVisible] = useState(false);
 
   const {data: comments = [], isLoading, addComment, refetch} = useComments();
   const filteredComments = comments.filter(comment => comment.movieId === id);
@@ -80,10 +79,6 @@ const MovieDetails = ({route}: any) => {
       dispatch(addToFavorites(route?.params.movie));
     }
     setIsFavorite(!isFavorite);
-    setToolTipVisible(true);
-    setTimeout(() => {
-      setToolTipVisible(false);
-    }, 2000); 
   };
 
   const handleAddComment = () => {
@@ -131,22 +126,18 @@ const MovieDetails = ({route}: any) => {
         style={styles.linearGradient}>
         <View style={styles.movieDetailBlur}></View>
       </LinearGradient>
-
+      
       <CustomToolTip
-      isVisible={toolTipVisible}
-      onClose={() => setToolTipVisible(false)}
       content={isFavorite ? openContentToolTip() : closeContentToolTip()}
-      placement="top"
+      style={styles.favoriteIcon}
+      onPress={handlePressFavorite}
+
       children={
-        <TouchableOpacity
-        style={styles.favoriteIcon}
-        onPress={handlePressFavorite}>
         <Ionicons
           name={isFavorite ? 'heart' : 'heart-outline'}
           size={30}
           color={isFavorite ? 'red' : 'white'}
         />
-      </TouchableOpacity>
       }/>
 
 

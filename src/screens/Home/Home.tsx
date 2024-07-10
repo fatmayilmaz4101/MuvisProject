@@ -72,6 +72,7 @@ const Home = ({route}: any) => {
         loop={true}
         />
       </View>
+      
       <Text style={styles.welcomeMessage}>En Beğenilen Yönetmenler</Text>
       <View style={styles.directorAvatar}>
         <FlatList

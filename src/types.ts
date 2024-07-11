@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 export interface MovieType {
-  id: number;
+  id: string;
   src: string;
   name: string;
   category: string;
@@ -31,13 +31,13 @@ export interface CategoryType {
 }
 export interface CommentType {
   id: string;
-  movieId: number;
+  movieId: string;
   username: string;
   content: string;
   date: string;
 }
 export interface DirectorType {
-  id: number;
+  id: string;
   name: string;
   src: string;
   movies: MovieType[];

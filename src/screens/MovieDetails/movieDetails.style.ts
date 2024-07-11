@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
   },
   detailsContainer: {
     position: 'absolute',
-    top: '30%',
-    left: '4%',
+    top: '35%',
+    left: '3%',
   },
   titleStyle: {
     fontFamily: 'Lora-Regular',
@@ -53,6 +53,7 @@ export const styles = StyleSheet.create({
   },
   viewComment: {
     marginTop: '20%',
+    marginBottom: '10%'
   },
   starTitle: {
     margin: 20,
@@ -60,7 +61,7 @@ export const styles = StyleSheet.create({
   },
   rating: {
     position: 'absolute',
-    top: '90%',
+    top: '80%',
     left: '4%',
   },
   commentInputContainer: {
@@ -78,6 +79,7 @@ export const styles = StyleSheet.create({
   commentContainer: {
     flex: 1,
     padding: 5,
+    marginTop: '7%'
   },
   loadingContainer: {
     flex: 1,

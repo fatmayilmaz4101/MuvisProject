@@ -3,7 +3,6 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'black',
     justifyContent: 'center',
     textAlign: 'center',
   },
@@ -19,11 +18,14 @@ export const styles = StyleSheet.create({
   },
   movieImage: {
     width: '90%',
-    aspectRatio: 9 / 12, // Oran burada belirlenir
+    aspectRatio: 9 / 12, // Oran belirleme
     borderRadius: 10,
     margin: 5,
   },
   movieTitle: {
     textAlign: 'center',
   },
+  errorText: {
+    color: 'red'
+  }
 });

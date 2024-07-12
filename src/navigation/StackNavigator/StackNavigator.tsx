@@ -10,15 +10,21 @@ import MyDrawer, {
   MenuIcon,
 } from '../DrawerNavigator/DrawerNavigator';
 import DirectorsDetail from '../../screens/DirectorsDetail/DirectorsDetail';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { getThemeColor } from '../../color';
 
 const Stack = createStackNavigator();
 
 const Stacks = () => {
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
+
   return (
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: 'black',
+          backgroundColor: themeColors.background,
           borderBottomWidth: 0,
           shadowOpacity: 0,
           elevation: 0,

@@ -21,6 +21,9 @@ import {useUser} from '../../hooks/useUser';
 import {UserFormInput} from '../../types';
 import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
 import CustomMaskInput from '../../components/CustomMaskInput/CustomMaskInput';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { getThemeColor } from '../../color';
 
 const SignUp = () => {
   const navigation = useNavigation<any>();
@@ -43,6 +46,8 @@ const SignUp = () => {
       phone: '',
     },
   });
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -98,7 +103,7 @@ const SignUp = () => {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.keyboardStyle}>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, {backgroundColor: themeColors.background}]}>
         <TouchableOpacity
           style={[
             styles.avatarContainer,
@@ -109,7 +114,7 @@ const SignUp = () => {
         </TouchableOpacity>
 
         <View
-          style={[
+          style={[{borderColor: themeColors.titleColor},
             styles.center,
             styles.inputContainer,
             keyboardOpen && styles.containerKeyboardOpen,
@@ -233,8 +238,8 @@ const SignUp = () => {
         </View>
 
         <View style={styles.rowStyle}>
-          <Text style={styles.customText}>Hesabınız varsa</Text>
-          <Button mode="text" onPress={handleNavigateLogin} textColor="white">
+          <Text style={[styles.customText, {color: themeColors.titleColor}]}>Hesabınız varsa</Text>
+          <Button mode="text" onPress={handleNavigateLogin} textColor={themeColors.titleColor}>
             Giriş yapın.
           </Button>
         </View>

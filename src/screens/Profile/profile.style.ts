@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     marginTop: 10,
   },
   container: {
-    backgroundColor: 'black',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -52,8 +51,5 @@ export const styles = StyleSheet.create({
   selectedAvatar: {
     borderColor: Color.CustomGreen,
     borderWidth: 2,
-  },
-  errorText: {
-    color: Color.Danger,
   },
 });

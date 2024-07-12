@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -8,14 +8,11 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
-  ActivityIndicator,
 } from 'react-native';
 import { styles } from './movieDetails.style';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Rating } from 'react-native-ratings';
-import { BottomSheetRef } from '../../types';
 import { useComments } from '../../hooks/useComments';
 import { CommentType } from '../../types';
 import { Avatar, Card } from 'react-native-paper';
@@ -27,24 +24,30 @@ import {
 } from '../../redux/actions/favoriteActions';
 import CustomLoading from '../../components/CustomLoading/CustomLoading';
 import CustomToolTip from '../../components/CustomToolTip/CustomToolTip';
-import { Color } from '../../utilities/Color';
+import { getThemeColor } from '../../color';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MovieDetails = ({ route }: any) => {
   const dispatch = useAppDispatch();
   const { id, src, name, category, director, summary } = route?.params.movie;
   const [isFavorite, setIsFavorite] = useState(false);
   const [newComment, setNewComment] = useState<string>('');
-  const login = useSelector((state: RootState) => state.user.login.userName);
-  const bottomSheetRef = useRef<BottomSheetRef>(null);
   const { favorites } = useSelector((state: RootState) => state.favori);
   const [visibleComments, setVisibleComments] = useState(4);
-  const [isFetchingMore, setIsFetchingMore] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [onEndReachedCalledDuringMomentum, setOnEndReachedCalledDuringMomentum] = useState<boolean>(true)
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
+  const [userName, setuserName] = useState<string>('');
 
   const { data: comments = [], isLoading, addComment, refetch } = useComments();
   const filteredComments = comments.filter(comment => comment.movieId === id);
-
+  useEffect(() => {
+    const getFirstName = async () => {
+      const storedFirstName = await AsyncStorage.getItem('firstName');
+      setuserName(storedFirstName!); 
+    };
+    getFirstName();
+  }, [route]);
   useEffect(() => {
     const favorite = favorites.find(
       movie => movie.id === route?.params.movie.id,
@@ -56,7 +59,7 @@ const MovieDetails = ({ route }: any) => {
 
   const renderComments = ({ item }: { item: CommentType }) => (
     <View style={{ width: '100%', margin: 1 }}>
-      <Card style={{ borderRadius: 5, backgroundColor: Color.BackgroundColor }}>
+      <Card style={{ borderRadius: 5, backgroundColor: themeColors.commentContainer }}>
         <Card.Content>
           <View style={{ flexDirection: 'row' }}>
             <Avatar.Image
@@ -65,12 +68,12 @@ const MovieDetails = ({ route }: any) => {
             />
             <View style={{ marginLeft: 5 }}>
               <View style={{ flexDirection: 'row' }}>
-                <Text style={styles.commentText}>{item.username}</Text>
-                <Text style={{ marginLeft: 5, color: 'grey' }}>
+                <Text style={{color: themeColors.commentInput}}>{item.username}</Text>
+                <Text style={{ marginLeft: 5, color: themeColors.commentDateColor }}>
                   {item.date.toString()}
                 </Text>
               </View>
-              <Text style={styles.commentText}>{item.content}</Text>
+              <Text style={{color: themeColors.commentInput}}>{item.content}</Text>
             </View>
           </View>
         </Card.Content>
@@ -91,7 +94,7 @@ const MovieDetails = ({ route }: any) => {
     const comment = {
       movieId: id,
       content: newComment,
-      username: login,
+      username: userName,
       date: new Date().toString(),
     };
     console.log('New Comment: ', newComment);
@@ -105,16 +108,16 @@ const MovieDetails = ({ route }: any) => {
 
   const CommentInput = () => {
     return (
-      <View style={styles.commentInputContainer}>
+      <View style={[styles.commentInputContainer, {backgroundColor: themeColors.sendInputContainer}]}>
         <TextInput
-          style={styles.commentInput}
+          style={[styles.commentInput, {color: themeColors.titleColor}]}
           placeholder="Yorumunuzu yazın"
-          placeholderTextColor={'white'}
+          placeholderTextColor={themeColors.titleColor}
           value={newComment}
           onChangeText={setNewComment}
         />
         <TouchableOpacity onPress={handleAddComment}>
-          <Ionicons name="send" style={styles.sendIcon} size={24} color="white" />
+          <Ionicons name="send" style={styles.sendIcon} size={24} color={themeColors.titleColor} />
         </TouchableOpacity>
       </View>
     );
@@ -129,27 +132,27 @@ const MovieDetails = ({ route }: any) => {
 
   if (isLoading) {
     return (
-      <View style={styles.loadingContainer}>
+      <View style={{backgroundColor: themeColors.background}}>
         <CustomLoading isLoading={isLoading} text="Yükleniyor" />
       </View>
     );
   }
 
   const openContentToolTip = () => {
-    return <Text style={styles.contentText}>Film favorilere eklendi.</Text>;
+    return <Text style={[styles.contentText, {color: themeColors.background}]}>Film favorilere eklendi.</Text>;
   };
   const closeContentToolTip = () => {
-    return <Text style={styles.contentText}>Film favorilerden kaldırıldı.</Text>;
+    return <Text style={[styles.contentText, {color: themeColors.background}]}>Film favorilerden kaldırıldı.</Text>;
   };
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <View style={styles.container}>
+      <View style={[styles.mainContainer, {backgroundColor: themeColors.background}]}>
         <Image source={{ uri: src }} style={styles.image} />
         <LinearGradient
-          colors={['transparent', 'black', 'black']}
+          colors={themeColors.blurColor}
           style={styles.linearGradient}>
           <View style={styles.movieDetailBlur}></View>
         </LinearGradient>
@@ -168,22 +171,25 @@ const MovieDetails = ({ route }: any) => {
         />
 
         <View style={styles.detailsContainer}>
-          <Text style={styles.titleStyle}>{name}</Text>
+          <Text style={[styles.titleStyle, {color: themeColors.titleColor}]}>{name}</Text>
           <View style={styles.categoryDirector}>
-            <Text style={styles.categoryDirectorText}> *{category}</Text>
-            <Text style={styles.categoryDirectorText}> *{director}</Text>
+            <Text style={[styles.categoryDirectorText, {color: themeColors.titleColor}]}> *{category}</Text>
+            <Text style={[styles.categoryDirectorText, {color: themeColors.titleColor}]}> *{director}</Text>
           </View>
-          <Text style={styles.summaryText}>{summary}</Text>
+          <Text style={[styles.summaryText, {color: themeColors.titleColor}]}>{summary}</Text>
         </View>
 
         <View style={styles.viewComment}>
-          <Text style={styles.starTitle}>Bu filmi izlediniz mi?</Text>
+          <Text style={[styles.starTitle, {color: themeColors.titleColor}]}>Bu filmi izlediniz mi?</Text>
           <Rating
+          
             type="star"
             ratingCount={5}
             imageSize={30}
             style={styles.rating}
-            tintColor="black"
+            tintColor= {themeColors.background}
+
+            
           />
         </View>
           <View style={styles.commentContainer}>

@@ -8,7 +8,7 @@ export const addToFavorites = (movie: MovieType) => ({
   payload: movie,
 });
 
-export const removeFromFavorites = (movieId: number) => ({
+export const removeFromFavorites = (movieId: string) => ({
   type: REMOVE_FROM_FAVORITES,
   payload: movieId,
 });

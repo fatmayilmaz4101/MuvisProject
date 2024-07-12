@@ -10,6 +10,9 @@ import Carousel from 'react-native-snap-carousel';
 import {CarouselDataType, CustomCarouselType} from '../../types';
 import {Text} from 'react-native-paper';
 import {styles} from './customCarousel.style';
+import { RootState } from '../../redux/store';
+import { useSelector } from 'react-redux';
+import { getThemeColor } from '../../color';
 
 const {width: viewportWidth} = Dimensions.get('window');
 
@@ -20,14 +23,16 @@ const CustomCarousel = ({
   loop,
 }: CustomCarouselType) => {
   const carouselRef = useRef<Carousel<any>>(null);
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
 
   const renderItem = ({item}: {item: CarouselDataType}) => (
-    <TouchableOpacity onPress={() => handlePress(item)} style={styles.slide}>
+    <TouchableOpacity onPress={() => handlePress(item)} style={[styles.slide,{backgroundColor: themeColors.cardBottom, shadowColor: themeColors.cardBottom}]}>
       <Image
         source={typeof item.src === 'string' ? {uri: item.src} : item.src}
-        style={styles.image}
+        style={[styles.image,{backgroundColor: themeColors.cardBottom}]}
       />
-      <View style={styles.textContainer}>
+      <View style={[styles.textContainer, {backgroundColor: themeColors.cardBottom}]}>
         <Text style={styles.title}>{item.name}</Text>
       </View>
     </TouchableOpacity>

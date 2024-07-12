@@ -3,6 +3,9 @@ import { CustomMaskInputType } from "../../types"
 import { View } from "react-native"
 import { styles } from "./customMaskInput.style"
 import { Color } from "../../utilities/Color"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
+import { getThemeColor } from "../../color"
 const phoneMask = [
     '+',
     '9',
@@ -23,6 +26,8 @@ const phoneMask = [
     /\d/,
   ];  
 const CustomMaskInput = ({value, onChangeText, onBlur} : CustomMaskInputType) => {
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
     return(
         <View>
             <MaskInput
@@ -33,7 +38,7 @@ const CustomMaskInput = ({value, onChangeText, onBlur} : CustomMaskInputType) =>
             mask={phoneMask}
             cursorColor={'red'}
             selectionColor={'red'}
-            style={styles.input}
+            style={[styles.input, {color: themeColors.titleColor, backgroundColor: themeColors.background, borderColor: themeColors.titleColor}]}
             placeholder="+90-5XX-XXX-XX-XX"
             placeholderTextColor={Color.Gray}
           />

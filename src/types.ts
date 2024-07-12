@@ -73,7 +73,6 @@ export interface BottomSheetRef {
 export interface CustomButtonProps {
   title: string;
   onPress: () => void;
-  type?: 'login' | 'update';
 }
 export interface LoadingComponentProps {
   isLoading: boolean;

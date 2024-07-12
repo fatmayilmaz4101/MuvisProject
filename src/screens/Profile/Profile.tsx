@@ -22,6 +22,9 @@ import {Color} from '../../utilities/Color';
 import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
 import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
 import CustomMaskInput from '../../components/CustomMaskInput/CustomMaskInput';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { getThemeColor } from '../../color';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -32,6 +35,9 @@ const Profile = () => {
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
   const [phone, setPhone] = useState<string>('');
   const [profileData, setProfileData] = useState<UserType | null>(null);
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
+
   const {
     control,
     handleSubmit,
@@ -145,7 +151,7 @@ const Profile = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={{flex: 1, backgroundColor: themeColors.background}}>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={[
@@ -181,7 +187,7 @@ const Profile = () => {
           name="firstName"
         />
         {errors.firstName && (
-          <Text style={styles.errorText}>{errors.firstName.message}</Text>
+          <Text style={{color: 'red'}}>{errors.firstName.message}</Text>
         )}
         <Controller
           control={control}
@@ -208,7 +214,7 @@ const Profile = () => {
           name="lastName"
         />
         {errors.lastName && (
-          <Text style={styles.errorText}>{errors.lastName.message}</Text>
+          <Text style={{color: 'red'}}>{errors.lastName.message}</Text>
         )}
         <Controller
           control={control}
@@ -266,13 +272,12 @@ const Profile = () => {
           name="phone"
         />
         {errors.phone && (
-          <Text style={styles.errorText}>{errors.phone.message}</Text>
+          <Text style={{color: 'red'}}>{errors.phone.message}</Text>
         )}
         <View style={styles.customButton}>
           <CustomButton
             title="Güncelle"
             onPress={handleSubmit(onSubmit)}
-            type="update"
           />
         </View>
         <AvatarSelectionModal

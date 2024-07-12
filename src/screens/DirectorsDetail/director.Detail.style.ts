@@ -3,10 +3,8 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'black',
   },
   directorName: {
-    color: 'white',
     textAlign: 'center',
     fontFamily: 'Lora-Bold',
   },

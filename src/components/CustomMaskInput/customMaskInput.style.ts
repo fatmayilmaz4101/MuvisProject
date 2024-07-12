@@ -3,15 +3,12 @@ import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   input: {
-    borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 1,
     width: 200,
     height: 30,
     marginTop: 10,
     textAlign:'center',
     padding:0,
-    backgroundColor: Color.BackgroundColor,
-    color: 'white',
-    borderRadius: 3
+    borderRadius: 5
   },
 });

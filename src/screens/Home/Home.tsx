@@ -13,6 +13,10 @@ import {CarouselDataType, DirectorType, MovieType} from '../../types';
 import {useDirector} from '../../hooks/useDirectors';
 import {useMovies} from '../../hooks/useMovie';
 import CustomCarousel from '../../components/CustomCarousel/CustomCarousel';
+import { RootState } from '../../redux/store';
+import { useSelector } from 'react-redux';
+import { getThemeColor } from '../../color';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const getRandomMovies = (movies: MovieType[], count: number) => {
@@ -27,6 +31,18 @@ const Home = ({route}: any) => {
   const [randomMovies, setRandomMovies] = useState<MovieType[]>([]);
   const {data: directors = []} = useDirector();
   const {data: movies = []} = useMovies();
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
+
+  useEffect(() => {
+    const setFirstName = async () => {
+      if (route?.params?.firstName) {
+        const { firstName } = route.params;
+        await AsyncStorage.setItem('firstName', firstName);
+      } 
+    };
+    setFirstName();
+  }, [route]);
 
 
   useEffect(() => {
@@ -54,15 +70,15 @@ const Home = ({route}: any) => {
             size={80}
             source={{uri: item.src}}
           />
-          <Text style={styles.directorName}>{item.name}</Text>
+          <Text style={[styles.directorName, {color: themeColors.titleColor}]}>{item.name}</Text>
         </View>
       </TouchableOpacity>
     );
   };
   return (
-    <SafeAreaView style={styles.homeScreen}>
+    <SafeAreaView style={[styles.homeScreen, {backgroundColor:themeColors.background}]}>
       <View>
-        <Text style={styles.welcomeMessage}>
+        <Text style={[styles.welcomeMessage, {color: themeColors.titleColor}]}>
           {firstName}, senin için seçtiklerimize göz at
         </Text>
         <CustomCarousel
@@ -73,7 +89,7 @@ const Home = ({route}: any) => {
         />
       </View>
       
-      <Text style={styles.welcomeMessage}>En Beğenilen Yönetmenler</Text>
+      <Text style={[styles.welcomeMessage, {color: themeColors.titleColor}]}>En Beğenilen Yönetmenler</Text>
       <View style={styles.directorAvatar}>
         <FlatList
           data={directors}

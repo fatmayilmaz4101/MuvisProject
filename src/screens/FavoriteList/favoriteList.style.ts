@@ -1,10 +1,8 @@
 import {StyleSheet} from 'react-native';
-import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'black',
   },
   movieContainer: {
     flex: 1,
@@ -25,11 +23,9 @@ export const styles = StyleSheet.create({
   },
   movieTitle: {
     textAlign: 'center',
-    color: 'white',
   },
   emptyCompText: {
     textAlign: 'center',
-    color: 'white',
     fontFamily: 'Lora-Regular'
   },
   closeIcon:{

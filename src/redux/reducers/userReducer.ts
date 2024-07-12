@@ -13,7 +13,7 @@ export interface UserState {
   login: UserLoginModel;
   profile: UserProfileModel;
   error: boolean;
-  isLoggedIn: boolean; // Giriş durumunu ekliyoruz
+  isLoggedIn: boolean; 
 }
 const initialState: UserState = {
   login: {userName: '', password: ''},

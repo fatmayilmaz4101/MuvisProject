@@ -5,10 +5,15 @@ import {styles} from './director.Detail.style';
 import {FlatList, Image, TouchableOpacity, View} from 'react-native';
 import {MovieType} from '../../types';
 import {useNavigation} from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { getThemeColor } from '../../color';
+import { RootState } from '../../redux/store';
 
 const DirectorsDetail = ({route}: any) => {
   const navigation = useNavigation<any>();
   const {name, src, movies} = route?.params?.directors || {};
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
 
   const handlePress = (item: MovieType) => {
     navigation.navigate('MovieDetail', {movie: item});
@@ -18,16 +23,16 @@ const DirectorsDetail = ({route}: any) => {
     <View style={styles.movieContainer}>
       <TouchableOpacity onPress={() => handlePress(item)}>
         <Image source={{uri: item.src}} style={styles.movieImage} />
-        <Text style={styles.movieTitle}>{item.name}</Text>
+        <Text style={[styles.movieTitle, {color: themeColors.titleColor}]}>{item.name}</Text>
       </TouchableOpacity>
     </View>
   );
 
   return (
-    <SafeAreaView style={styles.mainContainer}>
+    <SafeAreaView style={[styles.mainContainer,{backgroundColor: themeColors.background}]}>
       <View style={styles.directorStyle}>
         <CustomAvatar size={80} source={{uri: src}} />
-        <Text style={styles.directorName}>{name}</Text>
+        <Text style={[styles.directorName, {color: themeColors.titleColor}]}>{name}</Text>
       </View>
       <View style={styles.movieStyle}>
         <FlatList

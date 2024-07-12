@@ -1,10 +1,8 @@
 import {StyleSheet} from 'react-native';
-import { Color } from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: 'black',
   },
   image: {
     width: '100%',
@@ -12,19 +10,17 @@ export const styles = StyleSheet.create({
   },
   detailsContainer: {
     position: 'absolute',
-    top: '35%',
+    top: '36%',
     left: '3%',
   },
   titleStyle: {
     fontFamily: 'Lora-Regular',
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
   },
   summaryText: {
     fontFamily: 'Lora-Regular',
     fontSize: 18,
-    color: 'white',
   },
   linearGradient: {
     flex: 1,
@@ -57,7 +53,6 @@ export const styles = StyleSheet.create({
   },
   starTitle: {
     margin: 20,
-    color: 'gray',
   },
   rating: {
     position: 'absolute',
@@ -74,7 +69,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     marginRight: 10,
-    color: 'white'
   },
   commentContainer: {
     flex: 1,
@@ -85,37 +79,15 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'black',
   },
   categoryDirectorText: {
-    color: 'white',
     fontFamily: 'Lora-Regular',
-  },
-  commentText: {
-    color: 'white',
   },
   sendIcon: {
     marginRight: 15,
   },
-  touchable: {
-    padding: 10,
-    backgroundColor: Color.BackgroundColor,
-    borderRadius: 5,
-  },
   contentText: {
-    color: 'white',
     textAlign: 'center',
     fontFamily: 'Lora-Regular'
-  },
-  toolTipContentStyle: {
-    backgroundColor: Color.BackgroundColor,
-    padding:10
-  },
-  toolTipStyle: {
-    width: '100%',
-    height:'auto',
-    position:'absolute',
-    top:'2%'
-  }
-  
+  },  
 });

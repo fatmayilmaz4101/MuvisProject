@@ -19,12 +19,17 @@ import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
 import {Button} from 'react-native-paper';
 import {useUser} from '../../hooks/useUser';
 import {LoginFormInput} from '../../types';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { getThemeColor } from '../../color';
 
 const Login = ({route}: any) => {
   const navigation = useNavigation<any>();
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
   const avatar = route?.params?.selectedAvatar;
   const {data: users = [], refetch} = useUser();
+  const theme = useSelector((state:RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
 
   const [isEnabled, setIsEnabled] = useState<boolean>(false);
   const {
@@ -97,7 +102,7 @@ const Login = ({route}: any) => {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{flex: 1}}>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, {backgroundColor: themeColors.background}]}>
         <View
           style={[
             styles.avatarContainer,
@@ -112,7 +117,7 @@ const Login = ({route}: any) => {
             />
           )}
         </View>
-        <View style={[styles.center, styles.inputContainer]}>
+        <View style={[styles.center, styles.inputContainer, {borderColor: themeColors.titleColor}]}>
           <View style={[styles.center]}>
             <Controller
               control={control}
@@ -163,7 +168,7 @@ const Login = ({route}: any) => {
             )}
           </View>
           <View style={styles.rowStyle}>
-            <Text style={styles.rememberMe}>Beni hatırla</Text>
+            <Text style={[styles.rememberMe, {color: themeColors.titleColor}]}>Beni hatırla</Text>
             <Switch
               trackColor={{false: Color.Dark, true: Color.Orange}}
               thumbColor={isEnabled ? Color.Light : Color.Secondary}
@@ -176,10 +181,10 @@ const Login = ({route}: any) => {
           </View>
         </View>
 
-        <Text style={styles.rememberPassword}>Parolamı unuttum</Text>
+        <Text style={{color: themeColors.titleColor}}>Parolamı unuttum</Text>
         <View style={styles.rowStyle}>
-          <Text style={styles.customText}>Hesabınız yok mu?</Text>
-          <Button mode="text" onPress={onPressSignUp} textColor="white">
+          <Text style={[styles.customText, {color:themeColors.titleColor}]}>Hesabınız yok mu?</Text>
+          <Button mode="text" onPress={onPressSignUp} textColor= {themeColors.titleColor}>
             Şimdi kaydolun.
           </Button>
         </View>

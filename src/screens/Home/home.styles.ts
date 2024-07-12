@@ -3,11 +3,9 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   homeScreen: {
     flex: 1,
-    backgroundColor: 'black',
   },
   welcomeMessage: {
     fontSize: 18,
-    color: 'white',
     fontFamily: 'Lora-Bold',
     padding: 20,
   },
@@ -24,7 +22,6 @@ export const styles = StyleSheet.create({
   directorName: {
     fontSize: 14,
     textAlign: 'center',
-    color: 'white',
     fontFamily: 'Lora-Regular',
   },
 

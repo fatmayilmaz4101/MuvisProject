@@ -3,7 +3,6 @@ import {Color} from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -30,7 +29,6 @@ export const styles = StyleSheet.create({
   },
   customText: {
     marginTop: 9,
-    color: 'gray',
   },
   submit: {
     marginTop: 10,
@@ -41,10 +39,6 @@ export const styles = StyleSheet.create({
   },
   rememberMe: {
     marginTop: 5,
-    color: 'gray',
-  },
-  rememberPassword: {
-    color: 'gray',
   },
   errorText: {
     color: Color.Danger,

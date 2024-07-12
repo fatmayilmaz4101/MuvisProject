@@ -3,11 +3,9 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'black',
   },
   categoryTitle: {
     fontSize: 18,
-    color: 'white',
     fontFamily: 'Lora-Bold',
     padding: 20,
   },

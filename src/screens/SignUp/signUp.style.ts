@@ -3,7 +3,6 @@ import {Color} from '../../utilities/Color';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -30,7 +29,6 @@ export const styles = StyleSheet.create({
   },
   inputContainer: {
     position: 'absolute',
-    borderColor: 'white',
     borderWidth: 0.5,
     borderRadius: 10,
     padding: 50,
@@ -42,7 +40,6 @@ export const styles = StyleSheet.create({
 
   customText: {
     marginTop: 9,
-    color: 'white',
   },
   submit: {
     marginTop: 18,

@@ -18,6 +18,7 @@ import { toggleTheme } from '../../redux/actions/themeActions';
 import { RootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { getThemeColor } from '../../color';
+import { Color } from '../../utilities/Color';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,7 +49,6 @@ function DrawerNavigator() {
   const themeColors = getThemeColor(theme);
 
   const toggleSwitch = async (value: boolean) => {
-    console.log('value: ',value)
     if(value){
       dispatch(toggleTheme('dark'))
     } else{
@@ -61,8 +61,8 @@ function DrawerNavigator() {
     return (
       <View style={{flex: 1, backgroundColor: themeColors.drawerBackground}}>
           <Switch
-          trackColor={{ false: 'gray', true: 'gray' }}
-          thumbColor={theme ? 'light' : 'dark'}
+          trackColor={{false: Color.Dark, true: Color.Orange}}
+          thumbColor={theme ? 'dark' : 'light'}
           onValueChange={toggleSwitch}
           value={theme === 'dark'}
         />

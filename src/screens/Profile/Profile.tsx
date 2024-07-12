@@ -33,7 +33,6 @@ const Profile = () => {
   );
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
-  const [phone, setPhone] = useState<string>('');
   const [profileData, setProfileData] = useState<UserType | null>(null);
   const theme = useSelector((state:RootState) => state.theme.theme);
   const themeColors = getThemeColor(theme);

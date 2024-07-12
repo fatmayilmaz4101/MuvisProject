@@ -9,25 +9,11 @@ export interface ColorProps {
     commentDateColor: string;
     danger: string;
     cardBottom: string;
-    commentContainer: string,
-    sendInputContainer: string,
-
-    primary: string;
-    primaryTextColor: string;
-    lighterBlack: string;
-    secondaryTextColor: string;
-    inActiveUnderlineTextInputColor: string;
-    tertiaryTextColor: string;
-    whiteColor: string;
-    lightPrimaryColor: string;
-    favouriteButtonColor: string;
-    addPhotoButtonColor: string;
-    ratingIconColor: string;
-    disabledButtonColor: string;
-    onboardingInactiveIconColor: string;
-    tabBarTextColor: string;
-    tabColor: string;
-    gradientColor: string;
+    commentContainer: string;
+    sendInputContainer: string;
+    modalBackground: string;
+    modalContent: string;
+    
   }
   export const Colors: ColorProps = {
     drawerBackground: 'white',
@@ -42,23 +28,9 @@ export interface ColorProps {
     cardBottom: 'gray',
     commentContainer: '#b7b9bd',
     sendInputContainer: 'gray',
+    modalBackground: 'rgba(0, 0, 0, 0.5)',
+    modalContent: 'white'
 
-    primaryTextColor: '#000000',
-    lighterBlack: '#FFFFFF',
-    secondaryTextColor: '#FFFFFF',
-    tertiaryTextColor: '#FFFFFF',
-    gradientColor: '#61D2C4',
-    tabColor: '#FFFFFF',
-    ratingIconColor: '#FFCD00',
-    primary: '#2DDA93',
-    disabledButtonColor: '#AAAAAA',
-    onboardingInactiveIconColor: '#DBDBDB',
-    inActiveUnderlineTextInputColor: '#A7A7A7',
-    lightPrimaryColor: '#61D2C4',
-    tabBarTextColor: '#D2D2D2',
-    whiteColor: '#FFFFFF',
-    favouriteButtonColor: '#FF6262',
-    addPhotoButtonColor: '#48A2F5',
   };
   export const DarkColors: ColorProps = {
     background: 'black',
@@ -73,23 +45,8 @@ export interface ColorProps {
     cardBottom: '#17181a',
     commentContainer: '#17181a',
     sendInputContainer: 'black',
-
-    primaryTextColor: '#FFFFFF',
-    tertiaryTextColor: '#1E1E1E',
-    secondaryTextColor: '#F5F5F5',
-    lighterBlack: '#777777',
-    tabColor: '#FFFFFF',
-    ratingIconColor: '#FFCD00',
-    primary: '#2DDA93',
-    disabledButtonColor: '#AAAAAA',
-    lightPrimaryColor: '#61D2C4',
-    gradientColor: '#1B1C1E',
-    onboardingInactiveIconColor: '#DBDBDB',
-    inActiveUnderlineTextInputColor: '#A7A7A7',
-    tabBarTextColor: '#D2D2D2',
-    whiteColor: '#FFFFFF',
-    favouriteButtonColor: '#FF6262',
-    addPhotoButtonColor: '#48A2F5',
+    modalBackground: 'rgba(0, 0, 0, 0.5)',
+    modalContent: '#17181a'
   };
   const themes = {
     light: {...Colors},

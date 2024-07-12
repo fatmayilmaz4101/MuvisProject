@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
     top: '5%',
   },
   inputContainer: {
-    borderColor: 'white',
     borderWidth: 0.5,
     borderRadius: 10,
     padding: 35,
@@ -39,8 +38,5 @@ export const styles = StyleSheet.create({
   },
   rememberMe: {
     marginTop: 5,
-  },
-  errorText: {
-    color: Color.Danger,
   },
 });

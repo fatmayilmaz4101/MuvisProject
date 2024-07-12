@@ -12,7 +12,6 @@ import {useSelector} from 'react-redux';
 import {MovieType} from '../../types';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Color } from '../../utilities/Color';
 import { removeFromFavorites } from '../../redux/actions/favoriteActions';
 import { getThemeColor } from '../../color';
 

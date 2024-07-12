@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   movieImage: {
     width: '90%',
-    aspectRatio: 9 / 12, // Oran belirleme
+    aspectRatio: 9 / 12,
     borderRadius: 10,
     margin: 5,
   },

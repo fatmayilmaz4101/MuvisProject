@@ -134,13 +134,13 @@ const Login = ({route}: any) => {
                   onChangeText={onChange}
                   value={value}
                   placeholder="Kullanıcı Adı"
-                  placeholderTextColor={Color.Gray}
+                  placeholderTextColor={themeColors.commentDateColor}
                 />
               )}
               name="userName"
             />
             {errors.userName && (
-              <Text style={styles.errorText}>{errors.userName.message}</Text>
+              <Text style={{color:themeColors.danger}}>{errors.userName.message}</Text>
             )}
             <Controller
               control={control}
@@ -157,14 +157,14 @@ const Login = ({route}: any) => {
                   onChangeText={onChange}
                   value={value}
                   placeholder="Şifre"
-                  placeholderTextColor={Color.Gray}
+                  placeholderTextColor={themeColors.commentDateColor}
                   secureTextEntry
                 />
               )}
               name="password"
             />
             {errors.password && (
-              <Text style={styles.errorText}>{errors.password.message}</Text>
+              <Text style={{color:themeColors.danger}}>{errors.password.message}</Text>
             )}
           </View>
           <View style={styles.rowStyle}>

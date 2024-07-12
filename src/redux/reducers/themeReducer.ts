@@ -1,4 +1,3 @@
-// reducers/themeReducer.ts
 import { TOGGLE_THEME } from '../actions/themeActions';
 
 export interface ThemeState {

@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Yarı saydam siyah arka plan
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
   },
   loadingText: {
     marginTop: 10,

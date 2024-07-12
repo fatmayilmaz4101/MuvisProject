@@ -1,4 +1,3 @@
-// actions/themeActions.ts
 export const TOGGLE_THEME = 'TOGGLE_THEME';
 
 export interface ToggleThemeAction {

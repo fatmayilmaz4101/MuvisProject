@@ -10,6 +10,9 @@ import {
 import CustomAvatar from '../CustomAvatar/CustomAvatar';
 import {styles} from './customAvatarSelectionModal.style';
 import {avatarImages} from '../../../api/getAvatarDatas';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../redux/store';
+import {getThemeColor} from '../../color';
 
 interface AvatarSelectionModalProps {
   visible: boolean;
@@ -36,6 +39,8 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
       />
     </TouchableOpacity>
   );
+  const theme = useSelector((state: RootState) => state.theme.theme);
+  const themeColors = getThemeColor(theme);
 
   return (
     <Modal
@@ -43,8 +48,16 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
       transparent={true}
       visible={visible}
       onRequestClose={onClose}>
-      <View style={styles.modalBackground}>
-        <View style={styles.modalContent}>
+      <View
+        style={[
+          styles.modalBackground,
+          {backgroundColor: themeColors.modalBackground},
+        ]}>
+        <View
+          style={[
+            styles.modalContent,
+            {backgroundColor: themeColors.modalContent},
+          ]}>
           <FlatList
             data={avatarImages}
             keyExtractor={(item, index) => index.toString()}

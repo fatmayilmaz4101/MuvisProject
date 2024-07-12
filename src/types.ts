@@ -108,3 +108,22 @@ export interface CustomToolTipType{
   style: StyleProp<ViewStyle>
   onPress: (event: GestureResponderEvent) => void
 } 
+export const phoneMask = [
+  '+',
+  '9',
+  '0',
+  '-',
+  '5',
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+];  

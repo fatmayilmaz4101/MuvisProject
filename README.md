@@ -15,7 +15,6 @@ Muvis is a movie archive collection.
 
 
 ### Outputs
-### Outputs
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <img src="assets/images/sign-up.png" alt="Sign Up" width="200">

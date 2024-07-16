@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
         padding: 8,
         margin:5,
         borderRadius: 5,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
       },
 })

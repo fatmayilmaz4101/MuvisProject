@@ -53,6 +53,7 @@ export const styles = StyleSheet.create({
   },
   starTitle: {
     margin: 20,
+    marginTop: 50
   },
   rating: {
     position: 'absolute',

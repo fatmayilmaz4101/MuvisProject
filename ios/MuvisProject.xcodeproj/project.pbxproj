@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		17B511AC50CBA9E69F246CBE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BDA6F2CCA93068D6605BE8A9 /* PrivacyInfo.xcprivacy */; };
 		420F1D08A9F44973BA4AB2B8 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03D34788DDB64367A017764C /* Lora-BoldItalic.ttf */; };
 		4DFBD0F72BCD26D60032C31D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DFBD0F62BCD26D60032C31D /* Ionicons.ttf */; };
 		4E48938BCAB14B8AA70D9B62 /* Lora-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06707B69901B40F798127B64 /* Lora-MediumItalic.ttf */; };
@@ -68,6 +69,7 @@
 		8B656BD845E18257C3552ED9 /* libPods-MuvisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D94C7D0CC574579A3E9FD7E /* Lora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora/static/Lora-Bold.ttf"; sourceTree = "<group>"; };
 		9FE150A1E96D25B702263F32 /* libPods-MuvisProject-MuvisProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject-MuvisProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA6F2CCA93068D6605BE8A9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = MuvisProject/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EC59EFC15F1A4675B5F95C07 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F2A727CEE2D6B5EA1D9AD603 /* Pods-MuvisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject.release.xcconfig"; path = "Target Support Files/Pods-MuvisProject/Pods-MuvisProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				BDA6F2CCA93068D6605BE8A9 /* PrivacyInfo.xcprivacy */,
 			);
 			name = MuvisProject;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				80BD4D2A2275459394D558AA /* Lora-SemiBoldItalic.ttf in Resources */,
 				6BECA45DA0C340508ADD919A /* OFL.txt in Resources */,
 				973E840D7F0D4327ADFDF7C3 /* README.txt in Resources */,
+				17B511AC50CBA9E69F246CBE /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -604,6 +609,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
@@ -615,6 +621,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLIPPER_ENABLED=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -623,6 +630,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -656,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -683,6 +693,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
@@ -695,6 +706,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

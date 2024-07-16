@@ -20,7 +20,7 @@ target 'MuvisProject' do
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper only in Debug mode.
-    :flipper_configuration => (ENV['NO_FLIPPER'] == "1" || !ENV['DEBUG']) ? FlipperConfiguration.disabled : FlipperConfiguration.enabled,
+    #:flipper_configuration => (ENV['NO_FLIPPER'] == "1" || !ENV['DEBUG']) ? FlipperConfiguration.disabled : FlipperConfiguration.enabled,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )

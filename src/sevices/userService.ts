@@ -13,3 +13,5 @@ export const getUserById = async (userId:string): Promise<UserType | null> => {
     const users = await getUsers();
     return users.find((user)=>user.id==userId) || null;
 }
+
+

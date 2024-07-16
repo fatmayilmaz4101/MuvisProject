@@ -83,7 +83,6 @@ const SignUp = () => {
   };
 
   const onSubmit: SubmitHandler<UserFormInput> = async data => {
-    console.log('kayıt ola tıklandı, data: ', data);
     try {
       addUser(data, {
         onSuccess: () => {

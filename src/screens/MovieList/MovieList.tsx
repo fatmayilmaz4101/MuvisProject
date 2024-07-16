@@ -32,7 +32,7 @@ const MovieList = () => {
   };
   if (isLoading) {
     return (
-      <View style={styles.loadingContainer}>
+      <View style={[styles.loadingContainer, {backgroundColor: themeColors.background}]}>
         <CustomLoading isLoading={isLoading} text="Yükleniyor" />
       </View>
     );

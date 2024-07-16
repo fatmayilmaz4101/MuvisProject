@@ -59,9 +59,6 @@ const FavoriteList = () => {
         numColumns={2}
         ListEmptyComponent={FavoriEmptyComponent}
       />
-      <TouchableOpacity>
-        <Ionicons name="menu" size={24} color="white" />
-      </TouchableOpacity>
     </SafeAreaView>
   );
 };

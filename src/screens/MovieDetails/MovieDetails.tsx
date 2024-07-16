@@ -139,10 +139,10 @@ const MovieDetails = ({ route }: any) => {
   }
 
   const openContentToolTip = () => {
-    return <Text style={[styles.contentText, {color: themeColors.background}]}>Film favorilere eklendi.</Text>;
+    return <Text style={[styles.contentText, {color: themeColors.titleColor}]}>Film favorilere eklendi.</Text>;
   };
   const closeContentToolTip = () => {
-    return <Text style={[styles.contentText, {color: themeColors.background}]}>Film favorilerden kaldırıldı.</Text>;
+    return <Text style={[styles.contentText, {color: themeColors.titleColor}]}>Film favorilerden kaldırıldı.</Text>;
   };
 
   return (

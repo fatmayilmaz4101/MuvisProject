@@ -3,11 +3,9 @@ import { TOGGLE_THEME } from '../actions/themeActions';
 export interface ThemeState {
   theme: 'light' | 'dark' ;
 }
-
 const initialState: ThemeState = {
   theme: 'light',
 };
-
 const themeReducer = (
   state = initialState,
   action: {type: string; payload?: any}

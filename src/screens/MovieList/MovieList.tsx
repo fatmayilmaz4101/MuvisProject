@@ -37,7 +37,7 @@ const MovieList = () => {
       </View>
     );
   }
-
+    
   if (error) {
     return (
       <View style={styles.errorContainer}>

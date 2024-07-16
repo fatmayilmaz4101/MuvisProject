@@ -15,18 +15,22 @@ Muvis is a movie archive collection.
 
 
 ### Outputs
-<img src="assets/images/sign-up.png" alt="Sign Up" width="200"> 
-<img src="assets/images/sign-up-modal.png" alt="Sign Up Modal" width="200">
-<img src="assets/images/login.png" alt="Log in" width="200">
-<img src="assets/images/home.png" alt="Home" width="200">
-<img src="assets/images/theme-dark.png" alt="Dark Theme" width="200">
-<img src="assets/images/theme-light.png" alt="Light Theme" width="200">
-<img src="assets/images/director-detail.png" alt="Director Detail" width="200">
-<img src="assets/images/profile.png" alt="Profile" width="200">
-<img src="assets/images/movie-list.png" alt="Movie List" width="200">
-<img src="assets/images/category-detail.png" alt="Category Detail" width="200">
-<img src="assets/images/movie-detail.png" alt="Movie Detail" width="200">
-<img src="assets/images/favorite-list.png" alt="Favorite List" width="200">
+### Outputs
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <img src="assets/images/sign-up.png" alt="Sign Up" width="200">
+    <img src="assets/images/sign-up-modal.png" alt="Sign Up Modal" width="200">
+    <img src="assets/images/login.png" alt="Log in" width="200">
+    <img src="assets/images/home.png" alt="Home" width="200">
+    <img src="assets/images/theme-dark.png" alt="Dark Theme" width="200">
+    <img src="assets/images/theme-light.png" alt="Light Theme" width="200">
+    <img src="assets/images/director-detail.png" alt="Director Detail" width="200">
+    <img src="assets/images/profile.png" alt="Profile" width="200">
+    <img src="assets/images/movie-list.png" alt="Movie List" width="200">
+    <img src="assets/images/category-detail.png" alt="Category Detail" width="200">
+    <img src="assets/images/movie-detail.png" alt="Movie Detail" width="200">
+    <img src="assets/images/favorite-list.png" alt="Favorite List" width="200">
+</div>
 
 ### Summary
 - Users can register.

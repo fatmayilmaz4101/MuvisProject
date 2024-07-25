@@ -1,8 +1,8 @@
 import {useQuery} from '@tanstack/react-query';
-import {CategoryType} from '../types';
-import {getCategories} from '../sevices/categoryService';
+import {CategoryType} from '../utilities/Types';
+import {getCategories} from '../sevices/CategoryService';
 
-export const useCategories = () => {
+export const UseCategories = () => {
   return useQuery<CategoryType[]>({
     queryKey: ['category'],
     queryFn: getCategories,

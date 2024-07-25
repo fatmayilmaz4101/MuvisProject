@@ -13,18 +13,17 @@ import {
 import {useForm, Controller, SubmitHandler} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CustomButton from '../../components/CustomButton/CustomButton';
-import CustomTextInput from '../../components/CustomTextInput/CustomTextInput';
-import {getUserById} from '../../sevices/userService';
-import {UserFormInput, UserType} from '../../types';
-import {styles} from './profile.style';
-import {Color} from '../../utilities/Color';
-import CustomAvatar from '../../components/CustomAvatar/CustomAvatar';
-import AvatarSelectionModal from '../../components/CustomAvatarSelectionModal/CustomAvatarSelectionModal';
-import CustomMaskInput from '../../components/CustomMaskInput/CustomMaskInput';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { getThemeColor } from '../../color';
+import CustomButton from '../../components/button/Button';
+import CustomTextInput from '../../components/text-input/TextInput';
+import {getUserById} from '../../sevices/UserService';
+import {UserFormInput, UserType} from '../../utilities/Types';
+import {styles} from './Profile.style';
+import CustomAvatar from '../../components/avatar/Avatar';
+import AvatarSelectionModal from '../../components/avatar-selection-modal/AvatarSelectionModal';
+import CustomMaskInput from '../../components/mask-input/MaskInput';
+import {useSelector} from 'react-redux';
+import { RootState } from '../../redux/Store';
+import { getThemeColor } from '../../utilities/Color';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -34,7 +33,7 @@ const Profile = () => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
   const [profileData, setProfileData] = useState<UserType | null>(null);
-  const theme = useSelector((state:RootState) => state.theme.theme);
+  const theme = useSelector((state: RootState) => state.theme.theme);
   const themeColors = getThemeColor(theme);
 
   const {
@@ -180,7 +179,7 @@ const Profile = () => {
               onChangeText={onChange}
               value={value}
               placeholder="İsim"
-              placeholderTextColor={Color.Gray}
+              placeholderTextColor={themeColors.titleColor}
             />
           )}
           name="firstName"
@@ -207,7 +206,7 @@ const Profile = () => {
               onChangeText={onChange}
               value={value}
               placeholder="Soyisim"
-              placeholderTextColor={Color.Gray}
+              placeholderTextColor={themeColors.titleColor}
             />
           )}
           name="lastName"
@@ -230,7 +229,7 @@ const Profile = () => {
               onChangeText={onChange}
               value={value}
               placeholder="Kullanıcı Adı"
-              placeholderTextColor={Color.Gray}
+              placeholderTextColor={themeColors.titleColor}
             />
           )}
           name="userName"
@@ -251,7 +250,7 @@ const Profile = () => {
               value={value}
               placeholder="Şifre"
               secureTextEntry
-              placeholderTextColor={Color.Gray}
+              placeholderTextColor={themeColors.titleColor}
             />
           )}
           name="password"
@@ -274,10 +273,7 @@ const Profile = () => {
           <Text style={{color: 'red'}}>{errors.phone.message}</Text>
         )}
         <View style={styles.customButton}>
-          <CustomButton
-            title="Güncelle"
-            onPress={handleSubmit(onSubmit)}
-          />
+          <CustomButton title="Güncelle" onPress={handleSubmit(onSubmit)} />
         </View>
         <AvatarSelectionModal
           visible={modalVisible}

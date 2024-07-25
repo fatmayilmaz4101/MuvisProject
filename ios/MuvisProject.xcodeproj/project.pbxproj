@@ -69,7 +69,7 @@
 		8B656BD845E18257C3552ED9 /* libPods-MuvisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D94C7D0CC574579A3E9FD7E /* Lora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora/static/Lora-Bold.ttf"; sourceTree = "<group>"; };
 		9FE150A1E96D25B702263F32 /* libPods-MuvisProject-MuvisProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuvisProject-MuvisProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDA6F2CCA93068D6605BE8A9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = MuvisProject/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		BDA6F2CCA93068D6605BE8A9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MuvisProject/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		EC59EFC15F1A4675B5F95C07 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-VariableFont_wght.ttf"; path = "../assets/fonts/Lora/Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F2A727CEE2D6B5EA1D9AD603 /* Pods-MuvisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuvisProject.release.xcconfig"; path = "Target Support Files/Pods-MuvisProject/Pods-MuvisProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -621,7 +621,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLIPPER_ENABLED=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

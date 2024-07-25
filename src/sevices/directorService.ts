@@ -1,7 +1,7 @@
-import { DirectorType } from "../types";
-import apiClient from "./apiClient";
+import {DirectorType} from '../utilities/Types';
+import apiClient from './ApiClient';
 
 export const getDirectors = async (): Promise<DirectorType[]> => {
-    const response = await apiClient.get('/directors')
-    return response.data
-}
+  const response = await apiClient.get('/directors');
+  return response.data;
+};

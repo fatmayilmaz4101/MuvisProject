@@ -1,7 +1,5 @@
-import {MovieType} from './movieActions';
-
-export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
-export const REMOVE_FROM_FAVORITES = 'REMOVE_FROM_FAVORITES';
+import { MovieType } from "../../utilities/Types";
+import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../ActionTypes";
 
 export const addToFavorites = (movie: MovieType) => ({
   type: ADD_TO_FAVORITES,

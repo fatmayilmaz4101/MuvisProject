@@ -1,14 +1,10 @@
 import {thunk} from 'redux-thunk';
 import {configureStore} from '@reduxjs/toolkit';
 import {useDispatch} from 'react-redux';
-import userReducer from './reducers/userReducer';
-import moviesReducer from './reducers/movieReducer';
-import favoriteReducer from './reducers/favoriteReducer';
-import themeReducer from './reducers/themeReducer';
+import favoriteReducer from './reducers/FavoriteReducer';
+import themeReducer from './reducers/ThemeReducer';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from '@react-native-async-storage/async-storage';
-
-//movies ve user TanStack Query'ye çevrildi.
 
 const persistConfig = {
   key: 'root',
@@ -21,9 +17,6 @@ const persistedThemeReducer = persistReducer(persistConfig, themeReducer);
 const store = configureStore({
   reducer: {
     theme: persistedThemeReducer,
-
-    movies: moviesReducer,
-    user: userReducer,
     favori: favoriteReducer,
   },
   middleware: (getDefaultMiddleware) =>

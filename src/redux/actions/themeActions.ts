@@ -1,4 +1,4 @@
-export const TOGGLE_THEME = 'TOGGLE_THEME';
+import { TOGGLE_THEME } from "../ActionTypes";
 
 export interface ToggleThemeAction {
   type: typeof TOGGLE_THEME;

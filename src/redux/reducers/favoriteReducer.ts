@@ -1,8 +1,5 @@
-import {
-  ADD_TO_FAVORITES,
-  REMOVE_FROM_FAVORITES,
-} from '../actions/favoriteActions';
-import {MovieType} from '../../types';
+import {MovieType} from '../../utilities/Types';
+import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from '../ActionTypes';
 
 export interface FavoritesState {
   favorites: MovieType[];

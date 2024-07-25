@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-const API_BASE_URL = 'http://192.168.1.46:4000'
+const API_BASE_URL = 'http://10.0.2.2:4000';
 const apiClient = axios.create({
-    baseURL: API_BASE_URL,
-    timeout: 10000
-})
-export default apiClient
+  baseURL: API_BASE_URL,
+  timeout: 10000,
+});
+export default apiClient;

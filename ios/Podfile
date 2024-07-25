@@ -42,7 +42,7 @@ target 'MuvisProject' do
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
         if config.name == 'Debug'
-          flipper_post_install(installer) if ENV['NO_FLIPPER'] != "1"
+          #flipper_post_install(installer) if ENV['NO_FLIPPER'] != "1"
         end
       end
     end

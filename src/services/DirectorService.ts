@@ -1,4 +1,4 @@
-import {DirectorType} from '../utilities/Types';
+import {DirectorType} from '@utilities/Types';
 import apiClient from './ApiClient';
 
 export const getDirectors = async (): Promise<DirectorType[]> => {

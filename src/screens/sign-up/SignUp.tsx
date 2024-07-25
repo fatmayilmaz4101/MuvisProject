@@ -10,26 +10,26 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import {styles} from './SignUp.style';
-import CustomButton from '../../components/button/Button';
+import CustomButton from '@components/button/Button';
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import CustomTextInput from '../../components/text-input/TextInput';
-import CustomAvatar from '../../components/avatar/Avatar';
+import CustomTextInput from '@components/text-input/TextInput';
+import CustomAvatar from '@components/avatar/Avatar';
 import {Button} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
-import {useUser} from '../../hooks/UseUser';
-import {UserFormInput} from '../../utilities/Types';
-import AvatarSelectionModal from '../../components/avatar-selection-modal/AvatarSelectionModal';
-import CustomMaskInput from '../../components/mask-input/MaskInput';
+import {useUser} from '@hooks/UseUser';
+import {UserFormInput} from '@utilities/Types';
+import AvatarSelectionModal from '@components/avatar-selection-modal/AvatarSelectionModal';
+import CustomMaskInput from '@components/mask-input/MaskInput';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../redux/Store';
-import {getThemeColor} from '../../utilities/Color';
+import {RootState} from '@redux/Store';
+import {getThemeColor} from '@utilities/Color';
 
 const SignUp = () => {
   const navigation = useNavigation<any>();
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [keyboardOpen, setKeyboardOpen] = useState<boolean>(false);
   const [selectedAvatar, setSelectedAvatar] = useState<ImageSourcePropType>(
-    require('../../../assets/images/anonim-avatar.png'),
+    require('@assets/images/anonim-avatar.png'),
   );
   const {addUser} = useUser();
   const {

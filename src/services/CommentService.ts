@@ -1,4 +1,4 @@
-import {CommentType} from '../utilities/Types';
+import {CommentType} from '@utilities/Types';
 import apiClient from './ApiClient';
 
 export const getComments = async (): Promise<CommentType[]> => {

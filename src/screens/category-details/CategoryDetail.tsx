@@ -2,12 +2,12 @@ import React from 'react';
 import {Image, SafeAreaView, View, FlatList} from 'react-native';
 import {styles} from './CategoryDetail.style';
 import {Text} from 'react-native-paper';
-import {MovieType} from '../../utilities/Types';
+import {MovieType} from '@utilities/Types';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
-import {getThemeColor} from '../../utilities/Color';
+import {getThemeColor} from '@utilities/Color';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../redux/Store';
+import {RootState} from '@redux/Store';
 
 const CategoryDetail = ({route}: any) => {
   const navigation = useNavigation<any>();

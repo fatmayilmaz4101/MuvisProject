@@ -1,4 +1,4 @@
-import {UserType} from '../utilities/Types';
+import {UserType} from '@utilities/Types';
 import apiClient from './ApiClient';
 
 export const getUsers = async (): Promise<UserType[]> => {

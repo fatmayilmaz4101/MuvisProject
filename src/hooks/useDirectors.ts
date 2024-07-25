@@ -1,6 +1,6 @@
 import {useQuery} from '@tanstack/react-query';
-import {DirectorType} from '../utilities/Types';
-import {getDirectors} from '../sevices/DirectorService';
+import {DirectorType} from '@utilities/Types';
+import {getDirectors} from '@services/DirectorService';
 
 export const UseDirector = () => {
   return useQuery<DirectorType[]>({

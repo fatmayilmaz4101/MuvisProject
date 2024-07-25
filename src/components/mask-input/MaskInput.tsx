@@ -1,10 +1,10 @@
 import MaskInput from 'react-native-mask-input';
-import {MaskInputType, phoneMask} from '../../utilities/Types';
+import {MaskInputType, phoneMask} from '@utilities/Types';
 import {View} from 'react-native';
 import {styles} from './MaskInput.style';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 const GenericMaskInput = ({
   value,

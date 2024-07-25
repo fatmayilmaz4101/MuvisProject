@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, ActivityIndicator, Text} from 'react-native';
 import {styles} from './Loading.styles';
-import {LoadingProps} from '../../utilities/Types';
+import {LoadingProps} from '@utilities/Types';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 const Loading = ({isLoading, text}: LoadingProps) => {
   if (!isLoading) {

@@ -1,6 +1,6 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
-import {CommentType} from '../utilities/Types';
-import {getComments, sendComment} from '../sevices/CommentService';
+import {CommentType} from '@utilities/Types';
+import {getComments, sendComment} from '@services/CommentService';
 
 export const UseComments = () => {
   const queryClient = useQueryClient();

@@ -10,17 +10,17 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {styles} from './SignIn.style';
-import CustomButton from '../../components/button/Button';
+import CustomButton from '@components/button/Button';
 import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import CustomTextInput from '../../components/text-input/TextInput';
+import CustomTextInput from '@components/text-input/TextInput';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CustomAvatar from '../../components/avatar/Avatar';
+import CustomAvatar from '@components/avatar/Avatar';
 import {Button} from 'react-native-paper';
-import {useUser} from '../../hooks/UseUser';
-import {LoginFormInput} from '../../utilities/Types';
+import {useUser} from '@hooks/UseUser';
+import {LoginFormInput} from '@utilities/Types';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../redux/Store';
-import {getThemeColor} from '../../utilities/Color';
+import {RootState} from '@redux/Store';
+import {getThemeColor} from '@utilities/Color';
 
 const Login = ({route}: any) => {
   const navigation = useNavigation<any>();

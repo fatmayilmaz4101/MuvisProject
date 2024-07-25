@@ -1,4 +1,4 @@
-import {MovieType} from '../../utilities/Types';
+import {MovieType} from '@utilities/Types';
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from '../ActionTypes';
 
 export interface FavoritesState {

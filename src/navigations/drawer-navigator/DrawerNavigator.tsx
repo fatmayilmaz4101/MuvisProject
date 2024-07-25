@@ -7,17 +7,17 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import {Switch, Text, TouchableOpacity, View} from 'react-native';
-import Profile from '../../screens/profile/Profile';
+import Profile from '@screens/profile/Profile';
+import {styles} from './DrawerNavigator.style';
+import Stacks from '../stack-navigator/StackNavigator';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
-import FavoriteList from '../../screens/favorite-list/FavoriteList';
+import FavoriteList from '@screens/favorite-list/FavoriteList';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState, useAppDispatch } from '../../redux/Store';
-import { toggleTheme } from '../../redux/actions/ThemeActions';
-import MovieList from '../../screens/movie-list/MovieList';
-import { styles } from '@navigations/drawer-navigator/DrawerNavigator.style';
-import Stacks from '@navigations/stack-navigator/StackNavigator';
+import {getThemeColor} from '@utilities/Color';
+import { RootState, useAppDispatch } from '@redux/Store';
+import { toggleTheme } from '@redux/actions/ThemeActions';
+import MovieList from '@screens/movie-list/MovieList';
 
 const Drawer = createDrawerNavigator();
 

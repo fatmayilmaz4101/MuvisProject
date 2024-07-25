@@ -7,16 +7,16 @@ import {
   View,
 } from 'react-native';
 import {styles} from './Home.styles';
-import CustomAvatar from '../../components/avatar/Avatar';
+import CustomAvatar from '@components/avatar/Avatar';
 import {useNavigation} from '@react-navigation/native';
-import {CarouselDataType, DirectorType, MovieType} from '../../utilities/Types';
-import {UseDirector} from '../../hooks/UseDirectors';
-import {UseMovies} from '../../hooks/UseMovie';
-import CustomCarousel from '../../components/carousel/Carousel';
+import {CarouselDataType, DirectorType, MovieType} from '@utilities/Types';
+import {UseDirector} from '@hooks/UseDirectors';
+import {UseMovies} from '@hooks/UseMovie';
+import CustomCarousel from '@components/carousel/Carousel';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
+import {getThemeColor} from '@utilities/Color';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { RootState } from '../../redux/Store';
+import { RootState } from '@redux/Store';
 
 const getRandomMovies = (movies: MovieType[], count: number) => {
   const shuffled = movies.sort(() => 0.5 - Math.random());

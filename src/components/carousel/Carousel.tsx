@@ -7,12 +7,12 @@ import {
   View,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import {CarouselDataType, CarouselType} from '../../utilities/Types';
+import {CarouselDataType, CarouselType} from '@utilities/Types';
 import {Text} from 'react-native-paper';
 import {styles} from './Carousel.style';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 const {width: viewportWidth} = Dimensions.get('window');
 

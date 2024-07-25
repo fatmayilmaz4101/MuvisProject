@@ -8,10 +8,10 @@ import {
 } from 'react-native';
 import CustomAvatar from '../avatar/Avatar';
 import {styles} from './AvatarSelectionModal.style';
-import {avatarImages} from '../../api/GetAvatarDatas';
+import {avatarImages} from '@api/GetAvatarDatas';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 interface AvatarSelectionModalProps {
   visible: boolean;

@@ -13,17 +13,17 @@ import {
 import {useForm, Controller, SubmitHandler} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CustomButton from '../../components/button/Button';
-import CustomTextInput from '../../components/text-input/TextInput';
-import {getUserById} from '../../sevices/UserService';
-import {UserFormInput, UserType} from '../../utilities/Types';
+import CustomButton from '@components/button/Button';
+import CustomTextInput from '@components/text-input/TextInput';
+import {getUserById} from '@services/UserService';
+import {UserFormInput, UserType} from '@utilities/Types';
 import {styles} from './Profile.style';
-import CustomAvatar from '../../components/avatar/Avatar';
-import AvatarSelectionModal from '../../components/avatar-selection-modal/AvatarSelectionModal';
+import CustomAvatar from '@components/avatar/Avatar';
+import AvatarSelectionModal from '@components/avatar-selection-modal/AvatarSelectionModal';
 import CustomMaskInput from '../../components/mask-input/MaskInput';
 import {useSelector} from 'react-redux';
-import { RootState } from '../../redux/Store';
-import { getThemeColor } from '../../utilities/Color';
+import {RootState} from '@redux/Store';
+import {getThemeColor} from '@utilities/Color';
 
 const Profile = () => {
   const navigation = useNavigation<any>();

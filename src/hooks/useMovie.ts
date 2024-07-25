@@ -1,6 +1,6 @@
 import {useQuery} from '@tanstack/react-query';
-import {MovieType} from '../utilities/Types';
-import {getMovies} from '../sevices/MovieService';
+import {MovieType} from '@utilities/Types';
+import {getMovies} from '@services/MovieService';
 
 export const UseMovies = () => {
   return useQuery<MovieType[]>({

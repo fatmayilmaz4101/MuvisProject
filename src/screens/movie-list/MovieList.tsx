@@ -1,15 +1,15 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {ScrollView, Text, View} from 'react-native';
-import {UseCategories} from '../../hooks/UseCategories';
-import {CarouselDataType, CategoryType} from '../../utilities/Types';
-import CustomLoading from '../../components/loading/Loading';
+import {UseCategories} from '@hooks/UseCategories';
+import {CarouselDataType, CategoryType} from '@utilities/Types';
+import CustomLoading from '@components/loading/Loading';
 import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
-import CustomCarousel from '../../components/carousel/Carousel';
+import CustomCarousel from '@components/carousel/Carousel';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../redux/Store';
-import {getThemeColor} from '../../utilities/Color';
+import {RootState} from '@redux/Store';
+import {getThemeColor} from '@utilities/Color';
 import { styles } from './MovieList.styles';
 
 const MovieList = () => {

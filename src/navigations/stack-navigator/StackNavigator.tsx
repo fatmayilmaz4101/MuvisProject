@@ -1,18 +1,18 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Login from '../../screens/sign-in/SignIn';
-import Home from '../../screens/home/Home';
-import MovieDetails from '../../screens/movie-details/MovieDetails';
-import CategoryDetail from '../../screens/category-details/CategoryDetail';
-import SignUp from '../../screens/sign-up/SignUp';
+import Login from '@screens/sign-in/SignIn';
+import Home from '@screens/home/Home';
+import MovieDetails from '@screens/movie-details/MovieDetails';
+import CategoryDetail from '@screens/category-details/CategoryDetail';
+import SignUp from '@screens/sign-up/SignUp';
 import MyDrawer, {
   LogoTitle,
   MenuIcon,
 } from '../drawer-navigator/DrawerNavigator';
-import DirectorsDetail from '../../screens/directors-detail/DirectorsDetail';
+import DirectorsDetail from '@screens/directors-detail/DirectorsDetail';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 const Stack = createStackNavigator();
 

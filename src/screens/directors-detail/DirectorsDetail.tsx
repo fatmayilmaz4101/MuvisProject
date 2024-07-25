@@ -1,13 +1,13 @@
 import {SafeAreaView} from 'react-native-safe-area-context';
-import CustomAvatar from '../../components/avatar/Avatar';
+import CustomAvatar from '@components/avatar/Avatar';
 import {Text} from 'react-native-paper';
 import {styles} from './Director.Detail.style';
 import {FlatList, Image, TouchableOpacity, View} from 'react-native';
-import {MovieType} from '../../utilities/Types';
+import {MovieType} from '@utilities/Types';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import {RootState} from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import {RootState} from '@redux/Store';
 
 const DirectorsDetail = ({route}: any) => {
   const navigation = useNavigation<any>();

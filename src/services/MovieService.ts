@@ -1,4 +1,4 @@
-import {MovieType} from '../utilities/Types';
+import {MovieType} from '@utilities/Types';
 import apiClient from './ApiClient';
 
 export const getMovies = async (): Promise<MovieType[]> => {

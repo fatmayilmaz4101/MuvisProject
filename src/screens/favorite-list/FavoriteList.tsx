@@ -7,13 +7,13 @@ import {
   View,
 } from 'react-native';
 import {styles} from './FavoriteList.style';
-import {RootState, useAppDispatch} from '../../redux/Store';
+import {RootState, useAppDispatch} from '@redux/Store';
 import {useSelector} from 'react-redux';
-import {MovieType} from '../../utilities/Types';
+import {MovieType} from '@utilities/Types';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {removeFromFavorites} from '../../redux/actions/FavoriteActions';
-import {getThemeColor} from '../../utilities/Color';
+import {removeFromFavorites} from '@redux/actions/FavoriteActions';
+import {getThemeColor} from '@utilities/Color';
 
 const FavoriteList = () => {
   const navigation = useNavigation<any>();

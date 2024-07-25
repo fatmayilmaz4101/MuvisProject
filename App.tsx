@@ -4,8 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {Provider} from 'react-redux';
-import store, {persistor} from './src/redux/Store';
-import DrawerNavigator from './src/navigation/drawer-navigator/DrawerNavigator';
+import store, {persistor} from '@redux/Store';
+import DrawerNavigator from '@navigations/drawer-navigator/DrawerNavigator';
 import {LogBox} from 'react-native';
 import {PersistGate} from 'redux-persist/integration/react';
 

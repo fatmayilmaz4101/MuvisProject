@@ -1,10 +1,10 @@
 import React from 'react';
 import {Button} from 'react-native-paper';
 import {styles} from './Button.styles';
-import {ButtonProps} from '../../utilities/Types';
+import {ButtonProps} from '@utilities/Types';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../redux/Store';
-import {getThemeColor} from '../../utilities/Color';
+import {RootState} from '@redux/Store';
+import {getThemeColor} from '@utilities/Color';
 
 const GenericButton = ({title, onPress}: ButtonProps) => {
   const theme = useSelector((state: RootState) => state.theme.theme);

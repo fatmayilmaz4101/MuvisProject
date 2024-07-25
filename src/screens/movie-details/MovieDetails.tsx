@@ -13,18 +13,18 @@ import {styles} from './MovieDetails.style';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Rating} from 'react-native-ratings';
-import {UseComments} from '../../hooks/UseComments';
-import {CommentType} from '../../utilities/Types';
+import {UseComments} from '@hooks/UseComments';
+import {CommentType} from '@utilities/Types';
 import {Avatar, Card} from 'react-native-paper';
 import {useSelector} from 'react-redux';
-import {RootState, useAppDispatch} from '../../redux/Store';
+import {RootState, useAppDispatch} from '@redux/Store';
 import {
   addToFavorites,
   removeFromFavorites,
-} from '../../redux/actions/FavoriteActions';
-import CustomLoading from '../../components/loading/Loading';
-import CustomToolTip from '../../components/tool-tip/ToolTip';
-import {getThemeColor} from '../../utilities/Color';
+} from '@redux/actions/FavoriteActions';
+import CustomLoading from '@components/loading/Loading';
+import CustomToolTip from '@components/tool-tip/ToolTip';
+import {getThemeColor} from '@utilities/Color';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MovieDetails = ({route}: any) => {

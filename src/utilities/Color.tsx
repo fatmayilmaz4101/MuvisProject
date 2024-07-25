@@ -56,7 +56,6 @@ export interface ColorProps {
   
   export const getThemeColor = (
     theme: 'light' | 'dark' = 'light',
-    useSystemTheme?: 'light' | 'dark',
   ) => {
     const themeMode = themes[theme];
     return themeMode;

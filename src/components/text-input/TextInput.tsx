@@ -1,10 +1,10 @@
 import React from 'react';
 import {TextInput} from 'react-native-paper';
 import {styles} from './TextInput.styles';
-import {TextInputProps} from '../../utilities/Types';
+import {TextInputProps} from '@utilities/Types';
 import {useSelector} from 'react-redux';
-import {getThemeColor} from '../../utilities/Color';
-import { RootState } from '../../redux/Store';
+import {getThemeColor} from '@utilities/Color';
+import { RootState } from '@redux/Store';
 
 const GenericTextInput = ({
   onBlur,

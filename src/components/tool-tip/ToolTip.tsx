@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 import {styles} from './ToolTip.style';
-import {ToolTipType} from '../../utilities/Types';
+import {ToolTipType} from '@utilities/Types';
 import {useState} from 'react';
 
 const ToolTip = ({content, children, style, onPress}: ToolTipType) => {

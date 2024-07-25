@@ -1,4 +1,4 @@
-import {CategoryType} from '../utilities/Types';
+import {CategoryType} from '@utilities/Types';
 import apiClient from './ApiClient';
 
 export const getCategories = async (): Promise<CategoryType[]> => {
